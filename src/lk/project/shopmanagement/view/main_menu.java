@@ -340,6 +340,11 @@ public class main_menu extends javax.swing.JFrame {
         btn_today.setColorTextNormal(new java.awt.Color(0, 0, 0));
         btn_today.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
         btn_today.setIconTextGap(10);
+        btn_today.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_todayActionPerformed(evt);
+            }
+        });
 
         btn_mounth.setBackground(new java.awt.Color(189, 195, 199));
         btn_mounth.setIcon(new javax.swing.ImageIcon("C:\\Users\\NIWANTHA\\Downloads\\font\\mounth.png")); // NOI18N
@@ -350,6 +355,11 @@ public class main_menu extends javax.swing.JFrame {
         btn_mounth.setColorTextNormal(new java.awt.Color(0, 0, 0));
         btn_mounth.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
         btn_mounth.setIconTextGap(10);
+        btn_mounth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mounthActionPerformed(evt);
+            }
+        });
 
         btn_settings.setBackground(new java.awt.Color(189, 195, 199));
         btn_settings.setIcon(new javax.swing.ImageIcon("C:\\Users\\NIWANTHA\\Downloads\\font\\settings.png")); // NOI18N
@@ -360,6 +370,11 @@ public class main_menu extends javax.swing.JFrame {
         btn_settings.setColorTextNormal(new java.awt.Color(0, 0, 0));
         btn_settings.setFont(new java.awt.Font("Montserrat", 1, 15)); // NOI18N
         btn_settings.setIconTextGap(10);
+        btn_settings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_settingsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menu_panelLayout = new javax.swing.GroupLayout(menu_panel);
         menu_panel.setLayout(menu_panelLayout);
@@ -1792,6 +1807,44 @@ public class main_menu extends javax.swing.JFrame {
     private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonMetro1ActionPerformed
+
+    private void btn_todayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_todayActionPerformed
+     
+        //remove all panel
+        loard_panel.removeAll();
+        loard_panel.repaint();
+        loard_panel.revalidate();
+        
+        //add panel
+        loard_panel.add(oparetion_panel);
+        loard_panel.repaint();
+        loard_panel.revalidate();
+    }//GEN-LAST:event_btn_todayActionPerformed
+
+    private void btn_mounthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mounthActionPerformed
+       
+        //remove all panel
+        loard_panel.removeAll();
+        loard_panel.repaint();
+        loard_panel.revalidate();
+        
+        //add panel
+        loard_panel.add(mounthly_panel);
+        loard_panel.repaint();
+        loard_panel.revalidate();
+    }//GEN-LAST:event_btn_mounthActionPerformed
+
+    private void btn_settingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_settingsActionPerformed
+        //remove all panel
+        loard_panel.removeAll();
+        loard_panel.repaint();
+        loard_panel.revalidate();
+        
+        //add panel
+        loard_panel.add(settings_panel);
+        loard_panel.repaint();
+        loard_panel.revalidate();
+    }//GEN-LAST:event_btn_settingsActionPerformed
 
     /**
      * @param args the command line arguments
