@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lk.project.shopmanagement.DAO;
-
-import lk.project.shopmanagement.DAO.Custom.IMPL.VehicalDAOImpl;
+package lk.project.shopmanagement.DAO.Custom.IMPL;
 
 /**
  *
  * @author NIWANTHA
  */
-public class DAOFactory {
-    
-
+public class VehicalDAOImpl {
     
 }

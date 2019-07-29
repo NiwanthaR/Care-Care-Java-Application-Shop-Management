@@ -1348,10 +1348,10 @@
                                               <Group type="102" alignment="1" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="rSButtonMetro7" pref="232" max="32767" attributes="0"/>
-                                                      <Component id="rSButtonMetro6" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="rSButtonMetro5" alignment="1" max="32767" attributes="0"/>
-                                                      <Component id="rSButtonMetro4" alignment="1" max="32767" attributes="0"/>
+                                                      <Component id="btn_update_vehical" pref="232" max="32767" attributes="0"/>
+                                                      <Component id="btn_remove_vehical" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="btn_add_vehical" alignment="1" max="32767" attributes="0"/>
+                                                      <Component id="btn_search_vehical" alignment="1" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                               </Group>
@@ -1360,20 +1360,20 @@
                                         <DimensionLayout dim="1">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="rSButtonMetro4" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_search_vehical" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro5" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_add_vehical" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro6" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_remove_vehical" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro7" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_update_vehical" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
                                       </Layout>
                                       <SubComponents>
-                                        <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro4">
+                                        <Component class="rsbuttom.RSButtonMetro" name="btn_search_vehical">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Search"/>
                                             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1387,7 +1387,7 @@
                                             </Property>
                                           </Properties>
                                         </Component>
-                                        <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro5">
+                                        <Component class="rsbuttom.RSButtonMetro" name="btn_add_vehical">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Add"/>
                                             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1400,8 +1400,11 @@
                                               <Color blue="0" green="0" red="0" type="rgb"/>
                                             </Property>
                                           </Properties>
+                                          <Events>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_add_vehicalActionPerformed"/>
+                                          </Events>
                                         </Component>
-                                        <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro6">
+                                        <Component class="rsbuttom.RSButtonMetro" name="btn_remove_vehical">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Remove"/>
                                             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1414,8 +1417,11 @@
                                               <Color blue="0" green="0" red="0" type="rgb"/>
                                             </Property>
                                           </Properties>
+                                          <Events>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_remove_vehicalActionPerformed"/>
+                                          </Events>
                                         </Component>
-                                        <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro7">
+                                        <Component class="rsbuttom.RSButtonMetro" name="btn_update_vehical">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Update"/>
                                             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1542,52 +1548,32 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel31" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                  <Component id="jTextField2" max="32767" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jComboBox3" max="32767" attributes="0"/>
                                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox4" max="32767" attributes="0"/>
+                                                  <Component id="vehical_no_et" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="vehical_model_et" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="vehical_brand_et" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
                                         <DimensionLayout dim="1">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel31" max="32767" attributes="0"/>
-                                              <Component id="jTextField2" alignment="0" pref="40" max="32767" attributes="0"/>
-                                              <Component id="jComboBox3" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jComboBox4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="vehical_no_et" alignment="0" pref="40" max="32767" attributes="0"/>
+                                              <Component id="vehical_model_et" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="vehical_brand_et" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                         </DimensionLayout>
                                       </Layout>
                                       <SubComponents>
                                         <Component class="javax.swing.JLabel" name="jLabel31">
                                         </Component>
-                                        <Component class="javax.swing.JTextField" name="jTextField2">
+                                        <Component class="javax.swing.JTextField" name="vehical_no_et">
                                         </Component>
-                                        <Component class="javax.swing.JComboBox" name="jComboBox3">
-                                          <Properties>
-                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                              <StringArray count="4">
-                                                <StringItem index="0" value="Item 1"/>
-                                                <StringItem index="1" value="Item 2"/>
-                                                <StringItem index="2" value="Item 3"/>
-                                                <StringItem index="3" value="Item 4"/>
-                                              </StringArray>
-                                            </Property>
-                                          </Properties>
+                                        <Component class="javax.swing.JTextField" name="vehical_model_et">
                                         </Component>
-                                        <Component class="javax.swing.JComboBox" name="jComboBox4">
-                                          <Properties>
-                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                              <StringArray count="4">
-                                                <StringItem index="0" value="Item 1"/>
-                                                <StringItem index="1" value="Item 2"/>
-                                                <StringItem index="2" value="Item 3"/>
-                                                <StringItem index="3" value="Item 4"/>
-                                              </StringArray>
-                                            </Property>
-                                          </Properties>
+                                        <Component class="javax.swing.JTextField" name="vehical_brand_et">
                                         </Component>
                                       </SubComponents>
                                     </Container>
@@ -1653,29 +1639,29 @@
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel35" min="-2" pref="30" max="-2" attributes="0"/>
                                                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                  <Component id="jTextField3" pref="405" max="32767" attributes="0"/>
+                                                  <Component id="owner_name_et" pref="405" max="32767" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jTextField4" min="-2" pref="281" max="-2" attributes="0"/>
+                                                  <Component id="owner_contact_et" min="-2" pref="281" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
                                         <DimensionLayout dim="1">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel35" max="32767" attributes="0"/>
-                                              <Component id="jTextField3" alignment="0" pref="40" max="32767" attributes="0"/>
-                                              <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="owner_name_et" alignment="0" pref="40" max="32767" attributes="0"/>
+                                              <Component id="owner_contact_et" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                         </DimensionLayout>
                                       </Layout>
                                       <SubComponents>
                                         <Component class="javax.swing.JLabel" name="jLabel35">
                                         </Component>
-                                        <Component class="javax.swing.JTextField" name="jTextField3">
+                                        <Component class="javax.swing.JTextField" name="owner_name_et">
                                           <Events>
-                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="owner_name_etActionPerformed"/>
                                           </Events>
                                         </Component>
-                                        <Component class="javax.swing.JTextField" name="jTextField4">
+                                        <Component class="javax.swing.JTextField" name="owner_contact_et">
                                         </Component>
                                       </SubComponents>
                                     </Container>
@@ -1725,17 +1711,17 @@
                                           <Layout>
                                             <DimensionLayout dim="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jTextField6" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="owner_address" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                             </DimensionLayout>
                                             <DimensionLayout dim="1">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jTextField6" alignment="0" pref="40" max="32767" attributes="0"/>
+                                                  <Component id="owner_address" alignment="0" pref="40" max="32767" attributes="0"/>
                                               </Group>
                                             </DimensionLayout>
                                           </Layout>
                                           <SubComponents>
-                                            <Component class="javax.swing.JTextField" name="jTextField6">
+                                            <Component class="javax.swing.JTextField" name="owner_address">
                                             </Component>
                                           </SubComponents>
                                         </Container>
@@ -1766,7 +1752,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="jScrollPane2" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane2" pref="420" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
