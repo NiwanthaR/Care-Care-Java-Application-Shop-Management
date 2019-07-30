@@ -9,6 +9,6 @@ package lk.project.shopmanagement.DAO.Custom;
  *
  * @author NIWANTHA
  */
-public class QuaryDAO {
+public interface QuaryDAO {
     
 }

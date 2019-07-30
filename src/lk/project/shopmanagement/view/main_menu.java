@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import lk.project.shopmanagement.Controller.Vehical_Controller;
 import lk.project.shopmanagement.DTO.VehicalDTO;
 
@@ -931,13 +932,13 @@ public class main_menu extends javax.swing.JFrame {
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_no_et)
+                .addComponent(vehical_no_et, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_model_et)
+                .addComponent(vehical_model_et, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_brand_et))
+                .addComponent(vehical_brand_et, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1866,7 +1867,11 @@ public class main_menu extends javax.swing.JFrame {
         
         
         try {
-            boolean isadded = Vehical_Controller.addVehical(new VehicalDTO(no,model,brand,name,address,contact));
+            boolean isAdded = Vehical_Controller.addVehical(new VehicalDTO(no,model,brand,name,address,contact));
+            if(isAdded) {
+                JOptionPane.showMessageDialog(this, "Added Success");
+            } else 
+                JOptionPane.showMessageDialog(this, "Added Failed");
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
