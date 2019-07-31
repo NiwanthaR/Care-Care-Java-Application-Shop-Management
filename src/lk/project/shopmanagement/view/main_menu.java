@@ -12,7 +12,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import lk.project.shopmanagement.Controller.Parts_Controller;
 import lk.project.shopmanagement.Controller.Vehical_Controller;
+import lk.project.shopmanagement.DTO.PartsDTO;
 import lk.project.shopmanagement.DTO.VehicalDTO;
 
 /**
@@ -176,21 +178,21 @@ public class main_menu extends javax.swing.JFrame {
         jPanel35 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         part_id_et = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        part_model_et = new javax.swing.JTextField();
+        part_brand_et = new javax.swing.JTextField();
         jPanel36 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jPanel37 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        part_name_et = new javax.swing.JTextField();
         jPanel38 = new javax.swing.JPanel();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jPanel39 = new javax.swing.JPanel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        part_getprice_et = new javax.swing.JTextField();
+        parts_sellprice_et = new javax.swing.JTextField();
+        part_qty_et = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jPanel40 = new javax.swing.JPanel();
@@ -1223,11 +1225,21 @@ public class main_menu extends javax.swing.JFrame {
         btn_searchpart.setColorHover(new java.awt.Color(0, 0, 255));
         btn_searchpart.setColorNormal(new java.awt.Color(0, 51, 204));
         btn_searchpart.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_searchpart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_searchpartActionPerformed(evt);
+            }
+        });
 
         btn_addpart.setText("Add");
         btn_addpart.setColorHover(new java.awt.Color(0, 204, 0));
         btn_addpart.setColorNormal(new java.awt.Color(0, 153, 51));
         btn_addpart.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_addpart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addpartActionPerformed(evt);
+            }
+        });
 
         btn_removepart.setText("Remove");
         btn_removepart.setColorHover(new java.awt.Color(255, 0, 0));
@@ -1324,20 +1336,20 @@ public class main_menu extends javax.swing.JFrame {
         jPanel35Layout.setHorizontalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
-                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(part_id_et)
+                .addComponent(part_id_et, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2)
+                .addComponent(part_model_et, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3))
+                .addComponent(part_brand_et, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(part_id_et, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-            .addComponent(jTextField2)
-            .addComponent(jTextField3)
+            .addComponent(part_model_et)
+            .addComponent(part_brand_et)
         );
 
         jPanel36.setBackground(new java.awt.Color(245, 245, 245));
@@ -1363,9 +1375,9 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel37.setBackground(new java.awt.Color(245, 245, 245));
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        part_name_et.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                part_name_etActionPerformed(evt);
             }
         });
 
@@ -1376,12 +1388,12 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel37Layout.createSequentialGroup()
                 .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jTextField7))
+                .addComponent(part_name_et))
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(part_name_et, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
         jPanel38.setBackground(new java.awt.Color(245, 245, 245));
@@ -1389,22 +1401,24 @@ public class main_menu extends javax.swing.JFrame {
         jLabel49.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel49.setText("Unite Get Price");
 
+        jPanel39.setBackground(new java.awt.Color(245, 245, 245));
+
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
         jPanel39Layout.setHorizontalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel39Layout.createSequentialGroup()
-                .addComponent(jTextField9)
+                .addComponent(part_getprice_et)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField8)
+                .addComponent(parts_sellprice_et)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField10))
+                .addComponent(part_qty_et))
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-            .addComponent(jTextField8)
-            .addComponent(jTextField10)
+            .addComponent(part_getprice_et, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(parts_sellprice_et)
+            .addComponent(part_qty_et)
         );
 
         jLabel46.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
@@ -1422,11 +1436,11 @@ public class main_menu extends javax.swing.JFrame {
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel38Layout.createSequentialGroup()
-                        .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                        .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(0, 0, 0)
-                        .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                        .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(0, 0, 0)
-                        .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))))
+                        .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1482,6 +1496,8 @@ public class main_menu extends javax.swing.JFrame {
         );
 
         jPanel40.setBackground(new java.awt.Color(245, 245, 245));
+
+        jScrollPane3.setBackground(new java.awt.Color(245, 245, 245));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1840,9 +1856,9 @@ public class main_menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_owner_name_etActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void part_name_etActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_part_name_etActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_part_name_etActionPerformed
 
     private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
         // TODO add your handling code here:
@@ -1962,6 +1978,40 @@ public class main_menu extends javax.swing.JFrame {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_update_vehicalActionPerformed
+
+    private void btn_searchpartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchpartActionPerformed
+        
+        try {
+            PartsDTO partsDTO = Parts_Controller.searchparts(part_id_et.getText());
+            if(partsDTO!=null)
+            {
+                part_model_et.setText(partsDTO.getVehical_model());
+                part_brand_et.setText(partsDTO.getVehical_brand());
+                part_name_et.setText(partsDTO.getPart_name());
+                part_getprice_et.setText(Integer.toString(partsDTO.getGet_price()));
+                parts_sellprice_et.setText(Integer.toString(partsDTO.getSold_price()));
+                part_qty_et.setText(Integer.toString(partsDTO.getPart_qty()));
+            }else
+                JOptionPane.showMessageDialog(this, "Part NOT FOUND");
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }//GEN-LAST:event_btn_searchpartActionPerformed
+
+    private void btn_addpartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addpartActionPerformed
+        
+        try {
+            boolean isAdded = Parts_Controller.addparts(new PartsDTO(part_id_et.getText().toUpperCase(), part_model_et.getText().toUpperCase(), part_brand_et.getText().toUpperCase(), part_name_et.getText(), Integer.parseInt(part_getprice_et.getText()), Integer.parseInt(parts_sellprice_et.getText()), Integer.parseInt(part_qty_et.getText())));
+            if(isAdded) {
+                JOptionPane.showMessageDialog(this, "Added Success");
+            } else 
+                JOptionPane.showMessageDialog(this, "Added Failed");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_addpartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2154,12 +2204,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel loard_panel;
     private javax.swing.JPanel menu_panel;
     private javax.swing.JPanel mounthly_panel;
@@ -2167,8 +2211,14 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField owner_address;
     private javax.swing.JTextField owner_contact_et;
     private javax.swing.JTextField owner_name_et;
+    private javax.swing.JTextField part_brand_et;
+    private javax.swing.JTextField part_getprice_et;
     private javax.swing.JTextField part_id_et;
+    private javax.swing.JTextField part_model_et;
+    private javax.swing.JTextField part_name_et;
     private javax.swing.JPanel part_panel;
+    private javax.swing.JTextField part_qty_et;
+    private javax.swing.JTextField parts_sellprice_et;
     private javax.swing.JLabel payment_date;
     private javax.swing.JPanel payment_panel;
     private rsbuttom.RSButtonMetro rSButtonMetro1;

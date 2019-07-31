@@ -46,7 +46,7 @@ public class PartsDAOImpl implements PartsDAO{
     @Override
     public Parts find(String id) throws Exception {
         ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM PARTS WHERE part_id='"+id+"'");
-        return rst.next()? new Parts(rst.getString("part_id"),rst.getString("part_model"),rst.getString("part_brand"),rst.getString("part_name"),rst.getString("part_getprice"),rst.getString("part_soldprice"),rst.getString("part_qty")):null;
+        return rst.next()? new Parts(rst.getString("part_id"),rst.getString("part_model"),rst.getString("part_brand"),rst.getString("part_name"),rst.getInt("part_getprice"),rst.getInt("part_soldprice"),rst.getInt("part_qty")):null;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class PartsDAOImpl implements PartsDAO{
         ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM PARTS");
         if(rst.next())
         {
-            partsList.add(new Parts(rst.getString("part_id"),rst.getString("part_model"),rst.getString("part_brand"),rst.getString("part_name"),rst.getString("part_getprice"),rst.getString("part_soldprice"),rst.getString("part_qty")));
+            partsList.add(new Parts(rst.getString("part_id"),rst.getString("part_model"),rst.getString("part_brand"),rst.getString("part_name"),rst.getInt("part_getprice"),rst.getInt("part_soldprice"),rst.getInt("part_qty")));
         }
         return partsList;
     }

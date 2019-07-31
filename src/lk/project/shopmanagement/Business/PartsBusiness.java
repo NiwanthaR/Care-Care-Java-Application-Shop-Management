@@ -17,7 +17,7 @@ import lk.project.shopmanagement.entity.Parts;
  */
 public class PartsBusiness {
     
-    private static PartsDAO partsDAO = (PartsDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.VEHICAL);
+    private static PartsDAO partsDAO = (PartsDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.PARTS);
     
     public static boolean addParst(PartsDTO partsDTO) throws Exception
     {

@@ -50,14 +50,7 @@ public class VehicalDAOImpl implements VehicalDAO{
 
     @Override
     public ArrayList<Vehical> findall() throws Exception {
-        
-//        ArrayList<Customer> customerList = new ArrayList<>();
-//        ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM Customer");
-//        while(rst.next()) {
-//            customerList.add(new Customer(rst.getString("id"), rst.getString("name"), rst.getString("address"), rst.getDouble("salary")));
-//        }
-//        return customerList;
-        
+    
         ArrayList<Vehical> vehicalList = new ArrayList<>();
         ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM vehical");
         while(rst.next())

@@ -15,14 +15,14 @@ public class PartsDTO {
     private String vehical_model;
     private String vehical_brand;
     private String part_name;
-    private String get_price;
-    private String sold_price;
-    private String part_qty;
+    private int get_price;
+    private int sold_price;
+    private int part_qty;
 
     public PartsDTO() {
     }
 
-    public PartsDTO(String part_id, String vehical_model, String vehical_brand, String part_name, String get_price, String sold_price, String part_qty) {
+    public PartsDTO(String part_id, String vehical_model, String vehical_brand, String part_name, int get_price, int sold_price, int part_qty) {
         this.part_id = part_id;
         this.vehical_model = vehical_model;
         this.vehical_brand = vehical_brand;
@@ -64,27 +64,27 @@ public class PartsDTO {
         this.part_name = part_name;
     }
 
-    public String getGet_price() {
+    public int getGet_price() {
         return get_price;
     }
 
-    public void setGet_price(String get_price) {
+    public void setGet_price(int get_price) {
         this.get_price = get_price;
     }
 
-    public String getSold_price() {
+    public int getSold_price() {
         return sold_price;
     }
 
-    public void setSold_price(String sold_price) {
+    public void setSold_price(int sold_price) {
         this.sold_price = sold_price;
     }
 
-    public String getPart_qty() {
+    public int getPart_qty() {
         return part_qty;
     }
 
-    public void setPart_qty(String part_qty) {
+    public void setPart_qty(int part_qty) {
         this.part_qty = part_qty;
     }
 
