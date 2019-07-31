@@ -163,10 +163,10 @@ public class main_menu extends javax.swing.JFrame {
         jPanel30 = new javax.swing.JPanel();
         jPanel31 = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
-        rSButtonMetro8 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro9 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro10 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro11 = new rsbuttom.RSButtonMetro();
+        btn_searchpart = new rsbuttom.RSButtonMetro();
+        btn_addpart = new rsbuttom.RSButtonMetro();
+        btn_removepart = new rsbuttom.RSButtonMetro();
+        btn_updatepart = new rsbuttom.RSButtonMetro();
         jPanel33 = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
@@ -175,9 +175,9 @@ public class main_menu extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jPanel35 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jComboBox5 = new javax.swing.JComboBox();
-        jComboBox6 = new javax.swing.JComboBox();
+        part_id_et = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jPanel36 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
@@ -1219,25 +1219,25 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel32.setBackground(new java.awt.Color(245, 245, 245));
 
-        rSButtonMetro8.setText("Search");
-        rSButtonMetro8.setColorHover(new java.awt.Color(0, 0, 255));
-        rSButtonMetro8.setColorNormal(new java.awt.Color(0, 51, 204));
-        rSButtonMetro8.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_searchpart.setText("Search");
+        btn_searchpart.setColorHover(new java.awt.Color(0, 0, 255));
+        btn_searchpart.setColorNormal(new java.awt.Color(0, 51, 204));
+        btn_searchpart.setColorTextHover(new java.awt.Color(0, 0, 0));
 
-        rSButtonMetro9.setText("Add");
-        rSButtonMetro9.setColorHover(new java.awt.Color(0, 204, 0));
-        rSButtonMetro9.setColorNormal(new java.awt.Color(0, 153, 51));
-        rSButtonMetro9.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_addpart.setText("Add");
+        btn_addpart.setColorHover(new java.awt.Color(0, 204, 0));
+        btn_addpart.setColorNormal(new java.awt.Color(0, 153, 51));
+        btn_addpart.setColorTextHover(new java.awt.Color(0, 0, 0));
 
-        rSButtonMetro10.setText("Remove");
-        rSButtonMetro10.setColorHover(new java.awt.Color(255, 0, 0));
-        rSButtonMetro10.setColorNormal(new java.awt.Color(204, 0, 0));
-        rSButtonMetro10.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_removepart.setText("Remove");
+        btn_removepart.setColorHover(new java.awt.Color(255, 0, 0));
+        btn_removepart.setColorNormal(new java.awt.Color(204, 0, 0));
+        btn_removepart.setColorTextHover(new java.awt.Color(0, 0, 0));
 
-        rSButtonMetro11.setText("Update");
-        rSButtonMetro11.setColorHover(new java.awt.Color(255, 255, 0));
-        rSButtonMetro11.setColorNormal(new java.awt.Color(204, 204, 0));
-        rSButtonMetro11.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_updatepart.setText("Update");
+        btn_updatepart.setColorHover(new java.awt.Color(255, 255, 0));
+        btn_updatepart.setColorNormal(new java.awt.Color(204, 204, 0));
+        btn_updatepart.setColorTextHover(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -1246,22 +1246,22 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel32Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(rSButtonMetro11, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                    .addComponent(rSButtonMetro10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSButtonMetro9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSButtonMetro8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btn_updatepart, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                    .addComponent(btn_removepart, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_addpart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_searchpart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel32Layout.createSequentialGroup()
-                .addComponent(rSButtonMetro8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_searchpart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonMetro9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_addpart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonMetro10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_removepart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonMetro11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_updatepart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1319,29 +1319,25 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel35.setBackground(new java.awt.Color(245, 245, 245));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
         jPanel35Layout.setHorizontalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
                 .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jTextField5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(part_id_et)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jTextField2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField3))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-            .addComponent(jComboBox5)
-            .addComponent(jComboBox6)
+            .addComponent(part_id_et, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(jTextField2)
+            .addComponent(jTextField3)
         );
 
         jPanel36.setBackground(new java.awt.Color(245, 245, 245));
@@ -1426,11 +1422,11 @@ public class main_menu extends javax.swing.JFrame {
                 .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel38Layout.createSequentialGroup()
-                        .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                        .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                         .addGap(0, 0, 0)
-                        .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                        .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                         .addGap(0, 0, 0)
-                        .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))))
+                        .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))))
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2036,23 +2032,25 @@ public class main_menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rsbuttom.RSButtonMetro btn_add_vehical;
+    private rsbuttom.RSButtonMetro btn_addpart;
     private rsbuttom.RSButtonMetro btn_mounth;
     private rsbuttom.RSButtonMetro btn_parts;
     private rsbuttom.RSButtonMetro btn_payment;
     private rsbuttom.RSButtonMetro btn_remove_vehical;
+    private rsbuttom.RSButtonMetro btn_removepart;
     private rsbuttom.RSButtonMetro btn_search_vehical;
+    private rsbuttom.RSButtonMetro btn_searchpart;
     private rsbuttom.RSButtonMetro btn_service;
     private rsbuttom.RSButtonMetro btn_settings;
     private rsbuttom.RSButtonMetro btn_store;
     private rsbuttom.RSButtonMetro btn_today;
     private rsbuttom.RSButtonMetro btn_update_vehical;
+    private rsbuttom.RSButtonMetro btn_updatepart;
     private rsbuttom.RSButtonMetro btn_vehical;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox5;
-    private javax.swing.JComboBox jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2157,7 +2155,8 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
@@ -2168,16 +2167,13 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField owner_address;
     private javax.swing.JTextField owner_contact_et;
     private javax.swing.JTextField owner_name_et;
+    private javax.swing.JTextField part_id_et;
     private javax.swing.JPanel part_panel;
     private javax.swing.JLabel payment_date;
     private javax.swing.JPanel payment_panel;
     private rsbuttom.RSButtonMetro rSButtonMetro1;
-    private rsbuttom.RSButtonMetro rSButtonMetro10;
-    private rsbuttom.RSButtonMetro rSButtonMetro11;
     private rsbuttom.RSButtonMetro rSButtonMetro2;
     private rsbuttom.RSButtonMetro rSButtonMetro3;
-    private rsbuttom.RSButtonMetro rSButtonMetro8;
-    private rsbuttom.RSButtonMetro rSButtonMetro9;
     private javax.swing.JPanel service_panel;
     private javax.swing.JPanel settings_panel;
     private javax.swing.JPanel store_panel;

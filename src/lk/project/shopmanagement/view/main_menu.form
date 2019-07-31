@@ -2069,10 +2069,10 @@
                                               <Group type="102" alignment="1" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="rSButtonMetro11" alignment="1" pref="232" max="32767" attributes="0"/>
-                                                      <Component id="rSButtonMetro10" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="rSButtonMetro9" alignment="1" max="32767" attributes="0"/>
-                                                      <Component id="rSButtonMetro8" alignment="1" max="32767" attributes="0"/>
+                                                      <Component id="btn_updatepart" alignment="1" pref="232" max="32767" attributes="0"/>
+                                                      <Component id="btn_removepart" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="btn_addpart" alignment="1" max="32767" attributes="0"/>
+                                                      <Component id="btn_searchpart" alignment="1" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                               </Group>
@@ -2081,20 +2081,20 @@
                                         <DimensionLayout dim="1">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="rSButtonMetro8" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_searchpart" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro9" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_addpart" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro10" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_removepart" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro11" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_updatepart" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
                                       </Layout>
                                       <SubComponents>
-                                        <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro8">
+                                        <Component class="rsbuttom.RSButtonMetro" name="btn_searchpart">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Search"/>
                                             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2108,7 +2108,7 @@
                                             </Property>
                                           </Properties>
                                         </Component>
-                                        <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro9">
+                                        <Component class="rsbuttom.RSButtonMetro" name="btn_addpart">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Add"/>
                                             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2122,7 +2122,7 @@
                                             </Property>
                                           </Properties>
                                         </Component>
-                                        <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro10">
+                                        <Component class="rsbuttom.RSButtonMetro" name="btn_removepart">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Remove"/>
                                             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2136,7 +2136,7 @@
                                             </Property>
                                           </Properties>
                                         </Component>
-                                        <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro11">
+                                        <Component class="rsbuttom.RSButtonMetro" name="btn_updatepart">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Update"/>
                                             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2263,52 +2263,32 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel43" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                  <Component id="jTextField5" max="32767" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jComboBox5" max="32767" attributes="0"/>
                                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox6" max="32767" attributes="0"/>
+                                                  <Component id="part_id_et" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextField2" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextField3" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
                                         <DimensionLayout dim="1">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel43" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField5" alignment="0" pref="40" max="32767" attributes="0"/>
-                                              <Component id="jComboBox5" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jComboBox6" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="part_id_et" alignment="0" pref="40" max="32767" attributes="0"/>
+                                              <Component id="jTextField2" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                         </DimensionLayout>
                                       </Layout>
                                       <SubComponents>
                                         <Component class="javax.swing.JLabel" name="jLabel43">
                                         </Component>
-                                        <Component class="javax.swing.JTextField" name="jTextField5">
+                                        <Component class="javax.swing.JTextField" name="part_id_et">
                                         </Component>
-                                        <Component class="javax.swing.JComboBox" name="jComboBox5">
-                                          <Properties>
-                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                              <StringArray count="4">
-                                                <StringItem index="0" value="Item 1"/>
-                                                <StringItem index="1" value="Item 2"/>
-                                                <StringItem index="2" value="Item 3"/>
-                                                <StringItem index="3" value="Item 4"/>
-                                              </StringArray>
-                                            </Property>
-                                          </Properties>
+                                        <Component class="javax.swing.JTextField" name="jTextField2">
                                         </Component>
-                                        <Component class="javax.swing.JComboBox" name="jComboBox6">
-                                          <Properties>
-                                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                              <StringArray count="4">
-                                                <StringItem index="0" value="Item 1"/>
-                                                <StringItem index="1" value="Item 2"/>
-                                                <StringItem index="2" value="Item 3"/>
-                                                <StringItem index="3" value="Item 4"/>
-                                              </StringArray>
-                                            </Property>
-                                          </Properties>
+                                        <Component class="javax.swing.JTextField" name="jTextField3">
                                         </Component>
                                       </SubComponents>
                                     </Container>
@@ -2399,11 +2379,11 @@
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="jPanel39" max="32767" attributes="0"/>
                                                       <Group type="102" attributes="0">
-                                                          <Component id="jLabel49" pref="241" max="32767" attributes="0"/>
+                                                          <Component id="jLabel49" pref="250" max="32767" attributes="0"/>
                                                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                                          <Component id="jLabel46" pref="226" max="32767" attributes="0"/>
+                                                          <Component id="jLabel46" pref="250" max="32767" attributes="0"/>
                                                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                                          <Component id="jLabel50" pref="226" max="32767" attributes="0"/>
+                                                          <Component id="jLabel50" pref="198" max="32767" attributes="0"/>
                                                       </Group>
                                                   </Group>
                                               </Group>
