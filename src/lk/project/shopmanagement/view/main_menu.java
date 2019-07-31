@@ -6,10 +6,12 @@
 package lk.project.shopmanagement.view;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import lk.project.shopmanagement.Controller.Vehical_Controller;
 import lk.project.shopmanagement.DTO.VehicalDTO;
 
@@ -22,7 +24,7 @@ public class main_menu extends javax.swing.JFrame {
     /**
      * Creates new form main_menu
      */
-    public main_menu() {
+    public main_menu(){
         initComponents();
         this.setLocationRelativeTo(this);
         this.btn_payment.setSelected(true);
@@ -41,6 +43,8 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.add(payment_panel);
         loard_panel.repaint();
         loard_panel.revalidate();
+        
+        
     }
 
     /**
@@ -149,7 +153,7 @@ public class main_menu extends javax.swing.JFrame {
         owner_address = new javax.swing.JTextField();
         jPanel25 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tableVehical = new javax.swing.JTable();
         part_panel = new javax.swing.JPanel();
         jPanel22 = new javax.swing.JPanel();
         jPanel27 = new javax.swing.JPanel();
@@ -821,6 +825,11 @@ public class main_menu extends javax.swing.JFrame {
         btn_search_vehical.setColorHover(new java.awt.Color(0, 0, 255));
         btn_search_vehical.setColorNormal(new java.awt.Color(0, 51, 204));
         btn_search_vehical.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_search_vehical.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_search_vehicalActionPerformed(evt);
+            }
+        });
 
         btn_add_vehical.setText("Add");
         btn_add_vehical.setColorHover(new java.awt.Color(0, 204, 0));
@@ -846,6 +855,11 @@ public class main_menu extends javax.swing.JFrame {
         btn_update_vehical.setColorHover(new java.awt.Color(255, 255, 0));
         btn_update_vehical.setColorNormal(new java.awt.Color(204, 204, 0));
         btn_update_vehical.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_update_vehical.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_update_vehicalActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -1078,7 +1092,7 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel25.setBackground(new java.awt.Color(245, 245, 245));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tableVehical.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1086,7 +1100,7 @@ public class main_menu extends javax.swing.JFrame {
                 "Vehical No", "Model", "Brand", "Owner Name", "contact", "Address"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tableVehical);
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -1857,17 +1871,9 @@ public class main_menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_settingsActionPerformed
 
     private void btn_add_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_add_vehicalActionPerformed
-        
-        String no = vehical_no_et.getText();
-        String model = vehical_model_et.getText();
-        String brand = vehical_brand_et.getText();
-        String name = owner_name_et.getText();
-        String address = owner_address.getText();
-        String contact = owner_contact_et.getText();
-        
-        
+
         try {
-            boolean isAdded = Vehical_Controller.addVehical(new VehicalDTO(no,model,brand,name,address,contact));
+            boolean isAdded = Vehical_Controller.addVehical(new VehicalDTO(vehical_no_et.getText(),vehical_model_et.getText(),vehical_brand_et.getText(),owner_name_et.getText(),owner_address.getText(),owner_contact_et.getText()));
             if(isAdded) {
                 JOptionPane.showMessageDialog(this, "Added Success");
             } else 
@@ -1878,8 +1884,56 @@ public class main_menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_add_vehicalActionPerformed
 
     private void btn_remove_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_remove_vehicalActionPerformed
-        // TODO add your handling code here:
+       
+        try {
+            boolean isDelete = Vehical_Controller.deleteVehical(vehical_no_et.getText());
+            
+            if(isDelete)
+                JOptionPane.showMessageDialog(this, "Remove Success");
+            else
+                JOptionPane.showMessageDialog(this, "Remove Failed");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_remove_vehicalActionPerformed
+
+    private void btn_search_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_search_vehicalActionPerformed
+       
+        try {
+            VehicalDTO vehicalDTO = Vehical_Controller.searchVehical(vehical_no_et.getText());
+            if(vehicalDTO!= null)
+            {
+                vehical_model_et.setText(vehicalDTO.getVehical_model());
+                vehical_brand_et.setText(vehicalDTO.getVehical_brand());
+                owner_name_et.setText(vehicalDTO.getOwner_name());
+                owner_address.setText(vehicalDTO.getOwner_address());
+                owner_contact_et.setText(vehicalDTO.getOwner_contact()); 
+            } else
+                JOptionPane.showMessageDialog(this, "Vehical Not Found....!!");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_search_vehicalActionPerformed
+
+    private void btn_update_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_update_vehicalActionPerformed
+        
+        try {
+            boolean isUpdate = Vehical_Controller.updateVehical(new VehicalDTO(vehical_no_et.getText(),vehical_model_et.getText(),vehical_brand_et.getText(),owner_name_et.getText(),owner_address.getText(),owner_contact_et.getText()));
+            
+            if(isUpdate)
+            {
+                JOptionPane.showMessageDialog(this, "Update Success");
+            }else
+            {
+                JOptionPane.showMessageDialog(this, "Update Failed");
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_update_vehicalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1919,6 +1973,23 @@ public class main_menu extends javax.swing.JFrame {
     private String formatDate(Date date) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(date);
+    }
+    
+    private void loadVehicalList() throws Exception
+    {
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) tableVehical.getModel();
+            ArrayList<VehicalDTO> allVehical = Vehical_Controller.searchAll();
+            dtm.setRowCount(0);
+        
+            for(VehicalDTO vehicalDTO : allVehical)
+                {
+                    Object[] rowData = {vehicalDTO.getVehical_number(),vehicalDTO.getVehical_model(),vehicalDTO.getVehical_brand(),vehicalDTO.getOwner_name(),vehicalDTO.getOwner_address(),vehicalDTO.getOwner_contact()};
+                    dtm.addRow(rowData);
+                }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2040,7 +2111,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
@@ -2069,6 +2139,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel service_panel;
     private javax.swing.JPanel settings_panel;
     private javax.swing.JPanel store_panel;
+    private javax.swing.JTable tableVehical;
     private javax.swing.JTextField vehical_brand_et;
     private javax.swing.JTextField vehical_model_et;
     private javax.swing.JTextField vehical_no_et;

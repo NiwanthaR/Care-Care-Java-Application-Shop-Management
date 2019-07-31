@@ -6,6 +6,7 @@
 package lk.project.shopmanagement.DAO.Custom.IMPL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import lk.project.shopmanagement.DAO.Custom.VehicalDAO;
 import lk.project.shopmanagement.DB.DBConnection;
@@ -33,22 +34,37 @@ public class VehicalDAOImpl implements VehicalDAO{
 
     @Override
     public boolean delete(String id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return DBConnection.getConnection().createStatement().executeUpdate("DELETE FROM Vehical WHERE vehical_no='"+id+"'")>0;
     }
 
     @Override
-    public boolean update(Vehical t) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean update(Vehical vehical) throws Exception {
+        return DBConnection.getConnection().createStatement().executeUpdate("UPDATE VEHICAL SET vehical_model='"+vehical.getVehical_model()+"' ,vehical_brand='"+vehical.getVehical_brand()+"', owner_name='"+vehical.getOwner_name()+"' ,owner_address='"+vehical.getOwner_address()+"', owner_contact='"+vehical.getOwner_contact()+"' WHERE vehical_no='"+vehical.getVehical_no()+"'")>0;
     }
 
     @Override
     public Vehical find(String id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM VEHICAL WHERE vehical_no='"+id+"'");
+        return rst.next()? new Vehical(rst.getString("vehical_no"),rst.getString("vehical_model"),rst.getString("vehical_brand"),rst.getString("owner_name"),rst.getString("owner_address"),rst.getString("owner_contact")): null;
     }
 
     @Override
     public ArrayList<Vehical> findall() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+//        ArrayList<Customer> customerList = new ArrayList<>();
+//        ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM Customer");
+//        while(rst.next()) {
+//            customerList.add(new Customer(rst.getString("id"), rst.getString("name"), rst.getString("address"), rst.getDouble("salary")));
+//        }
+//        return customerList;
+        
+        ArrayList<Vehical> vehicalList = new ArrayList<>();
+        ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM vehical");
+        while(rst.next())
+        {
+            vehicalList.add(new Vehical(rst.getString("vehical_no"),rst.getString("vehical_model"),rst.getString("vehical_brand"),rst.getString("owner_name"),rst.getString("owner_address"),rst.getString("owner_contact")));
+        }
+        return vehicalList;
     }
     
 }
