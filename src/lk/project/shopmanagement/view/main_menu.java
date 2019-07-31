@@ -941,6 +941,12 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(245, 245, 245));
 
+        vehical_no_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+
+        vehical_model_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+
+        vehical_brand_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
@@ -948,7 +954,7 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_no_et, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vehical_no_et, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(vehical_model_et, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -991,11 +997,14 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel20.setBackground(new java.awt.Color(245, 245, 245));
 
+        owner_name_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
         owner_name_et.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 owner_name_etActionPerformed(evt);
             }
         });
+
+        owner_contact_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -1019,6 +1028,8 @@ public class main_menu extends javax.swing.JFrame {
 
         jLabel37.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel37.setText("Address");
+
+        owner_address.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -1092,14 +1103,16 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel25.setBackground(new java.awt.Color(245, 245, 245));
 
+        tableVehical.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
         tableVehical.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Vehical No", "Model", "Brand", "Owner Name", "contact", "Address"
+                "Vehical No", "Model", "Brand", "Owner Name", "Address", "Contact"
             }
         ));
+        tableVehical.setRowHeight(20);
         jScrollPane2.setViewportView(tableVehical);
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
@@ -1792,6 +1805,13 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.add(vehical_panel);
         loard_panel.repaint();
         loard_panel.revalidate();
+        
+        try {
+            //load all vehical
+            loadVehicalList();
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_vehicalActionPerformed
 
     private void btn_partsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_partsActionPerformed
@@ -1873,9 +1893,13 @@ public class main_menu extends javax.swing.JFrame {
     private void btn_add_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_add_vehicalActionPerformed
 
         try {
-            boolean isAdded = Vehical_Controller.addVehical(new VehicalDTO(vehical_no_et.getText(),vehical_model_et.getText(),vehical_brand_et.getText(),owner_name_et.getText(),owner_address.getText(),owner_contact_et.getText()));
+            boolean isAdded = Vehical_Controller.addVehical(new VehicalDTO(vehical_no_et.getText().toUpperCase(),vehical_model_et.getText().toUpperCase(),vehical_brand_et.getText().toUpperCase(),owner_name_et.getText(),owner_address.getText(),owner_contact_et.getText()));
             if(isAdded) {
                 JOptionPane.showMessageDialog(this, "Added Success");
+                //clear field data
+                clearfield();
+                //Refresh Table
+                loadVehicalList();
             } else 
                 JOptionPane.showMessageDialog(this, "Added Failed");
         } catch (Exception ex) {
@@ -1888,9 +1912,13 @@ public class main_menu extends javax.swing.JFrame {
         try {
             boolean isDelete = Vehical_Controller.deleteVehical(vehical_no_et.getText());
             
-            if(isDelete)
+            if(isDelete){
                 JOptionPane.showMessageDialog(this, "Remove Success");
-            else
+                //clear field data
+                clearfield();
+                //Refresh Table
+                loadVehicalList();
+            }else
                 JOptionPane.showMessageDialog(this, "Remove Failed");
             
         } catch (Exception ex) {
@@ -1908,7 +1936,7 @@ public class main_menu extends javax.swing.JFrame {
                 vehical_brand_et.setText(vehicalDTO.getVehical_brand());
                 owner_name_et.setText(vehicalDTO.getOwner_name());
                 owner_address.setText(vehicalDTO.getOwner_address());
-                owner_contact_et.setText(vehicalDTO.getOwner_contact()); 
+                owner_contact_et.setText("0"+vehicalDTO.getOwner_contact()); 
             } else
                 JOptionPane.showMessageDialog(this, "Vehical Not Found....!!");
             
@@ -1920,11 +1948,15 @@ public class main_menu extends javax.swing.JFrame {
     private void btn_update_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_update_vehicalActionPerformed
         
         try {
-            boolean isUpdate = Vehical_Controller.updateVehical(new VehicalDTO(vehical_no_et.getText(),vehical_model_et.getText(),vehical_brand_et.getText(),owner_name_et.getText(),owner_address.getText(),owner_contact_et.getText()));
+            boolean isUpdate = Vehical_Controller.updateVehical(new VehicalDTO(vehical_no_et.getText().toUpperCase(),vehical_model_et.getText().toUpperCase(),vehical_brand_et.getText().toUpperCase(),owner_name_et.getText(),owner_address.getText(),owner_contact_et.getText()));
             
             if(isUpdate)
             {
                 JOptionPane.showMessageDialog(this, "Update Success");
+                //Clear field data
+                clearfield();
+                //Refresh Table
+                loadVehicalList();
             }else
             {
                 JOptionPane.showMessageDialog(this, "Update Failed");
@@ -1984,12 +2016,22 @@ public class main_menu extends javax.swing.JFrame {
         
             for(VehicalDTO vehicalDTO : allVehical)
                 {
-                    Object[] rowData = {vehicalDTO.getVehical_number(),vehicalDTO.getVehical_model(),vehicalDTO.getVehical_brand(),vehicalDTO.getOwner_name(),vehicalDTO.getOwner_address(),vehicalDTO.getOwner_contact()};
+                    Object[] rowData = {vehicalDTO.getVehical_number(),vehicalDTO.getVehical_model(),vehicalDTO.getVehical_brand(),vehicalDTO.getOwner_name(),vehicalDTO.getOwner_address(),"0"+vehicalDTO.getOwner_contact()};
                     dtm.addRow(rowData);
                 }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex);
         }
+    }
+    
+    private void clearfield()
+    {
+        vehical_no_et.setText("");
+        vehical_model_et.setText("");
+        vehical_brand_et.setText("");
+        owner_name_et.setText("");
+        owner_address.setText("");
+        owner_contact_et.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
