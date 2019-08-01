@@ -205,7 +205,7 @@ public class main_menu extends javax.swing.JFrame {
         jPanel43 = new javax.swing.JPanel();
         jPanel55 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tableStore = new javax.swing.JTable();
         oparetion_panel = new javax.swing.JPanel();
         mounthly_panel = new javax.swing.JPanel();
         settings_panel = new javax.swing.JPanel();
@@ -1625,7 +1625,8 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel55.setBackground(new java.awt.Color(245, 245, 245));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tableStore.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        tableStore.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1633,7 +1634,8 @@ public class main_menu extends javax.swing.JFrame {
                 "Part ID", "Model", "Brand", "Part Discription", "Get Price", "Unite Sell Price", "Store Qty"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        tableStore.setRowHeight(25);
+        jScrollPane4.setViewportView(tableStore);
 
         javax.swing.GroupLayout jPanel55Layout = new javax.swing.GroupLayout(jPanel55);
         jPanel55.setLayout(jPanel55Layout);
@@ -1885,6 +1887,12 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.add(store_panel);
         loard_panel.repaint();
         loard_panel.revalidate();
+        
+        try {
+            loadStoreList();
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_storeActionPerformed
 
     private void owner_name_etActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_owner_name_etActionPerformed
@@ -2071,7 +2079,7 @@ public class main_menu extends javax.swing.JFrame {
     private void btn_updatepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updatepartActionPerformed
         
         try {
-            boolean isUpdate = Parts_Controller.updateparts(new PartsDTO(part_id_et.getText(), part_model_et.getText(), part_brand_et.getText(), part_name_et.getText(), Integer.parseInt(part_getprice_et.getText()), Integer.parseInt(parts_sellprice_et.getText()), Integer.parseInt(part_qty_et.getText())));
+            boolean isUpdate = Parts_Controller.updateparts(new PartsDTO(part_id_et.getText().toUpperCase(), part_model_et.getText().toUpperCase(), part_brand_et.getText().toUpperCase(), part_name_et.getText(), Integer.parseInt(part_getprice_et.getText()), Integer.parseInt(parts_sellprice_et.getText()), Integer.parseInt(part_qty_et.getText())));
             if(isUpdate)
             {
                 clearfield_parts();
@@ -2153,6 +2161,27 @@ public class main_menu extends javax.swing.JFrame {
         try
         {
             DefaultTableModel dtm = (DefaultTableModel) tableParts.getModel();
+            ArrayList<PartsDTO> partsList = Parts_Controller.searchallparts();
+            dtm.setRowCount(0);
+        
+            for(PartsDTO partsDTO : partsList)
+                {
+                    Object[] rowData = {partsDTO.getPart_id(),partsDTO.getVehical_model(),partsDTO.getVehical_brand(),partsDTO.getPart_name(),partsDTO.getGet_price()+".00",partsDTO.getSold_price()+".00",partsDTO.getPart_qty()};
+                    dtm.addRow(rowData);
+                }
+        
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex);
+        }
+                
+    }
+    
+    //------------------------------------------------------Loard Store List---------------------------------------------------------
+    private void loadStoreList() throws Exception
+    {
+        try
+        {
+            DefaultTableModel dtm = (DefaultTableModel) tableStore.getModel();
             ArrayList<PartsDTO> partsList = Parts_Controller.searchallparts();
             dtm.setRowCount(0);
         
@@ -2310,7 +2339,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel loard_panel;
     private javax.swing.JPanel menu_panel;
@@ -2336,6 +2364,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel settings_panel;
     private javax.swing.JPanel store_panel;
     private javax.swing.JTable tableParts;
+    private javax.swing.JTable tableStore;
     private javax.swing.JTable tableVehical;
     private javax.swing.JTextField vehical_brand_et;
     private javax.swing.JTextField vehical_model_et;
