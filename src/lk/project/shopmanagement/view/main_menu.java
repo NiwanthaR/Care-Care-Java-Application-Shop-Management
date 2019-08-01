@@ -197,7 +197,7 @@ public class main_menu extends javax.swing.JFrame {
         jLabel50 = new javax.swing.JLabel();
         jPanel40 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tableParts = new javax.swing.JTable();
         store_panel = new javax.swing.JPanel();
         jPanel41 = new javax.swing.JPanel();
         jPanel42 = new javax.swing.JPanel();
@@ -956,11 +956,11 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_no_et, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                .addComponent(vehical_no_et, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_model_et, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                .addComponent(vehical_model_et, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_brand_et, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))
+                .addComponent(vehical_brand_et, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1015,7 +1015,7 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(owner_name_et, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                .addComponent(owner_name_et, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(owner_contact_et, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -1114,7 +1114,7 @@ public class main_menu extends javax.swing.JFrame {
                 "Vehical No", "Model", "Brand", "Owner Name", "Address", "Contact"
             }
         ));
-        tableVehical.setRowHeight(20);
+        tableVehical.setRowHeight(25);
         jScrollPane2.setViewportView(tableVehical);
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
@@ -1130,7 +1130,7 @@ public class main_menu extends javax.swing.JFrame {
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1245,11 +1245,21 @@ public class main_menu extends javax.swing.JFrame {
         btn_removepart.setColorHover(new java.awt.Color(255, 0, 0));
         btn_removepart.setColorNormal(new java.awt.Color(204, 0, 0));
         btn_removepart.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_removepart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_removepartActionPerformed(evt);
+            }
+        });
 
         btn_updatepart.setText("Update");
         btn_updatepart.setColorHover(new java.awt.Color(255, 255, 0));
         btn_updatepart.setColorNormal(new java.awt.Color(204, 204, 0));
         btn_updatepart.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_updatepart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updatepartActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -1515,7 +1525,8 @@ public class main_menu extends javax.swing.JFrame {
 
         jScrollPane3.setBackground(new java.awt.Color(245, 245, 245));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tableParts.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        tableParts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1523,7 +1534,8 @@ public class main_menu extends javax.swing.JFrame {
                 "Part ID", "Model", "Brand", "Part Discription", "Get Price", "Unite Sell Price", "Store Qty"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        tableParts.setRowHeight(25);
+        jScrollPane3.setViewportView(tableParts);
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
@@ -1853,6 +1865,13 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.add(part_panel);
         loard_panel.repaint();
         loard_panel.revalidate();
+        
+        try {
+            //loard part list
+            loadPartsList();
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_partsActionPerformed
 
     private void btn_storeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_storeActionPerformed
@@ -1925,7 +1944,7 @@ public class main_menu extends javax.swing.JFrame {
             if(isAdded) {
                 JOptionPane.showMessageDialog(this, "Added Success");
                 //clear field data
-                clearfield();
+                clearfield_vehical();
                 //Refresh Table
                 loadVehicalList();
             } else 
@@ -1943,7 +1962,7 @@ public class main_menu extends javax.swing.JFrame {
             if(isDelete){
                 JOptionPane.showMessageDialog(this, "Remove Success");
                 //clear field data
-                clearfield();
+                clearfield_vehical();
                 //Refresh Table
                 loadVehicalList();
             }else
@@ -1982,7 +2001,7 @@ public class main_menu extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(this, "Update Success");
                 //Clear field data
-                clearfield();
+                clearfield_vehical();
                 //Refresh Table
                 loadVehicalList();
             }else
@@ -2004,8 +2023,8 @@ public class main_menu extends javax.swing.JFrame {
                 part_model_et.setText(partsDTO.getVehical_model());
                 part_brand_et.setText(partsDTO.getVehical_brand());
                 part_name_et.setText(partsDTO.getPart_name());
-                part_getprice_et.setText(Integer.toString(partsDTO.getGet_price()));
-                parts_sellprice_et.setText(Integer.toString(partsDTO.getSold_price()));
+                part_getprice_et.setText(Integer.toString(partsDTO.getGet_price())+".00");
+                parts_sellprice_et.setText(Integer.toString(partsDTO.getSold_price())+".00");
                 part_qty_et.setText(Integer.toString(partsDTO.getPart_qty()));
             }else
                 JOptionPane.showMessageDialog(this, "Part NOT FOUND");
@@ -2020,6 +2039,9 @@ public class main_menu extends javax.swing.JFrame {
         try {
             boolean isAdded = Parts_Controller.addparts(new PartsDTO(part_id_et.getText().toUpperCase(), part_model_et.getText().toUpperCase(), part_brand_et.getText().toUpperCase(), part_name_et.getText(), Integer.parseInt(part_getprice_et.getText()), Integer.parseInt(parts_sellprice_et.getText()), Integer.parseInt(part_qty_et.getText())));
             if(isAdded) {
+                //clear fields
+                clearfield_parts();
+                loadPartsList();
                 JOptionPane.showMessageDialog(this, "Added Success");
             } else 
                 JOptionPane.showMessageDialog(this, "Added Failed");
@@ -2028,6 +2050,42 @@ public class main_menu extends javax.swing.JFrame {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_addpartActionPerformed
+
+    private void btn_removepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_removepartActionPerformed
+        
+        try {
+            boolean isDelete = Parts_Controller.deleteparts(part_id_et.getText());
+            if(isDelete) {
+                //clear fields
+                clearfield_parts();
+                loadPartsList();
+                JOptionPane.showMessageDialog(this, "Remove Success");   
+            } else 
+                JOptionPane.showMessageDialog(this, "Remove Failed");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_removepartActionPerformed
+
+    private void btn_updatepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updatepartActionPerformed
+        
+        try {
+            boolean isUpdate = Parts_Controller.updateparts(new PartsDTO(part_id_et.getText(), part_model_et.getText(), part_brand_et.getText(), part_name_et.getText(), Integer.parseInt(part_getprice_et.getText()), Integer.parseInt(parts_sellprice_et.getText()), Integer.parseInt(part_qty_et.getText())));
+            if(isUpdate)
+            {
+                clearfield_parts();
+                loadPartsList();
+                JOptionPane.showMessageDialog(this, "Update Success");
+                
+            }else{
+                JOptionPane.showMessageDialog(this, "Update Failed");
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_updatepartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2069,6 +2127,8 @@ public class main_menu extends javax.swing.JFrame {
         return sdf.format(date);
     }
     
+    //-----------------------------------------------Load vehical list for table-----------------------------------------------------
+    
     private void loadVehicalList() throws Exception
     {
         try {
@@ -2086,7 +2146,29 @@ public class main_menu extends javax.swing.JFrame {
         }
     }
     
-    private void clearfield()
+    //-----------------------------------------------Load parts List for Table--------------------------------------------------------
+    
+    private void loadPartsList() throws Exception
+    {
+        try
+        {
+            DefaultTableModel dtm = (DefaultTableModel) tableParts.getModel();
+            ArrayList<PartsDTO> partsList = Parts_Controller.searchallparts();
+            dtm.setRowCount(0);
+        
+            for(PartsDTO partsDTO : partsList)
+                {
+                    Object[] rowData = {partsDTO.getPart_id(),partsDTO.getVehical_model(),partsDTO.getVehical_brand(),partsDTO.getPart_name(),partsDTO.getGet_price()+".00",partsDTO.getSold_price()+".00",partsDTO.getPart_qty()};
+                    dtm.addRow(rowData);
+                }
+        
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex);
+        }
+                
+    }
+    
+    private void clearfield_vehical()
     {
         vehical_no_et.setText("");
         vehical_model_et.setText("");
@@ -2094,6 +2176,17 @@ public class main_menu extends javax.swing.JFrame {
         owner_name_et.setText("");
         owner_address.setText("");
         owner_contact_et.setText("");
+    }
+    
+    private void clearfield_parts()
+    {
+        part_id_et.setText("");
+        part_model_et.setText("");
+        part_brand_et.setText("");
+        part_name_et.setText("");
+        part_getprice_et.setText("");
+        parts_sellprice_et.setText("");
+        part_qty_et.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2217,7 +2310,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel loard_panel;
@@ -2243,6 +2335,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel service_panel;
     private javax.swing.JPanel settings_panel;
     private javax.swing.JPanel store_panel;
+    private javax.swing.JTable tableParts;
     private javax.swing.JTable tableVehical;
     private javax.swing.JTextField vehical_brand_et;
     private javax.swing.JTextField vehical_model_et;

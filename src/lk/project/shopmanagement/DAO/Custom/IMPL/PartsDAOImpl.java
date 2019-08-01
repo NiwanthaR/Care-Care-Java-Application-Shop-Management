@@ -53,7 +53,7 @@ public class PartsDAOImpl implements PartsDAO{
     public ArrayList<Parts> findall() throws Exception {
         ArrayList<Parts> partsList = new ArrayList<>();
         ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM PARTS");
-        if(rst.next())
+        while(rst.next())
         {
             partsList.add(new Parts(rst.getString("part_id"),rst.getString("part_model"),rst.getString("part_brand"),rst.getString("part_name"),rst.getInt("part_getprice"),rst.getInt("part_soldprice"),rst.getInt("part_qty")));
         }
