@@ -2291,10 +2291,25 @@
                                         <Component class="javax.swing.JLabel" name="jLabel43">
                                         </Component>
                                         <Component class="javax.swing.JTextField" name="part_id_et">
+                                          <Properties>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Montserrat" size="15" style="0"/>
+                                            </Property>
+                                          </Properties>
                                         </Component>
                                         <Component class="javax.swing.JTextField" name="part_model_et">
+                                          <Properties>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Montserrat" size="15" style="0"/>
+                                            </Property>
+                                          </Properties>
                                         </Component>
                                         <Component class="javax.swing.JTextField" name="part_brand_et">
+                                          <Properties>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Montserrat" size="15" style="0"/>
+                                            </Property>
+                                          </Properties>
                                         </Component>
                                       </SubComponents>
                                     </Container>
@@ -2364,6 +2379,11 @@
                                         <Component class="javax.swing.JLabel" name="jLabel47">
                                         </Component>
                                         <Component class="javax.swing.JTextField" name="part_name_et">
+                                          <Properties>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Montserrat" size="15" style="0"/>
+                                            </Property>
+                                          </Properties>
                                           <Events>
                                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="part_name_etActionPerformed"/>
                                           </Events>
@@ -2452,10 +2472,28 @@
                                           </Layout>
                                           <SubComponents>
                                             <Component class="javax.swing.JTextField" name="part_getprice_et">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Montserrat" size="15" style="0"/>
+                                                </Property>
+                                                <Property name="horizontalAlignment" type="int" value="4"/>
+                                              </Properties>
                                             </Component>
                                             <Component class="javax.swing.JTextField" name="parts_sellprice_et">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Montserrat" size="15" style="0"/>
+                                                </Property>
+                                                <Property name="horizontalAlignment" type="int" value="4"/>
+                                              </Properties>
                                             </Component>
                                             <Component class="javax.swing.JTextField" name="part_qty_et">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Montserrat" size="15" style="0"/>
+                                                </Property>
+                                                <Property name="horizontalAlignment" type="int" value="4"/>
+                                              </Properties>
                                             </Component>
                                           </SubComponents>
                                         </Container>

@@ -1331,6 +1331,12 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel35.setBackground(new java.awt.Color(245, 245, 245));
 
+        part_id_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+
+        part_model_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+
+        part_brand_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
         jPanel35Layout.setHorizontalGroup(
@@ -1375,6 +1381,7 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel37.setBackground(new java.awt.Color(245, 245, 245));
 
+        part_name_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
         part_name_et.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 part_name_etActionPerformed(evt);
@@ -1402,6 +1409,15 @@ public class main_menu extends javax.swing.JFrame {
         jLabel49.setText("Unite Get Price");
 
         jPanel39.setBackground(new java.awt.Color(245, 245, 245));
+
+        part_getprice_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        part_getprice_et.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+
+        parts_sellprice_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        parts_sellprice_et.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+
+        part_qty_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        part_qty_et.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
