@@ -712,6 +712,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="ADD"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="LableOwnern_ame">
                               <Properties>
@@ -908,6 +911,7 @@
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="0"/>
+                                <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel25">
@@ -931,7 +935,7 @@
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Component id="btn_Partadd" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                      <Component id="rSButtonMetro2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btn_partRemove" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel22" max="32767" attributes="0"/>
                                   </Group>
@@ -940,7 +944,7 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="rSButtonMetro2" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="btn_partRemove" alignment="1" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
                                       <Component id="jLabel21" max="32767" attributes="0"/>
@@ -954,7 +958,7 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel22">
                             </Component>
-                            <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro2">
+                            <Component class="rsbuttom.RSButtonMetro" name="btn_partRemove">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="REMOVE"/>
                                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -967,6 +971,9 @@
                                   <Color blue="0" green="0" red="0" type="rgb"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_partRemoveActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="rsbuttom.RSButtonMetro" name="btn_Partadd">
                               <Properties>

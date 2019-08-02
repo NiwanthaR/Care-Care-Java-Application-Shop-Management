@@ -122,7 +122,7 @@ public class main_menu extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        rSButtonMetro2 = new rsbuttom.RSButtonMetro();
+        btn_partRemove = new rsbuttom.RSButtonMetro();
         btn_Partadd = new rsbuttom.RSButtonMetro();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -516,6 +516,11 @@ public class main_menu extends javax.swing.JFrame {
         });
 
         jButton3.setText("ADD");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         LableOwnern_ame.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         LableOwnern_ame.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -620,6 +625,7 @@ public class main_menu extends javax.swing.JFrame {
         Qty_et.setFont(new java.awt.Font("Montserrat", 0, 16)); // NOI18N
         Qty_et.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Qty_et.setText("0");
+        Qty_et.setToolTipText("");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -653,10 +659,15 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(245, 245, 245));
 
-        rSButtonMetro2.setText("REMOVE");
-        rSButtonMetro2.setColorHover(new java.awt.Color(255, 0, 0));
-        rSButtonMetro2.setColorNormal(new java.awt.Color(204, 0, 0));
-        rSButtonMetro2.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_partRemove.setText("REMOVE");
+        btn_partRemove.setColorHover(new java.awt.Color(255, 0, 0));
+        btn_partRemove.setColorNormal(new java.awt.Color(204, 0, 0));
+        btn_partRemove.setColorTextHover(new java.awt.Color(0, 0, 0));
+        btn_partRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_partRemoveActionPerformed(evt);
+            }
+        });
 
         btn_Partadd.setText("ADD");
         btn_Partadd.setColorHover(new java.awt.Color(0, 255, 0));
@@ -677,14 +688,14 @@ public class main_menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_Partadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
-                .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_partRemove, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(rSButtonMetro2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_partRemove, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1964,23 +1975,31 @@ public class main_menu extends javax.swing.JFrame {
 
     private void btn_PartaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PartaddActionPerformed
         
-        DefaultTableModel dtm = (DefaultTableModel) Table_Orderadd.getModel();
-        double unite_price = Double.valueOf(Lable_Price.getText());
-        int qty = Integer.parseInt(Qty_et.getText());
-        int rowIndex = isAlredyExist(PartsID_combobox.getSelectedItem().toString());
-        
-        if(rowIndex==-1)
+        if(Integer.parseInt(Qty_et.getText())>0)
         {
-            Object[] rowData = {PartsID_combobox.getSelectedItem(),Lable_Discription.getText(),unite_price+"00",qty,qty*unite_price+"00"};
-            dtm.addRow(rowData);
+            DefaultTableModel dtm = (DefaultTableModel) Table_Orderadd.getModel();
+            double unite_price = Double.valueOf(Lable_Price.getText());
+            int qty = Integer.parseInt(Qty_et.getText());
+            int rowIndex = isAlredyExist(PartsID_combobox.getSelectedItem().toString());
+        
+            if(rowIndex==-1)
+                {
+                    Object[] rowData = {PartsID_combobox.getSelectedItem(),Lable_Discription.getText(),unite_price+"0",qty,qty*unite_price+"0"};
+                    dtm.addRow(rowData);
+                }
+                else{
+                    qty+=(int)dtm.getValueAt(rowIndex, 3);
+                    dtm.setValueAt(qty, rowIndex, 3);
+                    dtm.setValueAt(qty*unite_price, rowIndex, 4);
+                    }
+                Calculate_total();
+                Qty_et.requestFocus();
+        
+        }else
+        {
+            JOptionPane.showMessageDialog(this, "Fill Quentity Field...!!");
         }
-        else{
-             qty+=(int)dtm.getValueAt(rowIndex, 3);
-             dtm.setValueAt(qty, rowIndex, 3);
-             dtm.setValueAt(qty*unite_price, rowIndex, 4);
-        }
-        Calculate_total();
-        Qty_et.requestFocus();
+        
         
         
     }//GEN-LAST:event_btn_PartaddActionPerformed
@@ -2197,6 +2216,22 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PartsID_comboboxItemStateChanged
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        btn_vehicalActionPerformed(evt);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btn_partRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_partRemoveActionPerformed
+       
+        DefaultTableModel dtm = (DefaultTableModel) Table_Orderadd.getModel();
+        int selectrow = Table_Orderadd.getSelectedRow();
+        if(selectrow==-1)
+        {
+            return;
+        }
+        dtm.removeRow(selectrow);
+        Calculate_total();
+    }//GEN-LAST:event_btn_partRemoveActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2251,6 +2286,7 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_add_vehical;
     private rsbuttom.RSButtonMetro btn_addpart;
     private rsbuttom.RSButtonMetro btn_mounth;
+    private rsbuttom.RSButtonMetro btn_partRemove;
     private rsbuttom.RSButtonMetro btn_parts;
     private rsbuttom.RSButtonMetro btn_payment;
     private rsbuttom.RSButtonMetro btn_remove_vehical;
@@ -2378,7 +2414,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField parts_sellprice_et;
     private javax.swing.JLabel payment_date;
     private javax.swing.JPanel payment_panel;
-    private rsbuttom.RSButtonMetro rSButtonMetro2;
     private rsbuttom.RSButtonMetro rSButtonMetro3;
     private javax.swing.JPanel service_panel;
     private javax.swing.JPanel settings_panel;
@@ -2441,9 +2476,10 @@ public class main_menu extends javax.swing.JFrame {
         
         for(int i =0; i<dtm.getRowCount() ;i++)
         {
-            total += (double)dtm.getValueAt(i, 4); 
+            //total += (double)dtm.getValueAt(i, 4); 
+            total += Double.valueOf((String) dtm.getValueAt(i, 4)); 
         }
-        Lable_total.setText(Double.toString(total)+"0");
+        Lable_total.setText(total+"0");
         
      }
         
