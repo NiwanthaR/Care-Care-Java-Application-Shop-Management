@@ -18,6 +18,8 @@ import lk.project.shopmanagement.Controller.Parts_Controller;
 import lk.project.shopmanagement.Controller.Payment_Controller;
 import lk.project.shopmanagement.Controller.Vehical_Controller;
 import lk.project.shopmanagement.DTO.PartsDTO;
+import lk.project.shopmanagement.DTO.PaymentDTO;
+import lk.project.shopmanagement.DTO.Payment_DetailsDTO;
 import lk.project.shopmanagement.DTO.VehicalDTO;
 
 /**
@@ -130,7 +132,7 @@ public class main_menu extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         Lable_total = new javax.swing.JLabel();
-        rSButtonMetro3 = new rsbuttom.RSButtonMetro();
+        btn_PlaceOrder = new rsbuttom.RSButtonMetro();
         service_panel = new javax.swing.JPanel();
         vehical_panel = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
@@ -738,9 +740,14 @@ public class main_menu extends javax.swing.JFrame {
         Lable_total.setForeground(new java.awt.Color(255, 0, 0));
         Lable_total.setText("6000.00");
 
-        rSButtonMetro3.setText("Place Order");
-        rSButtonMetro3.setColorHover(new java.awt.Color(51, 204, 0));
-        rSButtonMetro3.setColorNormal(new java.awt.Color(51, 51, 255));
+        btn_PlaceOrder.setText("Place Order");
+        btn_PlaceOrder.setColorHover(new java.awt.Color(51, 204, 0));
+        btn_PlaceOrder.setColorNormal(new java.awt.Color(51, 51, 255));
+        btn_PlaceOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_PlaceOrderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -752,14 +759,14 @@ public class main_menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Lable_total, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_PlaceOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Lable_total, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
             .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(rSButtonMetro3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_PlaceOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -2232,6 +2239,36 @@ public class main_menu extends javax.swing.JFrame {
         Calculate_total();
     }//GEN-LAST:event_btn_partRemoveActionPerformed
 
+    private void btn_PlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PlaceOrderActionPerformed
+        
+        try {
+            String order_id = LablePayment_id.getText();
+            String Vehical_no = vehicalno_combobox.getSelectedItem().toString();
+            String order_Date = payment_date.getText();
+            ArrayList<Payment_DetailsDTO> payment_DetailDTOs = new ArrayList<>();
+            DefaultTableModel dtm = (DefaultTableModel) Table_Orderadd.getModel();
+            
+            for(int i=0 ; i<dtm.getRowCount();i++)
+            {
+                String item_code =dtm.getValueAt(i, 0).toString();
+                int qty =(int) dtm.getValueAt(i, 3);
+                int unite_price = (int) dtm.getValueAt(i, 2);
+                Payment_DetailsDTO payment_DetailsDTO = new  Payment_DetailsDTO(order_id, item_code, unite_price, qty, qty*unite_price); 
+                payment_DetailDTOs.add(payment_DetailsDTO);
+            }
+            
+            PaymentDTO paymentDTO = new PaymentDTO(order_id, order_Date,0, Vehical_no, payment_DetailDTOs);
+            boolean isok = Payment_Controller.addPayment(paymentDTO);
+            if(isok)
+                JOptionPane.showMessageDialog(this, "Added Success");
+            else
+                JOptionPane.showMessageDialog(this, "Added Failed");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_PlaceOrderActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2283,6 +2320,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField Qty_et;
     private javax.swing.JTable Table_Orderadd;
     private rsbuttom.RSButtonMetro btn_Partadd;
+    private rsbuttom.RSButtonMetro btn_PlaceOrder;
     private rsbuttom.RSButtonMetro btn_add_vehical;
     private rsbuttom.RSButtonMetro btn_addpart;
     private rsbuttom.RSButtonMetro btn_mounth;
@@ -2414,7 +2452,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField parts_sellprice_et;
     private javax.swing.JLabel payment_date;
     private javax.swing.JPanel payment_panel;
-    private rsbuttom.RSButtonMetro rSButtonMetro3;
     private javax.swing.JPanel service_panel;
     private javax.swing.JPanel settings_panel;
     private javax.swing.JPanel store_panel;

@@ -1091,7 +1091,7 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="Lable_total" min="-2" pref="234" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="rSButtonMetro3" min="-2" pref="167" max="-2" attributes="0"/>
+                                      <Component id="btn_PlaceOrder" min="-2" pref="167" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1100,7 +1100,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="Lable_total" pref="69" max="32767" attributes="0"/>
                                   <Component id="jLabel23" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="rSButtonMetro3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btn_PlaceOrder" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -1125,7 +1125,7 @@
                                 <Property name="text" type="java.lang.String" value="6000.00"/>
                               </Properties>
                             </Component>
-                            <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro3">
+                            <Component class="rsbuttom.RSButtonMetro" name="btn_PlaceOrder">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Place Order"/>
                                 <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1135,6 +1135,9 @@
                                   <Color blue="ff" green="33" red="33" type="rgb"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_PlaceOrderActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
