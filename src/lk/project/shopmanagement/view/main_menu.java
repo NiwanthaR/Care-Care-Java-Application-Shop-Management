@@ -27,7 +27,7 @@ public class main_menu extends javax.swing.JFrame {
     /**
      * Creates new form main_menu
      */
-    public main_menu(){
+    public main_menu() throws Exception{
         initComponents();
         this.setLocationRelativeTo(this);
         this.btn_payment.setSelected(true);
@@ -39,6 +39,12 @@ public class main_menu extends javax.swing.JFrame {
         
         // Order id
         generateOrderID();
+        // vehical Number
+        loadAllVehicalno();
+        //part's ID
+        loaddAllPartsid();
+       
+        
         
         //remove all panel
         loard_panel.removeAll();
@@ -90,9 +96,9 @@ public class main_menu extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        vehicalno_combobox = new javax.swing.JComboBox();
         jButton3 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
+        LableOwnern_ame = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -101,10 +107,10 @@ public class main_menu extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        PartsID_combobox = new javax.swing.JComboBox();
+        Lable_Discription = new javax.swing.JLabel();
+        Lable_Price = new javax.swing.JLabel();
+        Lable_Qty = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -452,7 +458,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel6.setText("Payment ID");
 
-        LablePayment_id.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        LablePayment_id.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        LablePayment_id.setForeground(new java.awt.Color(255, 0, 0));
         LablePayment_id.setText("1001");
 
         payment_date.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
@@ -469,20 +476,24 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LablePayment_id, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LablePayment_id, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(payment_date, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(payment_date, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(LablePayment_id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(payment_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(payment_date, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(LablePayment_id, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(245, 245, 245));
@@ -490,14 +501,18 @@ public class main_menu extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel10.setText("Vehical NO");
 
-        jComboBox2.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        vehicalno_combobox.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        vehicalno_combobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Vehical No" }));
+        vehicalno_combobox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                vehicalno_comboboxItemStateChanged(evt);
+            }
+        });
 
         jButton3.setText("ADD");
 
-        jLabel11.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("GUNAPALA");
+        LableOwnern_ame.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        LableOwnern_ame.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jLabel12.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel12.setText("Vehical Owner");
@@ -510,22 +525,23 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vehicalno_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(LableOwnern_ame, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vehicalno_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(LableOwnern_ame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel6.setBackground(new java.awt.Color(245, 245, 245));
@@ -574,21 +590,27 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(245, 245, 245));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "T001", "T002", "T003", "T004" }));
+        PartsID_combobox.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        PartsID_combobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Code" }));
+        PartsID_combobox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                PartsID_comboboxItemStateChanged(evt);
+            }
+        });
 
-        jLabel18.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("180/55/17 Dunlop");
+        Lable_Discription.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        Lable_Discription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lable_Discription.setText("180/55/17 Dunlop");
 
-        jLabel19.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(51, 0, 153));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("5000.00");
+        Lable_Price.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        Lable_Price.setForeground(new java.awt.Color(51, 0, 153));
+        Lable_Price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lable_Price.setText("5000.00");
 
-        jLabel20.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("200");
+        Lable_Qty.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        Lable_Qty.setForeground(new java.awt.Color(255, 0, 0));
+        Lable_Qty.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lable_Qty.setText("200");
 
         jTextField1.setFont(new java.awt.Font("Montserrat", 0, 16)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -601,23 +623,23 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jComboBox1, 0, 0, Short.MAX_VALUE)
+                .addComponent(PartsID_combobox, 0, 0, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Lable_Discription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Lable_Price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Lable_Qty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jComboBox1)
-            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PartsID_combobox)
+            .addComponent(Lable_Discription, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+            .addComponent(Lable_Price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Lable_Qty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jTextField1)
             .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -682,7 +704,7 @@ public class main_menu extends javax.swing.JFrame {
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -1827,7 +1849,24 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.repaint();
         loard_panel.revalidate();
         
+        // Order id
         generateOrderID();
+        
+        
+        try {
+            // vehical Number
+            loadAllVehicalno();
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        try {
+            //part's ID
+            loaddAllPartsid();
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_paymentActionPerformed
 
     private void btn_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_serviceActionPerformed
@@ -2102,6 +2141,30 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_updatepartActionPerformed
 
+    private void vehicalno_comboboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_vehicalno_comboboxItemStateChanged
+        
+        try {
+            VehicalDTO vehicalDTO = Vehical_Controller.searchVehical(vehicalno_combobox.getSelectedItem().toString());
+            LableOwnern_ame.setText(vehicalDTO.getOwner_name());
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_vehicalno_comboboxItemStateChanged
+
+    private void PartsID_comboboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_PartsID_comboboxItemStateChanged
+        
+        try {
+            PartsDTO partsDTO = Parts_Controller.searchparts(PartsID_combobox.getSelectedItem().toString());
+            Lable_Discription.setText(partsDTO.getPart_name());
+            Lable_Price.setText(Integer.toString(partsDTO.getGet_price()));
+            Lable_Qty.setText(Integer.toString(partsDTO.getPart_qty()));
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PartsID_comboboxItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -2132,82 +2195,23 @@ public class main_menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new main_menu().setVisible(true);
+                try {
+                    new main_menu().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
     
-    private String formatDate(Date date) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        return sdf.format(date);
-    }
-    
-    //-----------------------------------------------Load vehical list for table-----------------------------------------------------
-    
-    private void loadVehicalList() throws Exception
-    {
-        try {
-            DefaultTableModel dtm = (DefaultTableModel) tableVehical.getModel();
-            ArrayList<VehicalDTO> allVehical = Vehical_Controller.searchAll();
-            dtm.setRowCount(0);
-        
-            for(VehicalDTO vehicalDTO : allVehical)
-                {
-                    Object[] rowData = {vehicalDTO.getVehical_number(),vehicalDTO.getVehical_model(),vehicalDTO.getVehical_brand(),vehicalDTO.getOwner_name(),vehicalDTO.getOwner_address(),"0"+vehicalDTO.getOwner_contact()};
-                    dtm.addRow(rowData);
-                }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, ex);
-        }
-    }
-    
-    //-----------------------------------------------Load parts List for Table--------------------------------------------------------
-    
-    private void loadPartsList() throws Exception
-    {
-        try
-        {
-            DefaultTableModel dtm = (DefaultTableModel) tableParts.getModel();
-            ArrayList<PartsDTO> partsList = Parts_Controller.searchallparts();
-            dtm.setRowCount(0);
-        
-            for(PartsDTO partsDTO : partsList)
-                {
-                    Object[] rowData = {partsDTO.getPart_id(),partsDTO.getVehical_model(),partsDTO.getVehical_brand(),partsDTO.getPart_name(),partsDTO.getGet_price()+".00",partsDTO.getSold_price()+".00",partsDTO.getPart_qty()};
-                    dtm.addRow(rowData);
-                }
-        
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(this, ex);
-        }
-                
-    }
-    
-    //------------------------------------------------------Loard Store List---------------------------------------------------------
-    private void loadStoreList() throws Exception
-    {
-        try
-        {
-            DefaultTableModel dtm = (DefaultTableModel) tableStore.getModel();
-            ArrayList<PartsDTO> partsList = Parts_Controller.searchallparts();
-            dtm.setRowCount(0);
-        
-            for(PartsDTO partsDTO : partsList)
-                {
-                    Object[] rowData = {partsDTO.getPart_id(),partsDTO.getVehical_model(),partsDTO.getVehical_brand(),partsDTO.getPart_name(),partsDTO.getGet_price()+".00",partsDTO.getSold_price()+".00",partsDTO.getPart_qty()};
-                    dtm.addRow(rowData);
-                }
-        
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(this, ex);
-        }
-                
-    }
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LableOwnern_ame;
     private javax.swing.JLabel LablePayment_id;
+    private javax.swing.JLabel Lable_Discription;
+    private javax.swing.JLabel Lable_Price;
+    private javax.swing.JLabel Lable_Qty;
+    private javax.swing.JComboBox PartsID_combobox;
     private rsbuttom.RSButtonMetro btn_add_vehical;
     private rsbuttom.RSButtonMetro btn_addpart;
     private rsbuttom.RSButtonMetro btn_mounth;
@@ -2226,21 +2230,15 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_vehical;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -2358,9 +2356,10 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField vehical_model_et;
     private javax.swing.JTextField vehical_no_et;
     private javax.swing.JPanel vehical_panel;
+    private javax.swing.JComboBox vehicalno_combobox;
     // End of variables declaration//GEN-END:variables
 
-    
+    //After submit clear Fields in Vehical
     private void clearfield_vehical()
     {
         vehical_no_et.setText("");
@@ -2371,6 +2370,7 @@ public class main_menu extends javax.swing.JFrame {
         owner_contact_et.setText("");
     }
     
+    //After submit clear Fields in Parts
     private void clearfield_parts()
     {
         part_id_et.setText("");
@@ -2391,6 +2391,96 @@ public class main_menu extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, ex);
         }
+    }
+    
+    //Order Date Genarator
+     private String formatDate(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
+    
+     //Load Vehical Number
+     private void loadAllVehicalno() throws Exception
+     {
+         ArrayList<VehicalDTO> allvehicalno = Vehical_Controller.searchAll();
+         for(VehicalDTO vehicalDTO : allvehicalno)
+         {
+             vehicalno_combobox.addItem(vehicalDTO.getVehical_number());
+         }
+     }
+     
+     //Load Parts IDs
+     private void loaddAllPartsid() throws Exception
+     {
+         ArrayList<PartsDTO> allparts = Parts_Controller.searchallparts();
+         for(PartsDTO partsDTO : allparts)
+         {
+             PartsID_combobox.addItem(partsDTO.getPart_id());
+         }
+     }
+    
+    
+    
+    //-----------------------------------------------Load vehical list for table-----------------------------------------------------
+    
+    private void loadVehicalList() throws Exception
+    {
+        try {
+            DefaultTableModel dtm = (DefaultTableModel) tableVehical.getModel();
+            ArrayList<VehicalDTO> allVehical = Vehical_Controller.searchAll();
+            dtm.setRowCount(0);
+        
+            for(VehicalDTO vehicalDTO : allVehical)
+                {
+                    Object[] rowData = {vehicalDTO.getVehical_number(),vehicalDTO.getVehical_model(),vehicalDTO.getVehical_brand(),vehicalDTO.getOwner_name(),vehicalDTO.getOwner_address(),"0"+vehicalDTO.getOwner_contact()};
+                    dtm.addRow(rowData);
+                }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex);
+        }
+    }
+    
+    //-----------------------------------------------Load parts List for Table--------------------------------------------------------
+    
+    private void loadPartsList() throws Exception
+    {
+        try
+        {
+            DefaultTableModel dtm = (DefaultTableModel) tableParts.getModel();
+            ArrayList<PartsDTO> partsList = Parts_Controller.searchallparts();
+            dtm.setRowCount(0);
+        
+            for(PartsDTO partsDTO : partsList)
+                {
+                    Object[] rowData = {partsDTO.getPart_id(),partsDTO.getVehical_model(),partsDTO.getVehical_brand(),partsDTO.getPart_name(),partsDTO.getGet_price()+".00",partsDTO.getSold_price()+".00",partsDTO.getPart_qty()};
+                    dtm.addRow(rowData);
+                }
+        
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex);
+        }
+                
+    }
+    
+    //------------------------------------------------------Loard Store List---------------------------------------------------------
+    private void loadStoreList() throws Exception
+    {
+        try
+        {
+            DefaultTableModel dtm = (DefaultTableModel) tableStore.getModel();
+            ArrayList<PartsDTO> partsList = Parts_Controller.searchallparts();
+            dtm.setRowCount(0);
+        
+            for(PartsDTO partsDTO : partsList)
+                {
+                    Object[] rowData = {partsDTO.getPart_id(),partsDTO.getVehical_model(),partsDTO.getVehical_brand(),partsDTO.getPart_name(),partsDTO.getGet_price()+".00",partsDTO.getSold_price()+".00",partsDTO.getPart_qty()};
+                    dtm.addRow(rowData);
+                }
+        
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(this, ex);
+        }
+                
     }
  
 }
