@@ -5,8 +5,12 @@
  */
 package lk.project.shopmanagement.Business;
 
+import java.sql.Connection;
+import lk.project.shopmanagement.Controller.Parts_Controller;
+import lk.project.shopmanagement.Controller.Payment_DetailsController;
 import lk.project.shopmanagement.DAO.Custom.PaymentDAO;
 import lk.project.shopmanagement.DAO.DAOFactory;
+import lk.project.shopmanagement.DB.DBConnection;
 import lk.project.shopmanagement.DTO.PaymentDTO;
 import lk.project.shopmanagement.entity.Payment;
 
@@ -22,9 +26,34 @@ public class PaymentBusiness {
         return paymentDAO.generateOrderID();
     }
     
-    public static boolean addPayment(PaymentDTO paymrntDTO) throws Exception
+    public static boolean addPayment(PaymentDTO paymentDTO) throws Exception
     {
-        return paymentDAO.add(new Payment(paymrntDTO.getPayment_id(), paymrntDTO.getPayment_date(), paymrntDTO.getPayment_cost(), paymrntDTO.getVehical_no()));
+        Connection connection = DBConnection.getConnection();
+        try
+        {
+            connection.setAutoCommit(false);
+            boolean isPaymentAdded =  paymentDAO.add(new Payment(paymentDTO.getPayment_id(), paymentDTO.getPayment_date(), paymentDTO.getPayment_cost(), paymentDTO.getVehical_no()));
+            
+            if(isPaymentAdded)
+            {
+                boolean isPaymentDetailsAdded = Payment_DetailsController.addPayment_Details(paymentDTO.getPaymentDetails());
+                if(isPaymentAdded)
+                {
+                    boolean parts_Update = Parts_Controller.updateQuantity(paymentDTO.getPaymentDetails());
+                    if(parts_Update)
+                    {
+                        connection.commit();
+                        return true;
+                    }
+                    
+                }
+               
+            }
+        return false;
+            
+        }finally{
+            connection.setAutoCommit(true);
+        }
     }
     
 }

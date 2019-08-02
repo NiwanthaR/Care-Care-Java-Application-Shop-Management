@@ -29,6 +29,23 @@ public class PaymentDTO {
         this.vehical_no = vehical_no;
     }
 
+    public PaymentDTO(String payment_id, String payment_date, int payment_cost, String vehical_no, ArrayList<Payment_DetailsDTO> paymentDetails) {
+        this.payment_id = payment_id;
+        this.payment_date = payment_date;
+        this.payment_cost = payment_cost;
+        this.vehical_no = vehical_no;
+        this.paymentDetails = paymentDetails;
+    }
+
+    public ArrayList<Payment_DetailsDTO> getPaymentDetails() {
+        return paymentDetails;
+    }
+
+    public void setPaymentDetails(ArrayList<Payment_DetailsDTO> paymentDetails) {
+        this.paymentDetails = paymentDetails;
+    }
+    
+
     public String getPayment_id() {
         return payment_id;
     }

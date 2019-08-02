@@ -53,4 +53,8 @@ public class PartsBusiness {
         
     }
     
+    public static boolean updateQuantity(String code, int qty) throws Exception {
+        return partsDAO.updateupdateQuantity(code, qty);
+    }
+    
 }

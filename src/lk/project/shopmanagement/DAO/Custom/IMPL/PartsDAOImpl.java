@@ -59,5 +59,10 @@ public class PartsDAOImpl implements PartsDAO{
         }
         return partsList;
     }
+
+    @Override
+    public boolean updateupdateQuantity(String code, int qty) throws Exception {
+        return DBConnection.getConnection().createStatement().executeUpdate("UPDATE PARTS SET part_qty ='"+qty+"' WHERE part_id ='"+code+"'")>0;
+    }
     
 }

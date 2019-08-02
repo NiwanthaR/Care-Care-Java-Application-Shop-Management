@@ -13,5 +13,6 @@ import lk.project.shopmanagement.entity.Parts;
  * @author NIWANTHA
  */
 public interface PartsDAO extends CrudDAO<Parts,String>{
+    public boolean updateupdateQuantity(String code, int qty) throws Exception;
     
 }

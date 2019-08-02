@@ -5,6 +5,7 @@
  */
 package lk.project.shopmanagement.Business;
 
+import java.util.ArrayList;
 import lk.project.shopmanagement.DAO.Custom.Payment_DetailsDAO;
 import lk.project.shopmanagement.DAO.DAOFactory;
 import lk.project.shopmanagement.DTO.Payment_DetailsDTO;
@@ -18,9 +19,15 @@ public class Payment_DetailsBusiness {
     
     private static Payment_DetailsDAO payment_DetailsDAO = (Payment_DetailsDAO) DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.PAYMENTdETAILS);
     
-    public static boolean addPayment_Details(Payment_DetailsDTO payment_DetailsDTO) throws Exception
+    public static boolean addPayment_Details(ArrayList<Payment_DetailsDTO> payment_DetailsDTOs) throws Exception
     {
-        return payment_DetailsDAO.add(new Payment_Details(payment_DetailsDTO.getPayment_id(), payment_DetailsDTO.getPart_id(), payment_DetailsDTO.getUnite_price(), payment_DetailsDTO.getQty(), payment_DetailsDTO.getTotal_cost()));
+        for(Payment_DetailsDTO payment_DetailsDTO : payment_DetailsDTOs)
+        {
+            boolean isItemAdded = payment_DetailsDAO.add(new Payment_Details(payment_DetailsDTO.getPayment_id(), payment_DetailsDTO.getPart_id(), payment_DetailsDTO.getUnite_price(), payment_DetailsDTO.getQty(), payment_DetailsDTO.getTotal_cost()));
+            if(!isItemAdded)
+                return false;
+        }
+        return true;
     }
     
 }

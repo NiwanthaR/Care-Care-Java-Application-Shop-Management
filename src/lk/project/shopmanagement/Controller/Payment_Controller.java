@@ -6,6 +6,7 @@
 package lk.project.shopmanagement.Controller;
 
 import lk.project.shopmanagement.Business.PaymentBusiness;
+import lk.project.shopmanagement.DTO.PaymentDTO;
 
 /**
  *
@@ -15,5 +16,10 @@ public class Payment_Controller {
     
     public static String generateOrderID() throws Exception {
         return PaymentBusiness.generateOrderID();
+    }
+    
+    public static boolean addPayment(PaymentDTO paymentDTO) throws Exception
+    {
+        return PaymentBusiness.addPayment(paymentDTO);
     }
 }
