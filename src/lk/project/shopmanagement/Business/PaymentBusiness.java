@@ -7,6 +7,8 @@ package lk.project.shopmanagement.Business;
 
 import lk.project.shopmanagement.DAO.Custom.PaymentDAO;
 import lk.project.shopmanagement.DAO.DAOFactory;
+import lk.project.shopmanagement.DTO.PaymentDTO;
+import lk.project.shopmanagement.entity.Payment;
 
 /**
  *
@@ -18,6 +20,11 @@ public class PaymentBusiness {
     
     public static String generateOrderID() throws Exception {       
         return paymentDAO.generateOrderID();
+    }
+    
+    public static boolean addPayment(PaymentDTO paymrntDTO) throws Exception
+    {
+        return paymentDAO.add(new Payment(paymrntDTO.getPayment_id(), paymrntDTO.getPayment_date(), paymrntDTO.getPayment_cost(), paymrntDTO.getVehical_no()));
     }
     
 }

@@ -5,6 +5,8 @@
  */
 package lk.project.shopmanagement.DTO;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author NIWANTHA
@@ -15,6 +17,7 @@ public class PaymentDTO {
     private String payment_date;
     private int payment_cost;
     private String vehical_no;
+    private ArrayList<Payment_DetailsDTO> paymentDetails;
 
     public PaymentDTO() {
     }

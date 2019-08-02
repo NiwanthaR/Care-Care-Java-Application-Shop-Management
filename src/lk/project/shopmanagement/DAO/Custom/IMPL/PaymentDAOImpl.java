@@ -5,6 +5,7 @@
  */
 package lk.project.shopmanagement.DAO.Custom.IMPL;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import lk.project.shopmanagement.DAO.Custom.PaymentDAO;
@@ -25,12 +26,18 @@ public class PaymentDAOImpl implements PaymentDAO{
             orderID = Integer.parseInt(orderID.split("[A-Z]")[1])+1+"";
             return "D"+orderID;
         }
-        return "D1";
+        return "D001";
     }
 
     @Override
-    public boolean add(Payment t) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean add(Payment payment) throws Exception {
+        PreparedStatement pstm = DBConnection.getConnection().prepareStatement("INSERT INTO PAYMENT VALUES(?,?,?,?)");
+        pstm.setObject(1, payment.getPayment_id());
+        pstm.setObject(2, payment.getPayment_date());
+        pstm.setObject(3, payment.getPayment_cost());
+        pstm.setObject(4, payment.getVehical_no());
+        return pstm.executeUpdate()>0;
+        
     }
 
     @Override
