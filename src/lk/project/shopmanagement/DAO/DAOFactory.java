@@ -6,6 +6,8 @@
 package lk.project.shopmanagement.DAO;
 
 import lk.project.shopmanagement.DAO.Custom.IMPL.PartsDAOImpl;
+import lk.project.shopmanagement.DAO.Custom.IMPL.PaymentDAOImpl;
+import lk.project.shopmanagement.DAO.Custom.IMPL.Payment_DetailsDAOImpl;
 import lk.project.shopmanagement.DAO.Custom.IMPL.VehicalDAOImpl;
 
 
@@ -28,15 +30,15 @@ public class DAOFactory {
     }
  
     public enum DAOTypes {
-        VEHICAL, PARTS, SERVICES    
+        VEHICAL, PARTS, PAYMENT , PAYMENTdETAILS    
     }
     
     public SuperDAO getDAO(DAOTypes daoTypes) {
         switch(daoTypes) {
             case VEHICAL : return new  VehicalDAOImpl();
             case PARTS : return new PartsDAOImpl();
-            //case QUERY : return new QueryDAOImpl();
-            //case ORDER : return new OrderDAOImpl();
+            case PAYMENT : return new PaymentDAOImpl() ;
+            case PAYMENTdETAILS : return new Payment_DetailsDAOImpl();
             //case ITEM_DETAIL : return new ItemDetailDAOImpl();
             default : return null;
         }

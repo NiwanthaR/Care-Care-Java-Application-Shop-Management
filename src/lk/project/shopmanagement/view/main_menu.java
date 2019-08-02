@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import lk.project.shopmanagement.Controller.Parts_Controller;
+import lk.project.shopmanagement.Controller.Payment_Controller;
 import lk.project.shopmanagement.Controller.Vehical_Controller;
 import lk.project.shopmanagement.DTO.PartsDTO;
 import lk.project.shopmanagement.DTO.VehicalDTO;
@@ -35,6 +36,9 @@ public class main_menu extends javax.swing.JFrame {
         Date date = new Date();
         String formatDate = formatDate(date);
         payment_date.setText(formatDate);
+        
+        // Order id
+        generateOrderID();
         
         //remove all panel
         loard_panel.removeAll();
@@ -81,7 +85,7 @@ public class main_menu extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        LablePayment_id = new javax.swing.JLabel();
         payment_date = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -448,8 +452,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel6.setText("Payment ID");
 
-        jLabel7.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
-        jLabel7.setText("1001");
+        LablePayment_id.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        LablePayment_id.setText("1001");
 
         payment_date.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         payment_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -466,7 +470,7 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LablePayment_id, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -475,7 +479,7 @@ public class main_menu extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LablePayment_id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(payment_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -509,7 +513,7 @@ public class main_menu extends javax.swing.JFrame {
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -578,14 +582,15 @@ public class main_menu extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(51, 0, 153));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("5000.00");
 
         jLabel20.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("200");
 
+        jTextField1.setFont(new java.awt.Font("Montserrat", 0, 16)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("2");
 
@@ -677,7 +682,7 @@ public class main_menu extends javax.swing.JFrame {
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -1821,6 +1826,8 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.add(payment_panel);
         loard_panel.repaint();
         loard_panel.revalidate();
+        
+        generateOrderID();
     }//GEN-LAST:event_btn_paymentActionPerformed
 
     private void btn_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_serviceActionPerformed
@@ -2197,28 +2204,10 @@ public class main_menu extends javax.swing.JFrame {
                 
     }
     
-    private void clearfield_vehical()
-    {
-        vehical_no_et.setText("");
-        vehical_model_et.setText("");
-        vehical_brand_et.setText("");
-        owner_name_et.setText("");
-        owner_address.setText("");
-        owner_contact_et.setText("");
-    }
     
-    private void clearfield_parts()
-    {
-        part_id_et.setText("");
-        part_model_et.setText("");
-        part_brand_et.setText("");
-        part_name_et.setText("");
-        part_getprice_et.setText("");
-        parts_sellprice_et.setText("");
-        part_qty_et.setText("");
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LablePayment_id;
     private rsbuttom.RSButtonMetro btn_add_vehical;
     private rsbuttom.RSButtonMetro btn_addpart;
     private rsbuttom.RSButtonMetro btn_mounth;
@@ -2287,7 +2276,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
@@ -2372,5 +2360,37 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel vehical_panel;
     // End of variables declaration//GEN-END:variables
 
+    
+    private void clearfield_vehical()
+    {
+        vehical_no_et.setText("");
+        vehical_model_et.setText("");
+        vehical_brand_et.setText("");
+        owner_name_et.setText("");
+        owner_address.setText("");
+        owner_contact_et.setText("");
+    }
+    
+    private void clearfield_parts()
+    {
+        part_id_et.setText("");
+        part_model_et.setText("");
+        part_brand_et.setText("");
+        part_name_et.setText("");
+        part_getprice_et.setText("");
+        parts_sellprice_et.setText("");
+        part_qty_et.setText("");
+    }
+    
+    
+    
+    //Order ID Genaretor
+    private void generateOrderID() {
+         try {
+            LablePayment_id.setText(Payment_Controller.generateOrderID());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex);
+        }
+    }
  
 }
