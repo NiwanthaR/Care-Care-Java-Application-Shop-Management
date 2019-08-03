@@ -18,7 +18,7 @@ public class ShopManagement {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException, Exception{
         splashscreen splash = new splashscreen();
         for(int i = 0;i<101;i++)
         {
