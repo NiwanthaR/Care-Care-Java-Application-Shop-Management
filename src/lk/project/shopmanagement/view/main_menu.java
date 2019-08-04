@@ -2476,7 +2476,8 @@ public class main_menu extends javax.swing.JFrame {
             {
                 String item_code =dtm.getValueAt(i, 0).toString();
                 int qty =(int) dtm.getValueAt(i, 3);
-                int unite_price = Integer.parseInt(dtm.getValueAt(i, 2).toString());
+                System.out.println();
+                int unite_price =(int)dtm.getValueAt(i, 2);
                 Payment_DetailsDTO payment_DetailsDTO = new  Payment_DetailsDTO(order_id, item_code, unite_price, qty, qty*unite_price); 
                 payment_DetailDTOs.add(payment_DetailsDTO);
             }
