@@ -676,7 +676,7 @@
                                       <Component id="vehicalno_combobox" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="243" max="32767" attributes="0"/>
+                                      <EmptySpace pref="228" max="32767" attributes="0"/>
                                       <Component id="jLabel12" min="-2" pref="143" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="LableOwnern_ame" min="-2" pref="186" max="-2" attributes="0"/>

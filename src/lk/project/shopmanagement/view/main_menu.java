@@ -2215,7 +2215,7 @@ public class main_menu extends javax.swing.JFrame {
         
             if(rowIndex==-1)
                 {
-                    Object[] rowData = {PartsID_combobox.getSelectedItem(),Lable_Discription.getText(),unite_price+"0",qty,qty*unite_price+"0"};
+                    Object[] rowData = {PartsID_combobox.getSelectedItem(),Lable_Discription.getText(),unite_price,qty,qty*unite_price+"0"};
                     dtm.addRow(rowData);
                 }
                 else{
@@ -2359,8 +2359,8 @@ public class main_menu extends javax.swing.JFrame {
                 part_model_et.setText(partsDTO.getVehical_model());
                 part_brand_et.setText(partsDTO.getVehical_brand());
                 part_name_et.setText(partsDTO.getPart_name());
-                part_getprice_et.setText(Integer.toString(partsDTO.getGet_price())+".00");
-                parts_sellprice_et.setText(Integer.toString(partsDTO.getSold_price())+".00");
+                part_getprice_et.setText(Integer.toString(partsDTO.getGet_price()));
+                parts_sellprice_et.setText(Integer.toString(partsDTO.getSold_price()));
                 part_qty_et.setText(Integer.toString(partsDTO.getPart_qty()));
             }else
                 JOptionPane.showMessageDialog(this, "Part NOT FOUND");
@@ -2469,6 +2469,12 @@ public class main_menu extends javax.swing.JFrame {
             String order_id = LablePayment_id.getText();
             String Vehical_no = vehicalno_combobox.getSelectedItem().toString();
             String order_Date = payment_date.getText();
+            
+            double total = Double.parseDouble(Lable_total.getText());
+            Double tot = total;
+            int total_value = tot.intValue();
+            System.out.println(Lable_total.getText());
+        
             ArrayList<Payment_DetailsDTO> payment_DetailDTOs = new ArrayList<>();
             DefaultTableModel dtm = (DefaultTableModel) Table_Orderadd.getModel();
             
@@ -2476,13 +2482,17 @@ public class main_menu extends javax.swing.JFrame {
             {
                 String item_code =dtm.getValueAt(i, 0).toString();
                 int qty =(int) dtm.getValueAt(i, 3);
-                System.out.println();
-                int unite_price =(int)dtm.getValueAt(i, 2);
+                //int unite_price =(int)dtm.getValueAt(i, 2);
+                
+                //use to convert double value to int
+                Double unite = new Double((double) dtm.getValueAt(i, 2));
+                int unite_price = unite.intValue();
+                
                 Payment_DetailsDTO payment_DetailsDTO = new  Payment_DetailsDTO(order_id, item_code, unite_price, qty, qty*unite_price); 
                 payment_DetailDTOs.add(payment_DetailsDTO);
             }
             
-            PaymentDTO paymentDTO = new PaymentDTO(order_id, order_Date,0, Vehical_no, payment_DetailDTOs);
+            PaymentDTO paymentDTO = new PaymentDTO(order_id, order_Date,total_value, Vehical_no, payment_DetailDTOs);
             boolean isok = Payment_Controller.addPayment(paymentDTO);
             if(isok)
                 JOptionPane.showMessageDialog(this, "Added Success");

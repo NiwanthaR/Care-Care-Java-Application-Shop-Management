@@ -22,7 +22,7 @@ public class PartsDAOImpl implements PartsDAO{
     @Override
     public boolean add(Parts parts) throws Exception {
         Connection connection = DBConnection.getConnection();
-        PreparedStatement pstm = connection.prepareStatement("INSERT INTO Vehical VALUES(?, ?, ?, ?, ?, ?, ?)");
+        PreparedStatement pstm = connection.prepareStatement("INSERT INTO PARTS VALUES(?, ?, ?, ?, ?, ?, ?)");
         pstm.setObject(1, parts.getPart_id());
         pstm.setObject(2, parts.getPart_model());
         pstm.setObject(3, parts.getPart_brand());
@@ -62,7 +62,7 @@ public class PartsDAOImpl implements PartsDAO{
 
     @Override
     public boolean updateupdateQuantity(String code, int qty) throws Exception {
-        return DBConnection.getConnection().createStatement().executeUpdate("UPDATE PARTS SET part_qty ='"+qty+"' WHERE part_id ='"+code+"'")>0;
+        return DBConnection.getConnection().createStatement().executeUpdate("UPDATE PARTS SET part_qty =part_qty-'"+qty+"' WHERE part_id ='"+code+"'")>0;
     }
     
 }
