@@ -5,6 +5,9 @@
  */
 package lk.project.shopmanagement.view;
 
+import javax.swing.JOptionPane;
+import lk.project.shopmanagement.Controller.Login_Controller;
+
 /**
  *
  * @author NIWANTHA
@@ -37,12 +40,13 @@ public class Login_Form extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        password_et = new javax.swing.JTextField();
-        rSButtonMetro1 = new rsbuttom.RSButtonMetro();
+        btn_Login = new rsbuttom.RSButtonMetro();
         username_et = new javax.swing.JTextField();
         forget_tv = new javax.swing.JLabel();
         Alert_tv = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        loginpassword_et = new javax.swing.JPasswordField();
+        password_chek = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -133,21 +137,15 @@ public class Login_Form extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel3.setText("Password");
 
-        password_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
-        password_et.setText("**********");
-        password_et.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                password_etFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                password_etFocusLost(evt);
+        btn_Login.setText("LOGIN");
+        btn_Login.setColorHover(new java.awt.Color(249, 105, 14));
+        btn_Login.setColorNormal(new java.awt.Color(243, 156, 18));
+        btn_Login.setColorPressed(new java.awt.Color(0, 204, 0));
+        btn_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_LoginActionPerformed(evt);
             }
         });
-
-        rSButtonMetro1.setText("LOGIN");
-        rSButtonMetro1.setColorHover(new java.awt.Color(249, 105, 14));
-        rSButtonMetro1.setColorNormal(new java.awt.Color(243, 156, 18));
-        rSButtonMetro1.setColorPressed(new java.awt.Color(0, 204, 0));
 
         username_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
         username_et.setText("User Name");
@@ -177,6 +175,24 @@ public class Login_Form extends javax.swing.JFrame {
         jLabel4.setText("<html>“Your most unhappy customers are your greatest source of learning.”</html>");
         jLabel4.setAutoscrolls(true);
 
+        loginpassword_et.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        loginpassword_et.setText("****************");
+        loginpassword_et.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                loginpassword_etFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                loginpassword_etFocusLost(evt);
+            }
+        });
+
+        password_chek.setText("Show Passowrd");
+        password_chek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                password_chekActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -198,19 +214,22 @@ public class Login_Form extends javax.swing.JFrame {
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 7, Short.MAX_VALUE))
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(password_et)
                             .addComponent(username_et)
-                            .addComponent(Alert_tv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(password_chek, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Alert_tv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(loginpassword_et))
                         .addGap(44, 44, 44))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(115, 115, 115))
+                                .addComponent(btn_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(120, 120, 120))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(forget_tv, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(146, 146, 146))))))
+                                .addGap(151, 151, 151))))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,26 +238,28 @@ public class Login_Form extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rSPanelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(username_et, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(password_et, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Alert_tv, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(loginpassword_et, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Alert_tv, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(password_chek))
+                        .addGap(22, 22, 22)
+                        .addComponent(btn_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(forget_tv, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rSPanelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                        .addComponent(forget_tv, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -284,26 +305,55 @@ public class Login_Form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_username_etFocusLost
 
-    private void password_etFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_etFocusGained
-        if(password_et.getText().equals("**********"))
-        {
-            password_et.setText("");
-        }
-    }//GEN-LAST:event_password_etFocusGained
-
-    private void password_etFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_etFocusLost
-        if(password_et.getText().equals(""))
-        {
-            password_et.setText("**********");
-        }
-    }//GEN-LAST:event_password_etFocusLost
-
     private void forget_tvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forget_tvMouseClicked
 
         Forget_Password forget = new Forget_Password();
         forget.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_forget_tvMouseClicked
+
+    private void loginpassword_etFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginpassword_etFocusGained
+        
+        if(String.valueOf(loginpassword_et.getPassword()).equals("****************"))
+        {
+            loginpassword_et.setText("");
+        }
+    }//GEN-LAST:event_loginpassword_etFocusGained
+
+    private void loginpassword_etFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginpassword_etFocusLost
+        
+        if(String.valueOf(loginpassword_et.getPassword()).equals(""))
+        {
+            loginpassword_et.setText("****************");
+        }
+    }//GEN-LAST:event_loginpassword_etFocusLost
+
+    private void password_chekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_chekActionPerformed
+        if(password_chek.isSelected())
+        {
+            loginpassword_et.setEchoChar((char)0);
+        }else
+        {
+            loginpassword_et.setEchoChar('*');
+        }
+    }//GEN-LAST:event_password_chekActionPerformed
+
+    private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
+        
+        String uname = username_et.getText();
+        String password = String.valueOf(loginpassword_et.getPassword());
+        
+        
+        boolean isfill = Login_Controller.login_isfill(uname, password);
+        
+        if(isfill)
+        {
+            JOptionPane.showMessageDialog(this,"OK");
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Please Fill Details");
+        }
+    }//GEN-LAST:event_btn_LoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -342,6 +392,7 @@ public class Login_Form extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Alert_tv;
+    private rsbuttom.RSButtonMetro btn_Login;
     private rojerusan.RSPanelImage btn_close;
     private javax.swing.JLabel forget_tv;
     private javax.swing.JLabel jLabel1;
@@ -352,8 +403,8 @@ public class Login_Form extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField password_et;
-    private rsbuttom.RSButtonMetro rSButtonMetro1;
+    private javax.swing.JPasswordField loginpassword_et;
+    private javax.swing.JCheckBox password_chek;
     private rojerusan.RSPanelImage rSPanelImage1;
     private javax.swing.JTextField username_et;
     // End of variables declaration//GEN-END:variables

@@ -11,13 +11,13 @@ package lk.project.shopmanagement.Controller;
  */
 public class Login_Controller {
     
-    private boolean login_isfill(String username , String password)
+    public static boolean login_isfill(String username , String password)
     {
-        if(username.isEmpty() || password.isEmpty())
+        if(username.equals("User Name") || password.equals("****************"))
         {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
     
 }

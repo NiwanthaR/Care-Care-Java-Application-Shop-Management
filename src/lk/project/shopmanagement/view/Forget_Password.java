@@ -193,7 +193,7 @@ public class Forget_Password extends javax.swing.JFrame {
         });
 
         password_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
-        password_et.setText("123456789");
+        password_et.setText("****************");
         password_et.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 password_etFocusGained(evt);
@@ -370,7 +370,7 @@ public class Forget_Password extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ResetActionPerformed
 
     private void password_etFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_etFocusGained
-        if(String.valueOf(password_et.getPassword()).equals("123456789"))
+        if(String.valueOf(password_et.getPassword()).equals("****************"))
         {
             password_et.setText("");
         }
@@ -379,7 +379,7 @@ public class Forget_Password extends javax.swing.JFrame {
     private void password_etFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_etFocusLost
        if(String.valueOf(password_et.getPassword()).equals(""))
         {
-            password_et.setText("123456789");
+            password_et.setText("****************");
         }
     }//GEN-LAST:event_password_etFocusLost
 
