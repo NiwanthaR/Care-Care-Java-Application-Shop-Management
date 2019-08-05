@@ -37,15 +37,16 @@ public class Forget_Password extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        password_et = new javax.swing.JTextField();
-        rSButtonMetro1 = new rsbuttom.RSButtonMetro();
+        btn_Reset = new rsbuttom.RSButtonMetro();
         username_et = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        security_combo = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
         answer_et = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        password_et = new javax.swing.JPasswordField();
+        password_checkbox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -136,21 +137,15 @@ public class Forget_Password extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel3.setText("Security Question");
 
-        password_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
-        password_et.setText("**********");
-        password_et.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                password_etFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                password_etFocusLost(evt);
+        btn_Reset.setText("Reset Password");
+        btn_Reset.setColorHover(new java.awt.Color(249, 105, 14));
+        btn_Reset.setColorNormal(new java.awt.Color(243, 156, 18));
+        btn_Reset.setColorPressed(new java.awt.Color(0, 204, 0));
+        btn_Reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ResetActionPerformed(evt);
             }
         });
-
-        rSButtonMetro1.setText("LOGIN");
-        rSButtonMetro1.setColorHover(new java.awt.Color(249, 105, 14));
-        rSButtonMetro1.setColorNormal(new java.awt.Color(243, 156, 18));
-        rSButtonMetro1.setColorPressed(new java.awt.Color(0, 204, 0));
 
         username_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
         username_et.setText("User Name");
@@ -172,7 +167,7 @@ public class Forget_Password extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel6.setText("New Password");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Your Question", "What's Your Childhood Nick Name", "What's Your First Vehical", "What's Your First Class Teacher", "What's Your Elder Brother's Name", "What's Your Favourite Country" }));
+        security_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Your Question", "What's Your Childhood Nick Name", "What's Your First Vehical", "What's Your First Class Teacher", "What's Your Elder Brother's Name", "What's Your Favourite Country" }));
 
         jLabel7.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel7.setText("Answer");
@@ -197,11 +192,28 @@ public class Forget_Password extends javax.swing.JFrame {
             }
         });
 
+        password_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        password_et.setText("123456789");
+        password_et.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                password_etFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                password_etFocusLost(evt);
+            }
+        });
+
+        password_checkbox.setText("Show Password");
+        password_checkbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                password_checkboxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -212,17 +224,8 @@ public class Forget_Password extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(answer_et, javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,21 +234,40 @@ public class Forget_Password extends javax.swing.JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE))
                                     .addComponent(username_et, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(password_et, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(44, 44, 44))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(97, 97, 97))))
+                                    .addComponent(security_combo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(44, 44, 44))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(password_et, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(password_checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(96, 96, 96)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(114, 114, 114)
+                                .addComponent(btn_Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(rSPanelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                        .addGap(24, 24, 24))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
@@ -253,7 +275,7 @@ public class Forget_Password extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel3)
                         .addGap(0, 0, 0)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(security_combo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
@@ -261,16 +283,14 @@ public class Forget_Password extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(password_et, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(password_et, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(password_checkbox)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_Reset, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(rSPanelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)))
-                .addContainerGap())
+                        .addComponent(jLabel8)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -316,20 +336,6 @@ public class Forget_Password extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_username_etFocusLost
 
-    private void password_etFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_etFocusGained
-        if(password_et.getText().equals("**********"))
-        {
-            password_et.setText("");
-        }
-    }//GEN-LAST:event_password_etFocusGained
-
-    private void password_etFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_etFocusLost
-        if(password_et.getText().equals(""))
-        {
-            password_et.setText("**********");
-        }
-    }//GEN-LAST:event_password_etFocusLost
-
     private void answer_etFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_answer_etFocusGained
         if(answer_et.getText().equals("Your Answer"))
         {
@@ -345,14 +351,48 @@ public class Forget_Password extends javax.swing.JFrame {
     }//GEN-LAST:event_answer_etFocusLost
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        this.setVisible(false);
+        
         
         Login_Form login = new Login_Form();
         login.setVisible(true);
+        this.setVisible(false);
         
         //this.dispose();
                 
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void btn_ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ResetActionPerformed
+        
+        String uname = username_et.getText();
+        String question =security_combo.getSelectedItem().toString();
+        String answer = answer_et.getText();
+        String password ;
+    }//GEN-LAST:event_btn_ResetActionPerformed
+
+    private void password_etFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_etFocusGained
+        if(String.valueOf(password_et.getPassword()).equals("123456789"))
+        {
+            password_et.setText("");
+        }
+    }//GEN-LAST:event_password_etFocusGained
+
+    private void password_etFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_etFocusLost
+       if(String.valueOf(password_et.getPassword()).equals(""))
+        {
+            password_et.setText("123456789");
+        }
+    }//GEN-LAST:event_password_etFocusLost
+
+    private void password_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_checkboxActionPerformed
+        
+        if(password_checkbox.isSelected())
+        {
+            password_et.setEchoChar((char)0);
+        }else
+        {
+            password_et.setEchoChar('*');
+        }
+    }//GEN-LAST:event_password_checkboxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -392,8 +432,8 @@ public class Forget_Password extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField answer_et;
+    private rsbuttom.RSButtonMetro btn_Reset;
     private rojerusan.RSPanelImage btn_close;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -405,9 +445,10 @@ public class Forget_Password extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField password_et;
-    private rsbuttom.RSButtonMetro rSButtonMetro1;
+    private javax.swing.JCheckBox password_checkbox;
+    private javax.swing.JPasswordField password_et;
     private rojerusan.RSPanelImage rSPanelImage1;
+    private javax.swing.JComboBox security_combo;
     private javax.swing.JTextField username_et;
     // End of variables declaration//GEN-END:variables
 }

@@ -299,12 +299,10 @@ public class Login_Form extends javax.swing.JFrame {
     }//GEN-LAST:event_password_etFocusLost
 
     private void forget_tvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forget_tvMouseClicked
-        this.setVisible(false);
-        
+
         Forget_Password forget = new Forget_Password();
         forget.setVisible(true);
-        
-        //this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_forget_tvMouseClicked
 
     /**
