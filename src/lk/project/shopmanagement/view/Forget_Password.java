@@ -5,8 +5,12 @@
  */
 package lk.project.shopmanagement.view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import lk.project.shopmanagement.Controller.Forget_Controller;
+import lk.project.shopmanagement.Controller.Login_Controller;
+import lk.project.shopmanagement.DTO.LoginDTO;
 
 /**
  *
@@ -170,7 +174,7 @@ public class Forget_Password extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel6.setText("New Password");
 
-        security_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Your Question", "What's Your Childhood Nick Name", "What's Your First Vehical", "What's Your First Class Teacher", "What's Your Elder Brother's Name", "What's Your Favourite Country" }));
+        security_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Your Question", "What s Your Childhood Nick Name", "What s Your First Vehical", "What s Your First Class Teacher", "What s Your Elder Brother's Name", "What s Your Favourite Country" }));
 
         jLabel7.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel7.setText("Answer");
@@ -374,7 +378,20 @@ public class Forget_Password extends javax.swing.JFrame {
         boolean isfill = Forget_Controller.Forget_isfill(uname, question, answer, password);
         
         if(isfill)
-            JOptionPane.showMessageDialog(this,"OK");
+        {
+            try {
+                boolean change = Login_Controller.ismatch_answer(new LoginDTO(uname, question, answer, password));
+                
+                if(change)
+                    JOptionPane.showMessageDialog(this,"Password Change Succesfully");
+                else
+                    JOptionPane.showMessageDialog(this,"Something Wrrong");
+            
+            } catch (Exception ex) {
+                Logger.getLogger(Forget_Password.class.getName()).log(Level.SEVERE, null, ex);
+            }
+  
+        }
         else
             JOptionPane.showMessageDialog(this,"Some Fild's Empty");
             

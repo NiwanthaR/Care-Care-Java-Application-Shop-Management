@@ -8,6 +8,7 @@ package lk.project.shopmanagement.DAO.Custom.IMPL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import lk.project.shopmanagement.DAO.Custom.LoginDAO;
 import lk.project.shopmanagement.DB.DBConnection;
 import lk.project.shopmanagement.entity.Login;
@@ -53,6 +54,28 @@ public class LoginDAOImpl implements LoginDAO{
     @Override
     public ArrayList<Login> findall() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean ismatch_answer(Login login) throws Exception {
+        
+        System.out.println(login.getUsername().toString());
+        System.out.println(login.getQuestion().toString());
+        System.out.println(login.getAnswer().toString());
+        System.out.println(login.getPassword().toString());
+        
+        PreparedStatement pstm = DBConnection.getConnection().prepareStatement("select * from user_details where user_name ='"+login.getUsername()+"' AND user_question='"+login.getQuestion()+"' AND user_answer='"+login.getAnswer()+"'");
+        ResultSet rst = pstm.executeQuery();
+        
+        if(rst.next()){
+             return DBConnection.getConnection().createStatement().executeUpdate("UPDATE USER_DETAILS SET user_password='"+login.getPassword()+"' WHERE user_name='"+login.getUsername()+"'")>0;
+        }else
+            return false;
+    }
+
+    @Override
+    public boolean isreset_password(Login login) throws Exception {
+        return DBConnection.getConnection().createStatement().executeUpdate("UPDATE USER_DETAILS SET user_password='"+login.getPassword()+"' WHERE user_name='"+login.getUsername()+"'")>0;
     }
     
 }

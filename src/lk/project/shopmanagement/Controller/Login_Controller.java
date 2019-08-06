@@ -28,4 +28,9 @@ public class Login_Controller {
         return LoginBusiness.login_validate(loginDTO);
     }
     
+    public static boolean ismatch_answer(LoginDTO loginDTO) throws Exception
+    {
+        return LoginBusiness.ismatch_answer(loginDTO);
+    }
+   
 }

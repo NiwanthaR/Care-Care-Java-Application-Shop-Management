@@ -30,9 +30,13 @@ public class LoginDTO {
         this.username = username;
         this.password = password;
     }
-    
-    
 
+    public LoginDTO(String username, String question, String answer) {
+        this.username = username;
+        this.question = question;
+        this.answer = answer;
+    }
+    
     public String getUsername() {
         return username;
     }

@@ -15,5 +15,7 @@ import lk.project.shopmanagement.entity.Login;
 public interface LoginDAO extends CrudDAO<Login, String>{
     
     public boolean isSuccess(Login login) throws Exception;
+    public boolean ismatch_answer(Login login) throws Exception;
+    public boolean isreset_password(Login login) throws Exception;
     
 }

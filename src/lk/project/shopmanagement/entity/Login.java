@@ -30,10 +30,12 @@ public class Login {
         this.username = username;
         this.password = password;
     }
-    
-    
 
-    
+    public Login(String username, String question, String answer) {
+        this.username = username;
+        this.question = question;
+        this.answer = answer;
+    }
 
     public String getUsername() {
         return username;

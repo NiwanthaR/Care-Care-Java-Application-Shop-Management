@@ -23,4 +23,8 @@ public class LoginBusiness {
         return loginDAO.isSuccess(new Login(loginDTO.getUsername(), loginDTO.getPassword()));
     }
     
+    public static boolean ismatch_answer(LoginDTO loginDTO) throws Exception
+    {
+        return loginDAO.ismatch_answer(new Login(loginDTO.getUsername(), loginDTO.getQuestion(), loginDTO.getAnswer(), loginDTO.getPassword()) );
+    }         
 }
