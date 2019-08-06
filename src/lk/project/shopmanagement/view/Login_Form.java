@@ -5,8 +5,11 @@
  */
 package lk.project.shopmanagement.view;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import lk.project.shopmanagement.Controller.Login_Controller;
+import lk.project.shopmanagement.DTO.LoginDTO;
 
 /**
  *
@@ -349,6 +352,11 @@ public class Login_Form extends javax.swing.JFrame {
         if(isfill)
         {
             JOptionPane.showMessageDialog(this,"OK");
+            try {
+                boolean islog = Login_Controller.check_login(new LoginDTO(uname, password));
+            } catch (Exception ex) {
+                Logger.getLogger(Login_Form.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         else{
             JOptionPane.showMessageDialog(this,"Please Fill Details");

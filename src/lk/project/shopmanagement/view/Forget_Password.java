@@ -5,6 +5,9 @@
  */
 package lk.project.shopmanagement.view;
 
+import javax.swing.JOptionPane;
+import lk.project.shopmanagement.Controller.Forget_Controller;
+
 /**
  *
  * @author NIWANTHA
@@ -266,7 +269,7 @@ public class Forget_Password extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(rSPanelImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
                         .addGap(24, 24, 24))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -366,7 +369,16 @@ public class Forget_Password extends javax.swing.JFrame {
         String uname = username_et.getText();
         String question =security_combo.getSelectedItem().toString();
         String answer = answer_et.getText();
-        String password ;
+        String password = String.valueOf(password_et.getPassword()) ;
+        
+        boolean isfill = Forget_Controller.Forget_isfill(uname, question, answer, password);
+        
+        if(isfill)
+            JOptionPane.showMessageDialog(this,"OK");
+        else
+            JOptionPane.showMessageDialog(this,"Some Fild's Empty");
+            
+       
     }//GEN-LAST:event_btn_ResetActionPerformed
 
     private void password_etFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password_etFocusGained

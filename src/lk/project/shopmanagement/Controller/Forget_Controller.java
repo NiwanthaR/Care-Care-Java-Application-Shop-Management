@@ -11,12 +11,12 @@ package lk.project.shopmanagement.Controller;
  */
 public class Forget_Controller {
     
-    private boolean Forget_isfill(String username, String question, String password, String new_password)
+    public static boolean Forget_isfill(String username, String question,String answer, String password)
     {
-        if(username.isEmpty() ||question.isEmpty() ||password.isEmpty() ||new_password.isEmpty())
+        if(username.equals("User Name") || question.equals("Select Your Question") || answer.equals("Your Answer") || password.equals("****************"))
         {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 }

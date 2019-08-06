@@ -5,6 +5,9 @@
  */
 package lk.project.shopmanagement.Controller;
 
+import lk.project.shopmanagement.Business.LoginBusiness;
+import lk.project.shopmanagement.DTO.LoginDTO;
+
 /**
  *
  * @author NIWANTHA
@@ -18,6 +21,11 @@ public class Login_Controller {
             return false;
         }
         return true;
+    }
+    
+    public static boolean check_login(LoginDTO loginDTO) throws Exception
+    {
+        return LoginBusiness.login_validate(loginDTO);
     }
     
 }
