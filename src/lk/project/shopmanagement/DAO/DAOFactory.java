@@ -9,6 +9,7 @@ package lk.project.shopmanagement.DAO;
 import lk.project.shopmanagement.DAO.Custom.IMPL.LoginDAOImpl;
 import lk.project.shopmanagement.DAO.Custom.IMPL.PartsDAOImpl;
 import lk.project.shopmanagement.DAO.Custom.IMPL.PaymentDAOImpl;
+import lk.project.shopmanagement.DAO.Custom.IMPL.PaymentListDAOImpl;
 import lk.project.shopmanagement.DAO.Custom.IMPL.Payment_DetailsDAOImpl;
 import lk.project.shopmanagement.DAO.Custom.IMPL.VehicalDAOImpl;
 
@@ -32,7 +33,7 @@ public class DAOFactory {
     }
  
     public enum DAOTypes {
-        VEHICAL, PARTS, PAYMENT , PAYMENTdETAILS , LOGIN  
+        VEHICAL, PARTS, PAYMENT , PAYMENTdETAILS , LOGIN , PAYMENTLIST
     }
     
     public SuperDAO getDAO(DAOTypes daoTypes) {
@@ -42,7 +43,8 @@ public class DAOFactory {
             case PAYMENT : return new PaymentDAOImpl() ;
             case PAYMENTdETAILS : return new Payment_DetailsDAOImpl();
             case LOGIN : return new LoginDAOImpl();
-            
+            case PAYMENTLIST : return new PaymentListDAOImpl();
+                
             default : return null;
         }
     }

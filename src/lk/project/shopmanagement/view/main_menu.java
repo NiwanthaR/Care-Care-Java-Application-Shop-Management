@@ -15,10 +15,12 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import lk.project.shopmanagement.Controller.Parts_Controller;
+import lk.project.shopmanagement.Controller.PaymentList_Controller;
 import lk.project.shopmanagement.Controller.Payment_Controller;
 import lk.project.shopmanagement.Controller.Vehical_Controller;
 import lk.project.shopmanagement.DTO.PartsDTO;
 import lk.project.shopmanagement.DTO.PaymentDTO;
+import lk.project.shopmanagement.DTO.PaymentListDTO;
 import lk.project.shopmanagement.DTO.Payment_DetailsDTO;
 import lk.project.shopmanagement.DTO.VehicalDTO;
 
@@ -146,17 +148,17 @@ public class main_menu extends javax.swing.JFrame {
         jPanel46 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        vehicalno_et = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        payment_et = new javax.swing.JFormattedTextField();
         jPanel47 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton_Number = new javax.swing.JRadioButton();
+        jRadioButton_Date = new javax.swing.JRadioButton();
         jLabel24 = new javax.swing.JLabel();
-        rSButtonMetro1 = new rsbuttom.RSButtonMetro();
+        btn_search = new rsbuttom.RSButtonMetro();
         jPanel48 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table_paymentList = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         search_vehical_panel = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
@@ -570,7 +572,7 @@ public class main_menu extends javax.swing.JFrame {
                 .addComponent(vehicalno_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LableOwnern_ame, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -859,17 +861,17 @@ public class main_menu extends javax.swing.JFrame {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel19.setText("Vehical NO");
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        vehicalno_et.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         jLabel20.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel20.setText("   Payment Date");
 
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        payment_et.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
-        jRadioButton1.setText("Search By Number");
+        jRadioButton_Number.setText("Search By Number");
 
-        jRadioButton2.setText("Search By Date");
+        jRadioButton_Date.setText("Search By Date");
 
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
@@ -878,19 +880,19 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel47Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
+                    .addComponent(jRadioButton_Date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jRadioButton_Number, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel47Layout.createSequentialGroup()
-                .addComponent(jRadioButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jRadioButton2))
+                .addComponent(jRadioButton_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton_Date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        rSButtonMetro1.setText("Search");
+        btn_search.setText("Search");
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
@@ -901,15 +903,15 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vehicalno_et, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(payment_et, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -917,25 +919,27 @@ public class main_menu extends javax.swing.JFrame {
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTextField1)
+            .addComponent(vehicalno_et)
             .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel46Layout.createSequentialGroup()
                 .addGap(2, 2, 2)
                 .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jFormattedTextField1)
+            .addComponent(payment_et)
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table_paymentList.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        table_paymentList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Payment ID", "Payment Date", "Payment Cost", "Vehical No"
             }
         ));
-        jScrollPane5.setViewportView(jTable1);
+        table_paymentList.setRowHeight(25);
+        jScrollPane5.setViewportView(table_paymentList);
 
         jButton2.setText("Go");
 
@@ -956,7 +960,7 @@ public class main_menu extends javax.swing.JFrame {
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel48Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
                 .addContainerGap())
@@ -976,7 +980,7 @@ public class main_menu extends javax.swing.JFrame {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(9, 9, 9)
                 .addComponent(jPanel48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2135,6 +2139,12 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.add(service_panel);
         loard_panel.repaint();
         loard_panel.revalidate();
+        
+        try {
+            loardPaymentList();
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_serviceActionPerformed
 
     private void btn_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_vehicalActionPerformed
@@ -2564,6 +2574,7 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_payment;
     private rsbuttom.RSButtonMetro btn_remove_vehical;
     private rsbuttom.RSButtonMetro btn_removepart;
+    private rsbuttom.RSButtonMetro btn_search;
     private rsbuttom.RSButtonMetro btn_search_vehical;
     private rsbuttom.RSButtonMetro btn_searchpart;
     private rsbuttom.RSButtonMetro btn_service;
@@ -2581,7 +2592,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2685,17 +2695,15 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton_Date;
+    private javax.swing.JRadioButton jRadioButton_Number;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel loard_panel;
     private javax.swing.JPanel menu_panel;
     private javax.swing.JPanel mounthly_panel;
@@ -2712,8 +2720,8 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField part_qty_et;
     private javax.swing.JTextField parts_sellprice_et;
     private javax.swing.JLabel payment_date;
+    private javax.swing.JFormattedTextField payment_et;
     private javax.swing.JPanel payment_panel;
-    private rsbuttom.RSButtonMetro rSButtonMetro1;
     private javax.swing.JPanel search_selling_panel;
     private javax.swing.JPanel search_vehical_panel;
     private javax.swing.JPanel service_panel;
@@ -2722,11 +2730,13 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTable tableParts;
     private javax.swing.JTable tableStore;
     private javax.swing.JTable tableVehical;
+    private javax.swing.JTable table_paymentList;
     private javax.swing.JTextField vehical_brand_et;
     private javax.swing.JTextField vehical_model_et;
     private javax.swing.JTextField vehical_no_et;
     private javax.swing.JPanel vehical_panel;
     private javax.swing.JComboBox vehicalno_combobox;
+    private javax.swing.JTextField vehicalno_et;
     // End of variables declaration//GEN-END:variables
 
     //After submit clear Fields in Vehical
@@ -2845,6 +2855,26 @@ public class main_menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, ex);
         }
                 
+    }
+    
+      //loard paymentlist
+    private void loardPaymentList() throws Exception
+    {
+        try
+        {
+            DefaultTableModel dtm = (DefaultTableModel) table_paymentList.getModel();
+        ArrayList<PaymentListDTO> paymentList = PaymentList_Controller.loadAllPayment();
+        dtm.setRowCount(0);
+        
+        for(PaymentListDTO paymentListDTO : paymentList)
+        {
+            Object[] rowData = {paymentListDTO.getPaymentID(),paymentListDTO.getPaymentDATE(),paymentListDTO.getPaymentCOST(),paymentListDTO.getVehicalNO()};
+            dtm.addRow(rowData);
+        }
+        }catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex);
+        }
     }
     
     //------------------------------------------------------Loard Store List---------------------------------------------------------
