@@ -6,6 +6,7 @@
 package shop.management;
 
 import java.awt.SplashScreen;
+import lk.project.shopmanagement.view.Login_Form;
 import lk.project.shopmanagement.view.main_menu;
 import lk.project.shopmanagement.view.splashscreen;
 
@@ -30,8 +31,10 @@ public class ShopManagement {
             if(i == 100)
             {
                 splash.setVisible(false);
-                main_menu menu = new main_menu();
-                menu.setVisible(true);
+                //main_menu menu = new main_menu();
+                //menu.setVisible(true);
+                Login_Form login = new Login_Form();
+                login.setVisible(true);
             }  
         }
         

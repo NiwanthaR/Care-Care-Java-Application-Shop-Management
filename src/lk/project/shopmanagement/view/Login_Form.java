@@ -351,9 +351,20 @@ public class Login_Form extends javax.swing.JFrame {
         
         if(isfill)
         {
-            JOptionPane.showMessageDialog(this,"OK");
             try {
                 boolean islog = Login_Controller.check_login(new LoginDTO(uname, password));
+                
+                if(islog)
+                {
+                    JOptionPane.showMessageDialog(this,"Login Success..!!");
+                    this.setVisible(false);
+                    main_menu menu = new main_menu();
+                    menu.setVisible(true);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this,"Login Failed..!!");
+                }
             } catch (Exception ex) {
                 Logger.getLogger(Login_Form.class.getName()).log(Level.SEVERE, null, ex);
             }

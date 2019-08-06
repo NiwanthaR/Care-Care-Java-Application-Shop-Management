@@ -59,11 +59,6 @@ public class LoginDAOImpl implements LoginDAO{
     @Override
     public boolean ismatch_answer(Login login) throws Exception {
         
-        System.out.println(login.getUsername().toString());
-        System.out.println(login.getQuestion().toString());
-        System.out.println(login.getAnswer().toString());
-        System.out.println(login.getPassword().toString());
-        
         PreparedStatement pstm = DBConnection.getConnection().prepareStatement("select * from user_details where user_name ='"+login.getUsername()+"' AND user_question='"+login.getQuestion()+"' AND user_answer='"+login.getAnswer()+"'");
         ResultSet rst = pstm.executeQuery();
         
