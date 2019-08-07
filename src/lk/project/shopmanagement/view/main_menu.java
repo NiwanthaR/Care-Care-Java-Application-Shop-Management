@@ -269,14 +269,14 @@ public class main_menu extends javax.swing.JFrame {
         jPanel52 = new javax.swing.JPanel();
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        change_username_et = new javax.swing.JTextField();
         jPanel53 = new javax.swing.JPanel();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        change_password_et = new javax.swing.JPasswordField();
         jPanel54 = new javax.swing.JPanel();
         jLabel63 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        change_newpassword_et = new javax.swing.JPasswordField();
         jLabel62 = new javax.swing.JLabel();
         jPanel51 = new javax.swing.JPanel();
         jLabel58 = new javax.swing.JLabel();
@@ -284,27 +284,27 @@ public class main_menu extends javax.swing.JFrame {
         jPanel58 = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        create_username_et = new javax.swing.JTextField();
         jPanel59 = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        create_question_combo = new javax.swing.JComboBox();
         jPanel60 = new javax.swing.JPanel();
         jLabel67 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        create_answer_et = new javax.swing.JTextField();
         jPanel61 = new javax.swing.JPanel();
         jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        create_password_et = new javax.swing.JPasswordField();
         jPanel62 = new javax.swing.JPanel();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
-        jPasswordField4 = new javax.swing.JPasswordField();
+        create_repassword_et = new javax.swing.JPasswordField();
         jPanel63 = new javax.swing.JPanel();
-        rSButtonMetro2 = new rsbuttom.RSButtonMetro();
+        btn_createnew_account = new rsbuttom.RSButtonMetro();
         jPanel56 = new javax.swing.JPanel();
-        rSButtonMetro1 = new rsbuttom.RSButtonMetro();
+        btn_passwordchange = new rsbuttom.RSButtonMetro();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2132,6 +2132,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel60.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel60.setText("User Name");
 
+        change_username_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+
         javax.swing.GroupLayout jPanel52Layout = new javax.swing.GroupLayout(jPanel52);
         jPanel52.setLayout(jPanel52Layout);
         jPanel52Layout.setHorizontalGroup(
@@ -2141,13 +2143,13 @@ public class main_menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jTextField2))
+                .addComponent(change_username_et))
         );
         jPanel52Layout.setVerticalGroup(
             jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-            .addComponent(jTextField2)
+            .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(change_username_et, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         jPanel53.setBackground(new java.awt.Color(245, 245, 245));
@@ -2155,7 +2157,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel57.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel57.setText("  Password");
 
-        jPasswordField1.setText("jPasswordField1");
+        change_password_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        change_password_et.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel53Layout = new javax.swing.GroupLayout(jPanel53);
         jPanel53.setLayout(jPanel53Layout);
@@ -2166,13 +2169,13 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1))
+                .addComponent(change_password_et))
         );
         jPanel53Layout.setVerticalGroup(
             jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(jPasswordField1)
+            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(change_password_et, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         jPanel54.setBackground(new java.awt.Color(245, 245, 245));
@@ -2180,7 +2183,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel63.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel63.setText("  New Password");
 
-        jPasswordField2.setText("jPasswordField2");
+        change_newpassword_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        change_newpassword_et.setText("jPasswordField2");
 
         javax.swing.GroupLayout jPanel54Layout = new javax.swing.GroupLayout(jPanel54);
         jPanel54.setLayout(jPanel54Layout);
@@ -2189,13 +2193,13 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel54Layout.createSequentialGroup()
                 .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+                .addComponent(change_newpassword_et, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
                 .addGap(1, 1, 1))
         );
         jPanel54Layout.setVerticalGroup(
             jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(jPasswordField2)
+            .addComponent(jLabel63, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(change_newpassword_et, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
@@ -2237,6 +2241,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel64.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel64.setText("User Name");
 
+        create_username_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+
         javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
         jPanel58.setLayout(jPanel58Layout);
         jPanel58Layout.setHorizontalGroup(
@@ -2246,13 +2252,13 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jTextField1))
+                .addComponent(create_username_et))
         );
         jPanel58Layout.setVerticalGroup(
             jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(jTextField1)
+            .addComponent(jLabel64, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(create_username_et, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         jPanel59.setBackground(new java.awt.Color(245, 245, 245));
@@ -2260,7 +2266,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel66.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel66.setText("Question");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        create_question_combo.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        create_question_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
         jPanel59.setLayout(jPanel59Layout);
@@ -2271,19 +2278,21 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(create_question_combo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel59Layout.setVerticalGroup(
             jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(jComboBox1)
+            .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(create_question_combo, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         jPanel60.setBackground(new java.awt.Color(245, 245, 245));
 
         jLabel68.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel68.setText("Answer");
+
+        create_answer_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
 
         javax.swing.GroupLayout jPanel60Layout = new javax.swing.GroupLayout(jPanel60);
         jPanel60.setLayout(jPanel60Layout);
@@ -2294,13 +2303,13 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jTextField3))
+                .addComponent(create_answer_et))
         );
         jPanel60Layout.setVerticalGroup(
             jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(jTextField3)
+            .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(create_answer_et, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         jPanel61.setBackground(new java.awt.Color(245, 245, 245));
@@ -2308,7 +2317,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel70.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel70.setText("Password");
 
-        jPasswordField3.setText("jPasswordField3");
+        create_password_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        create_password_et.setText("jPasswordField3");
 
         javax.swing.GroupLayout jPanel61Layout = new javax.swing.GroupLayout(jPanel61);
         jPanel61.setLayout(jPanel61Layout);
@@ -2319,13 +2329,13 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPasswordField3))
+                .addComponent(create_password_et))
         );
         jPanel61Layout.setVerticalGroup(
             jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel70, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(jPasswordField3)
+            .addComponent(jLabel70, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(create_password_et, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         jPanel62.setBackground(new java.awt.Color(245, 245, 245));
@@ -2333,7 +2343,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel72.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel72.setText("Re-Password");
 
-        jPasswordField4.setText("jPasswordField4");
+        create_repassword_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        create_repassword_et.setText("jPasswordField4");
 
         javax.swing.GroupLayout jPanel62Layout = new javax.swing.GroupLayout(jPanel62);
         jPanel62.setLayout(jPanel62Layout);
@@ -2344,13 +2355,13 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPasswordField4))
+                .addComponent(create_repassword_et))
         );
         jPanel62Layout.setVerticalGroup(
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel72, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(jPasswordField4)
+            .addComponent(jLabel72, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(create_repassword_et, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
@@ -2380,9 +2391,9 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel63.setBackground(new java.awt.Color(245, 245, 245));
 
-        rSButtonMetro2.setBackground(new java.awt.Color(255, 153, 0));
-        rSButtonMetro2.setText("Create");
-        rSButtonMetro2.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_createnew_account.setBackground(new java.awt.Color(255, 153, 0));
+        btn_createnew_account.setText("Create");
+        btn_createnew_account.setColorNormal(new java.awt.Color(255, 153, 0));
 
         javax.swing.GroupLayout jPanel63Layout = new javax.swing.GroupLayout(jPanel63);
         jPanel63.setLayout(jPanel63Layout);
@@ -2390,14 +2401,14 @@ public class main_menu extends javax.swing.JFrame {
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel63Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_createnew_account, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel63Layout.createSequentialGroup()
                 .addGap(153, 153, 153)
-                .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_createnew_account, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2425,9 +2436,9 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel56.setBackground(new java.awt.Color(245, 245, 245));
 
-        rSButtonMetro1.setBackground(new java.awt.Color(255, 153, 0));
-        rSButtonMetro1.setText("Change");
-        rSButtonMetro1.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_passwordchange.setBackground(new java.awt.Color(255, 153, 0));
+        btn_passwordchange.setText("Change");
+        btn_passwordchange.setColorNormal(new java.awt.Color(255, 153, 0));
 
         javax.swing.GroupLayout jPanel56Layout = new javax.swing.GroupLayout(jPanel56);
         jPanel56.setLayout(jPanel56Layout);
@@ -2435,14 +2446,14 @@ public class main_menu extends javax.swing.JFrame {
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel56Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_passwordchange, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel56Layout.setVerticalGroup(
             jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel56Layout.createSequentialGroup()
                 .addContainerGap(104, Short.MAX_VALUE)
-                .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_passwordchange, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86))
         );
 
@@ -3095,9 +3106,11 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_add_vehical;
     private rsbuttom.RSButtonMetro btn_addpart;
     private rsbuttom.RSButtonMetro btn_backserviceList;
+    private rsbuttom.RSButtonMetro btn_createnew_account;
     private rsbuttom.RSButtonMetro btn_mounth;
     private rsbuttom.RSButtonMetro btn_partRemove;
     private rsbuttom.RSButtonMetro btn_parts;
+    private rsbuttom.RSButtonMetro btn_passwordchange;
     private rsbuttom.RSButtonMetro btn_payment;
     private rsbuttom.RSButtonMetro btn_remove_vehical;
     private rsbuttom.RSButtonMetro btn_removepart;
@@ -3116,10 +3129,17 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.JPasswordField change_newpassword_et;
+    private javax.swing.JPasswordField change_password_et;
+    private javax.swing.JTextField change_username_et;
+    private javax.swing.JTextField create_answer_et;
+    private javax.swing.JPasswordField create_password_et;
+    private javax.swing.JComboBox create_question_combo;
+    private javax.swing.JPasswordField create_repassword_et;
+    private javax.swing.JTextField create_username_et;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3256,10 +3276,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
-    private javax.swing.JPasswordField jPasswordField4;
     private javax.swing.JRadioButton jRadioButton_Date;
     private javax.swing.JRadioButton jRadioButton_Number;
     private javax.swing.JScrollPane jScrollPane1;
@@ -3268,9 +3284,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lable_paymentlist_cost;
     private javax.swing.JPanel loard_panel;
     private javax.swing.JPanel menu_panel;
@@ -3290,8 +3303,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JLabel payment_date;
     private javax.swing.JFormattedTextField payment_et;
     private javax.swing.JPanel payment_panel;
-    private rsbuttom.RSButtonMetro rSButtonMetro1;
-    private rsbuttom.RSButtonMetro rSButtonMetro2;
     private javax.swing.JPanel search_selling_panel;
     private javax.swing.JPanel search_vehical_panel;
     private javax.swing.JPanel service_main;
