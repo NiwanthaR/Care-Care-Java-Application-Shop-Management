@@ -167,6 +167,8 @@ public class main_menu extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         table_billitem = new javax.swing.JTable();
         btn_backserviceList = new rsbuttom.RSButtonMetro();
+        jLabel53 = new javax.swing.JLabel();
+        lable_paymentlist_cost = new javax.swing.JLabel();
         vehical_panel = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
@@ -944,16 +946,16 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel48.setBackground(new java.awt.Color(245, 245, 245));
 
-        table_paymentList.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        table_paymentList.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         table_paymentList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Payment ID", "Payment Date", "Payment Cost", "Vehical No"
+                "Payment ID", "Payment Date", "Vehical No", "Payment Cost"
             }
         ));
-        table_paymentList.setRowHeight(25);
+        table_paymentList.setRowHeight(30);
         table_paymentList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 table_paymentListMouseClicked(evt);
@@ -1026,7 +1028,7 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel49.setBackground(new java.awt.Color(245, 245, 245));
 
-        table_billitem.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        table_billitem.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         table_billitem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1047,6 +1049,13 @@ public class main_menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel53.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel53.setText("Order Cost :");
+
+        lable_paymentlist_cost.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lable_paymentlist_cost.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
         jPanel49.setLayout(jPanel49Layout);
         jPanel49Layout.setHorizontalGroup(
@@ -1056,7 +1065,10 @@ public class main_menu extends javax.swing.JFrame {
                 .addGroup(jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
                     .addGroup(jPanel49Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lable_paymentlist_cost, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_backserviceList, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -1066,7 +1078,10 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_backserviceList, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addGroup(jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_backserviceList, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lable_paymentlist_cost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -2567,7 +2582,7 @@ public class main_menu extends javax.swing.JFrame {
             
             for(Payment_DetailsDTO payment_DetailsDTO1 : payment_DetailsDTO)
             {
-                Object [] rowData ={payment_DetailsDTO1.getPayment_id(),payment_DetailsDTO1.getPart_id(),payment_DetailsDTO1.getUnite_price(),payment_DetailsDTO1.getQty(),payment_DetailsDTO1.getTotal_cost() };
+                Object [] rowData ={payment_DetailsDTO1.getPayment_id(),payment_DetailsDTO1.getPart_id(),payment_DetailsDTO1.getUnite_price(),payment_DetailsDTO1.getQty(),payment_DetailsDTO1.getTotal_cost()+".00" };
                 dtk.addRow(rowData);
             }
             
@@ -2580,6 +2595,8 @@ public class main_menu extends javax.swing.JFrame {
             service_main.add(search_vehical_panel);
             service_main.repaint();
             service_main.revalidate();
+            
+            Calculate_PaymentList_total();
             
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -2726,6 +2743,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -2788,6 +2806,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JLabel lable_paymentlist_cost;
     private javax.swing.JPanel loard_panel;
     private javax.swing.JPanel menu_panel;
     private javax.swing.JPanel mounthly_panel;
@@ -2865,7 +2884,7 @@ public class main_menu extends javax.swing.JFrame {
         return sdf.format(date);
     }
      
-     //clculate total
+     //clculate total in payment
      private void Calculate_total()
      {
         DefaultTableModel dtm = (DefaultTableModel) Table_Orderadd.getModel();
@@ -2877,6 +2896,21 @@ public class main_menu extends javax.swing.JFrame {
             total += Double.valueOf((String) dtm.getValueAt(i, 4)); 
         }
         Lable_total.setText(total+"0");
+        
+     }
+     
+     //clculate total in payment
+     private void Calculate_PaymentList_total()
+     {
+        DefaultTableModel dtm = (DefaultTableModel) table_billitem.getModel();
+        double total = 0;
+        
+        for(int i =0; i<dtm.getRowCount() ;i++)
+        {
+            //total += (double)dtm.getValueAt(i, 4); 
+            total += Double.valueOf((String) dtm.getValueAt(i, 4)); 
+        }
+        lable_paymentlist_cost.setText(total+"0");
         
      }
         
@@ -2954,7 +2988,7 @@ public class main_menu extends javax.swing.JFrame {
         
         for(PaymentListDTO paymentListDTO : paymentList)
         {
-            Object[] rowData = {paymentListDTO.getPaymentID(),paymentListDTO.getPaymentDATE(),paymentListDTO.getPaymentCOST(),paymentListDTO.getVehicalNO()};
+            Object[] rowData = {paymentListDTO.getPaymentID(),paymentListDTO.getPaymentDATE(),paymentListDTO.getVehicalNO(),paymentListDTO.getPaymentCOST()+".00"};
             dtm.addRow(rowData);
         }
         }catch(Exception ex)
