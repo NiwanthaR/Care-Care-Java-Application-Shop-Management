@@ -663,6 +663,14 @@ public class main_menu extends javax.swing.JFrame {
         Qty_et.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Qty_et.setText("0");
         Qty_et.setToolTipText("");
+        Qty_et.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                Qty_etFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                Qty_etFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -1293,11 +1301,11 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_no_et, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                .addComponent(vehical_no_et, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_model_et, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                .addComponent(vehical_model_et, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vehical_brand_et, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                .addComponent(vehical_brand_et, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1352,7 +1360,7 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(owner_name_et, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                .addComponent(owner_name_et, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(owner_contact_et, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -1442,7 +1450,7 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel25.setBackground(new java.awt.Color(245, 245, 245));
 
-        tableVehical.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        tableVehical.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         tableVehical.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1451,7 +1459,7 @@ public class main_menu extends javax.swing.JFrame {
                 "Vehical No", "Model", "Brand", "Owner Name", "Address", "Contact"
             }
         ));
-        tableVehical.setRowHeight(25);
+        tableVehical.setRowHeight(30);
         jScrollPane2.setViewportView(tableVehical);
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
@@ -1862,7 +1870,7 @@ public class main_menu extends javax.swing.JFrame {
 
         jScrollPane3.setBackground(new java.awt.Color(245, 245, 245));
 
-        tableParts.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        tableParts.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         tableParts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1871,7 +1879,7 @@ public class main_menu extends javax.swing.JFrame {
                 "Part ID", "Model", "Brand", "Part Discription", "Get Price", "Unite Sell Price", "Store Qty"
             }
         ));
-        tableParts.setRowHeight(25);
+        tableParts.setRowHeight(30);
         jScrollPane3.setViewportView(tableParts);
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
@@ -1962,7 +1970,7 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel55.setBackground(new java.awt.Color(245, 245, 245));
 
-        tableStore.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+        tableStore.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         tableStore.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1971,7 +1979,7 @@ public class main_menu extends javax.swing.JFrame {
                 "Part ID", "Model", "Brand", "Part Discription", "Get Price", "Unite Sell Price", "Store Qty"
             }
         ));
-        tableStore.setRowHeight(25);
+        tableStore.setRowHeight(30);
         jScrollPane4.setViewportView(tableStore);
 
         javax.swing.GroupLayout jPanel55Layout = new javax.swing.GroupLayout(jPanel55);
@@ -1980,7 +1988,7 @@ public class main_menu extends javax.swing.JFrame {
             jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel55Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 950, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel55Layout.setVerticalGroup(
@@ -2615,6 +2623,21 @@ public class main_menu extends javax.swing.JFrame {
             service_main.repaint();
             service_main.revalidate();
     }//GEN-LAST:event_btn_backserviceListActionPerformed
+
+    private void Qty_etFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Qty_etFocusGained
+        
+        if(Qty_et.getText().equals("0"))
+        {
+            Qty_et.setText("");
+        }
+    }//GEN-LAST:event_Qty_etFocusGained
+
+    private void Qty_etFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Qty_etFocusLost
+        if(Qty_et.getText().equals(""))
+        {
+            Qty_et.setText("0");
+        }
+    }//GEN-LAST:event_Qty_etFocusLost
 
     /**
      * @param args the command line arguments

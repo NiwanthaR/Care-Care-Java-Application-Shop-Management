@@ -26,7 +26,7 @@ public class PaymentDAOImpl implements PaymentDAO{
             orderID = Integer.parseInt(orderID.split("[A-Z]")[1])+1+"";
             return "D"+orderID;
         }
-        return "D001";
+        return "D1";
     }
 
     @Override
