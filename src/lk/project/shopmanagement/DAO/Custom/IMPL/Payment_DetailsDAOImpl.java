@@ -6,6 +6,7 @@
 package lk.project.shopmanagement.DAO.Custom.IMPL;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import lk.project.shopmanagement.DAO.Custom.Payment_DetailsDAO;
 import lk.project.shopmanagement.DB.DBConnection;
@@ -48,5 +49,19 @@ public class Payment_DetailsDAOImpl implements Payment_DetailsDAO{
     public ArrayList<Payment_Details> findall() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public ArrayList<Payment_Details> findBillItem(String bill_no) throws Exception {
+        
+        ArrayList<Payment_Details> payment_Detailses = new ArrayList<>();
+        ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("Select * from Payment_Details where payment_id='"+bill_no+"'");
+        while(rst.next())
+        {
+            payment_Detailses.add(new Payment_Details(rst.getString("payment_id"), rst.getString("part_id"), rst.getInt("unite_price"), rst.getInt("qty"), rst.getInt("total_cost")));
+        }
+        return payment_Detailses;
+    }
+
+    
     
 }

@@ -20,4 +20,9 @@ public class Payment_DetailsController {
         return Payment_DetailsBusiness.addPayment_Details(payment_DetailsDTO);
     }
     
+    public static ArrayList<Payment_DetailsDTO> findbillItem(String bill_no) throws Exception
+    {
+        return Payment_DetailsBusiness.findBillItem(bill_no);
+    }
+    
 }

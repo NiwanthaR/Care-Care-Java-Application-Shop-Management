@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import lk.project.shopmanagement.Controller.Parts_Controller;
 import lk.project.shopmanagement.Controller.PaymentList_Controller;
 import lk.project.shopmanagement.Controller.Payment_Controller;
+import lk.project.shopmanagement.Controller.Payment_DetailsController;
 import lk.project.shopmanagement.Controller.Vehical_Controller;
 import lk.project.shopmanagement.DTO.PartsDTO;
 import lk.project.shopmanagement.DTO.PaymentDTO;
@@ -141,7 +142,7 @@ public class main_menu extends javax.swing.JFrame {
         Lable_total = new javax.swing.JLabel();
         btn_PlaceOrder = new rsbuttom.RSButtonMetro();
         service_panel = new javax.swing.JPanel();
-        jPanel44 = new javax.swing.JPanel();
+        service_main = new javax.swing.JPanel();
         search_selling_panel = new javax.swing.JPanel();
         jPanel45 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -164,7 +165,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel52 = new javax.swing.JLabel();
         jPanel49 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        table_billitem = new javax.swing.JTable();
+        btn_backserviceList = new rsbuttom.RSButtonMetro();
         vehical_panel = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
@@ -851,11 +853,19 @@ public class main_menu extends javax.swing.JFrame {
         service_panel.setBackground(new java.awt.Color(245, 245, 245));
         service_panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, new java.awt.Color(255, 255, 255), java.awt.Color.white));
 
-        jPanel44.setLayout(new java.awt.CardLayout());
+        service_main.setBackground(new java.awt.Color(245, 245, 245));
+        service_main.setLayout(new java.awt.CardLayout());
 
+        search_selling_panel.setBackground(new java.awt.Color(245, 245, 245));
+
+        jPanel45.setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel11.setBackground(new java.awt.Color(245, 245, 245));
         jLabel11.setFont(new java.awt.Font("Montserrat", 1, 30)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Search Payment List");
+
+        jPanel46.setBackground(new java.awt.Color(245, 245, 245));
 
         jLabel19.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -868,6 +878,8 @@ public class main_menu extends javax.swing.JFrame {
         jLabel20.setText("   Payment Date");
 
         payment_et.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+
+        jPanel47.setBackground(new java.awt.Color(245, 245, 245));
 
         jRadioButton_Number.setText("Search By Number");
 
@@ -893,6 +905,7 @@ public class main_menu extends javax.swing.JFrame {
         );
 
         btn_search.setText("Search");
+        btn_search.setColorNormal(new java.awt.Color(255, 102, 0));
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
@@ -929,6 +942,8 @@ public class main_menu extends javax.swing.JFrame {
             .addComponent(payment_et)
         );
 
+        jPanel48.setBackground(new java.awt.Color(245, 245, 245));
+
         table_paymentList.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
         table_paymentList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -939,6 +954,11 @@ public class main_menu extends javax.swing.JFrame {
             }
         ));
         table_paymentList.setRowHeight(25);
+        table_paymentList.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_paymentListMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(table_paymentList);
 
         jButton2.setText("Go");
@@ -995,24 +1015,37 @@ public class main_menu extends javax.swing.JFrame {
             .addComponent(jPanel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel44.add(search_selling_panel, "card2");
+        service_main.add(search_selling_panel, "card2");
 
+        search_vehical_panel.setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel52.setBackground(new java.awt.Color(245, 245, 245));
         jLabel52.setFont(new java.awt.Font("Montserrat", 1, 30)); // NOI18N
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel52.setText("Payment Details");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jPanel49.setBackground(new java.awt.Color(245, 245, 245));
+
+        table_billitem.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
+        table_billitem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Payment ID", "Part ID", "Unite Price", "part Qty", "Total Value"
             }
         ));
-        jScrollPane6.setViewportView(jTable2);
+        table_billitem.setRowHeight(30);
+        jScrollPane6.setViewportView(table_billitem);
+
+        btn_backserviceList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/back menu1.png"))); // NOI18N
+        btn_backserviceList.setText("Go Back");
+        btn_backserviceList.setColorNormal(new java.awt.Color(255, 102, 0));
+        btn_backserviceList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_backserviceListActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
         jPanel49.setLayout(jPanel49Layout);
@@ -1020,15 +1053,21 @@ public class main_menu extends javax.swing.JFrame {
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel49Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+                .addGroup(jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+                    .addGroup(jPanel49Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_backserviceList, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel49Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
-                .addGap(29, 29, 29))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_backserviceList, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout search_vehical_panelLayout = new javax.swing.GroupLayout(search_vehical_panel);
@@ -1046,17 +1085,17 @@ public class main_menu extends javax.swing.JFrame {
                 .addComponent(jPanel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel44.add(search_vehical_panel, "card2");
+        service_main.add(search_vehical_panel, "card2");
 
         javax.swing.GroupLayout service_panelLayout = new javax.swing.GroupLayout(service_panel);
         service_panel.setLayout(service_panelLayout);
         service_panelLayout.setHorizontalGroup(
             service_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(service_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         service_panelLayout.setVerticalGroup(
             service_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(service_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         loard_panel.add(service_panel, "card2");
@@ -2514,6 +2553,52 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_PlaceOrderActionPerformed
 
+    private void table_paymentListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_paymentListMouseClicked
+        
+        DefaultTableModel dtm = (DefaultTableModel) table_paymentList.getModel();
+        int selectedRow = table_paymentList.getSelectedRow();
+        String biii_no = dtm.getValueAt(selectedRow, 0).toString();
+        
+        try {
+            
+            DefaultTableModel dtk = (DefaultTableModel) table_billitem.getModel();
+            ArrayList<Payment_DetailsDTO> payment_DetailsDTO = Payment_DetailsController.findbillItem(biii_no);
+            dtk.setRowCount(0);
+            
+            for(Payment_DetailsDTO payment_DetailsDTO1 : payment_DetailsDTO)
+            {
+                Object [] rowData ={payment_DetailsDTO1.getPayment_id(),payment_DetailsDTO1.getPart_id(),payment_DetailsDTO1.getUnite_price(),payment_DetailsDTO1.getQty(),payment_DetailsDTO1.getTotal_cost() };
+                dtk.addRow(rowData);
+            }
+            
+            //remove all panel
+            service_main.removeAll();
+            service_main.repaint();
+            service_main.revalidate();
+        
+            //add panel
+            service_main.add(search_vehical_panel);
+            service_main.repaint();
+            service_main.revalidate();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_table_paymentListMouseClicked
+
+    private void btn_backserviceListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backserviceListActionPerformed
+        
+        //remove all panel
+            service_main.removeAll();
+            service_main.repaint();
+            service_main.revalidate();
+        
+            //add panel
+            service_main.add(search_selling_panel);
+            service_main.repaint();
+            service_main.revalidate();
+    }//GEN-LAST:event_btn_backserviceListActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2568,6 +2653,7 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_PlaceOrder;
     private rsbuttom.RSButtonMetro btn_add_vehical;
     private rsbuttom.RSButtonMetro btn_addpart;
+    private rsbuttom.RSButtonMetro btn_backserviceList;
     private rsbuttom.RSButtonMetro btn_mounth;
     private rsbuttom.RSButtonMetro btn_partRemove;
     private rsbuttom.RSButtonMetro btn_parts;
@@ -2683,7 +2769,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
     private javax.swing.JPanel jPanel43;
-    private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
     private javax.swing.JPanel jPanel46;
     private javax.swing.JPanel jPanel47;
@@ -2703,7 +2788,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable2;
     private javax.swing.JPanel loard_panel;
     private javax.swing.JPanel menu_panel;
     private javax.swing.JPanel mounthly_panel;
@@ -2724,12 +2808,14 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel payment_panel;
     private javax.swing.JPanel search_selling_panel;
     private javax.swing.JPanel search_vehical_panel;
+    private javax.swing.JPanel service_main;
     private javax.swing.JPanel service_panel;
     private javax.swing.JPanel settings_panel;
     private javax.swing.JPanel store_panel;
     private javax.swing.JTable tableParts;
     private javax.swing.JTable tableStore;
     private javax.swing.JTable tableVehical;
+    private javax.swing.JTable table_billitem;
     private javax.swing.JTable table_paymentList;
     private javax.swing.JTextField vehical_brand_et;
     private javax.swing.JTextField vehical_model_et;

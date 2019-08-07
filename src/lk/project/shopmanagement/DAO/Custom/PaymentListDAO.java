@@ -5,6 +5,7 @@
  */
 package lk.project.shopmanagement.DAO.Custom;
 
+import java.util.ArrayList;
 import lk.project.shopmanagement.DAO.CrudDAO;
 import lk.project.shopmanagement.entity.PaymentList;
 
@@ -13,5 +14,5 @@ import lk.project.shopmanagement.entity.PaymentList;
  * @author NIWANTHA
  */
 public interface PaymentListDAO extends CrudDAO<PaymentList, String>{
-    
+         
 }

@@ -30,4 +30,15 @@ public class Payment_DetailsBusiness {
         return true;
     }
     
+    public static ArrayList<Payment_DetailsDTO> findBillItem(String billno) throws Exception
+    {
+        ArrayList<Payment_DetailsDTO> payment_DetailsDTOs = new ArrayList<>();
+        ArrayList<Payment_Details> payment_Details = payment_DetailsDAO.findBillItem(billno);
+        
+        for(Payment_Details payment_Details1 :payment_Details)
+        {
+            payment_DetailsDTOs.add(new Payment_DetailsDTO(payment_Details1.getPayment_id(),payment_Details1.getPart_id(), payment_Details1.getUnite_price(), payment_Details1.getQty(), payment_Details1.getTotal_cost()));
+        }
+        return payment_DetailsDTOs;
+    }
 }
