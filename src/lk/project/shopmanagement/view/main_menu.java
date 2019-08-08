@@ -14,11 +14,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import lk.project.shopmanagement.Controller.Login_Controller;
 import lk.project.shopmanagement.Controller.Parts_Controller;
 import lk.project.shopmanagement.Controller.PaymentList_Controller;
 import lk.project.shopmanagement.Controller.Payment_Controller;
 import lk.project.shopmanagement.Controller.Payment_DetailsController;
 import lk.project.shopmanagement.Controller.Vehical_Controller;
+import lk.project.shopmanagement.DTO.LoginDTO;
 import lk.project.shopmanagement.DTO.PartsDTO;
 import lk.project.shopmanagement.DTO.PaymentDTO;
 import lk.project.shopmanagement.DTO.PaymentListDTO;
@@ -278,7 +280,7 @@ public class main_menu extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         change_newpassword_et = new javax.swing.JPasswordField();
         jLabel62 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        change_show_password = new javax.swing.JCheckBox();
         jPanel51 = new javax.swing.JPanel();
         jLabel58 = new javax.swing.JLabel();
         jPanel57 = new javax.swing.JPanel();
@@ -302,12 +304,12 @@ public class main_menu extends javax.swing.JFrame {
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         create_repassword_et = new javax.swing.JPasswordField();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        create_new_password = new javax.swing.JCheckBox();
         jPanel63 = new javax.swing.JPanel();
         btn_createnew_account = new rsbuttom.RSButtonMetro();
-        btn_createnew_account1 = new rsbuttom.RSButtonMetro();
-        btn_createnew_account2 = new rsbuttom.RSButtonMetro();
-        btn_createnew_account3 = new rsbuttom.RSButtonMetro();
+        btn_createnew_search = new rsbuttom.RSButtonMetro();
+        btn_createnew_update = new rsbuttom.RSButtonMetro();
+        btn_createnew_delete = new rsbuttom.RSButtonMetro();
         jPanel56 = new javax.swing.JPanel();
         btn_passwordchange = new rsbuttom.RSButtonMetro();
 
@@ -2163,7 +2165,6 @@ public class main_menu extends javax.swing.JFrame {
         jLabel57.setText("  Password");
 
         change_password_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
-        change_password_et.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel53Layout = new javax.swing.GroupLayout(jPanel53);
         jPanel53.setLayout(jPanel53Layout);
@@ -2189,7 +2190,6 @@ public class main_menu extends javax.swing.JFrame {
         jLabel63.setText("  New Password");
 
         change_newpassword_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
-        change_newpassword_et.setText("jPasswordField2");
 
         javax.swing.GroupLayout jPanel54Layout = new javax.swing.GroupLayout(jPanel54);
         jPanel54.setLayout(jPanel54Layout);
@@ -2207,7 +2207,12 @@ public class main_menu extends javax.swing.JFrame {
             .addComponent(change_newpassword_et, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jCheckBox1.setText("Show Password");
+        change_show_password.setText("Show Password");
+        change_show_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                change_show_passwordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
         jPanel50.setLayout(jPanel50Layout);
@@ -2222,7 +2227,7 @@ public class main_menu extends javax.swing.JFrame {
                 .addComponent(jPanel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel50Layout.createSequentialGroup()
                 .addGap(205, 205, 205)
-                .addComponent(jCheckBox1)
+                .addComponent(change_show_password)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel50Layout.setVerticalGroup(
@@ -2238,7 +2243,7 @@ public class main_menu extends javax.swing.JFrame {
                     .addComponent(jPanel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel62, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(jCheckBox1))
+                .addComponent(change_show_password))
         );
 
         jPanel51.setBackground(new java.awt.Color(245, 245, 245));
@@ -2330,7 +2335,6 @@ public class main_menu extends javax.swing.JFrame {
         jLabel70.setText("Password");
 
         create_password_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
-        create_password_et.setText("jPasswordField3");
 
         javax.swing.GroupLayout jPanel61Layout = new javax.swing.GroupLayout(jPanel61);
         jPanel61.setLayout(jPanel61Layout);
@@ -2356,7 +2360,6 @@ public class main_menu extends javax.swing.JFrame {
         jLabel72.setText("Re-Password");
 
         create_repassword_et.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
-        create_repassword_et.setText("jPasswordField4");
 
         javax.swing.GroupLayout jPanel62Layout = new javax.swing.GroupLayout(jPanel62);
         jPanel62.setLayout(jPanel62Layout);
@@ -2376,7 +2379,12 @@ public class main_menu extends javax.swing.JFrame {
             .addComponent(create_repassword_et, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jCheckBox2.setText("Show Password");
+        create_new_password.setText("Show Password");
+        create_new_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                create_new_passwordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
         jPanel57.setLayout(jPanel57Layout);
@@ -2389,7 +2397,7 @@ public class main_menu extends javax.swing.JFrame {
             .addComponent(jPanel62, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel57Layout.createSequentialGroup()
                 .addGap(201, 201, 201)
-                .addComponent(jCheckBox2)
+                .addComponent(create_new_password)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel57Layout.setVerticalGroup(
@@ -2406,7 +2414,7 @@ public class main_menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox2)
+                .addComponent(create_new_password)
                 .addGap(31, 31, 31))
         );
 
@@ -2416,17 +2424,22 @@ public class main_menu extends javax.swing.JFrame {
         btn_createnew_account.setText("Create Account");
         btn_createnew_account.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        btn_createnew_account1.setBackground(new java.awt.Color(255, 153, 0));
-        btn_createnew_account1.setText("Search");
-        btn_createnew_account1.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_createnew_search.setBackground(new java.awt.Color(255, 153, 0));
+        btn_createnew_search.setText("Search");
+        btn_createnew_search.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_createnew_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_createnew_searchActionPerformed(evt);
+            }
+        });
 
-        btn_createnew_account2.setBackground(new java.awt.Color(255, 153, 0));
-        btn_createnew_account2.setText("Update Question");
-        btn_createnew_account2.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_createnew_update.setBackground(new java.awt.Color(255, 153, 0));
+        btn_createnew_update.setText("Update Question");
+        btn_createnew_update.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        btn_createnew_account3.setBackground(new java.awt.Color(255, 153, 0));
-        btn_createnew_account3.setText("Delete Account");
-        btn_createnew_account3.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_createnew_delete.setBackground(new java.awt.Color(255, 153, 0));
+        btn_createnew_delete.setText("Delete Account");
+        btn_createnew_delete.setColorNormal(new java.awt.Color(255, 153, 0));
 
         javax.swing.GroupLayout jPanel63Layout = new javax.swing.GroupLayout(jPanel63);
         jPanel63.setLayout(jPanel63Layout);
@@ -2435,23 +2448,23 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel63Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_createnew_account1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_createnew_search, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_createnew_account, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_createnew_account2, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_createnew_account3, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_createnew_update, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_createnew_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel63Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_createnew_account1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_createnew_search, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_createnew_account, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_createnew_account3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_createnew_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_createnew_account2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_createnew_update, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(95, 95, 95))
         );
 
@@ -2485,6 +2498,11 @@ public class main_menu extends javax.swing.JFrame {
         btn_passwordchange.setBackground(new java.awt.Color(255, 153, 0));
         btn_passwordchange.setText("Change");
         btn_passwordchange.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_passwordchange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_passwordchangeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel56Layout = new javax.swing.GroupLayout(jPanel56);
         jPanel56.setLayout(jPanel56Layout);
@@ -2613,6 +2631,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //loard payment panel
     private void btn_paymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_paymentActionPerformed
        
         //remove all panel
@@ -2648,6 +2667,7 @@ public class main_menu extends javax.swing.JFrame {
         Calculate_total();
     }//GEN-LAST:event_btn_paymentActionPerformed
 
+    //loard service panel
     private void btn_serviceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_serviceActionPerformed
        
         //remove all panel
@@ -2667,6 +2687,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_serviceActionPerformed
 
+    //load vehical panel
     private void btn_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_vehicalActionPerformed
         
         //remove all panel
@@ -2687,6 +2708,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_vehicalActionPerformed
 
+    //loard parts panel
     private void btn_partsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_partsActionPerformed
         
         //remove all panel
@@ -2707,6 +2729,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_partsActionPerformed
 
+    //loard store panel
     private void btn_storeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_storeActionPerformed
         
         //remove all panel
@@ -2734,6 +2757,7 @@ public class main_menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_part_name_etActionPerformed
 
+    //add data row to order table in payment panel
     private void btn_PartaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PartaddActionPerformed
         
         if(Integer.parseInt(Qty_et.getText())>0)
@@ -2791,6 +2815,7 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.revalidate();
     }//GEN-LAST:event_btn_mounthActionPerformed
 
+    //loard settings panel
     private void btn_settingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_settingsActionPerformed
         //remove all panel
         loard_panel.removeAll();
@@ -2803,6 +2828,7 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.revalidate();
     }//GEN-LAST:event_btn_settingsActionPerformed
 
+    //add new vehical to vehical
     private void btn_add_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_add_vehicalActionPerformed
 
         try {
@@ -2820,6 +2846,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_add_vehicalActionPerformed
 
+    //delete vehical from database
     private void btn_remove_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_remove_vehicalActionPerformed
        
         try {
@@ -2839,6 +2866,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_remove_vehicalActionPerformed
 
+    //search vehical from database
     private void btn_search_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_search_vehicalActionPerformed
        
         try {
@@ -2858,6 +2886,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_search_vehicalActionPerformed
 
+    //update vehical details
     private void btn_update_vehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_update_vehicalActionPerformed
         
         try {
@@ -2880,6 +2909,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_update_vehicalActionPerformed
 
+    //search part in parts panel
     private void btn_searchpartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchpartActionPerformed
         
         try {
@@ -2900,6 +2930,7 @@ public class main_menu extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btn_searchpartActionPerformed
 
+    //add new parts to database
     private void btn_addpartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addpartActionPerformed
         
         try {
@@ -2917,6 +2948,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_addpartActionPerformed
 
+    //remove parts in database
     private void btn_removepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_removepartActionPerformed
         
         try {
@@ -2934,6 +2966,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_removepartActionPerformed
 
+    //update parts
     private void btn_updatepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updatepartActionPerformed
         
         try {
@@ -2977,10 +3010,12 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PartsID_comboboxItemStateChanged
 
+    //load add vehical panel
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         btn_vehicalActionPerformed(evt);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //remove order table data row
     private void btn_partRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_partRemoveActionPerformed
        
         DefaultTableModel dtm = (DefaultTableModel) Table_Orderadd.getModel();
@@ -2993,6 +3028,7 @@ public class main_menu extends javax.swing.JFrame {
         Calculate_total();
     }//GEN-LAST:event_btn_partRemoveActionPerformed
 
+    //palce order form place order button
     private void btn_PlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_PlaceOrderActionPerformed
         
         try {
@@ -3034,6 +3070,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_PlaceOrderActionPerformed
 
+    //after click some bill go to bill details panel
     private void table_paymentListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_paymentListMouseClicked
         
         DefaultTableModel dtm = (DefaultTableModel) table_paymentList.getModel();
@@ -3069,6 +3106,7 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_table_paymentListMouseClicked
 
+    //got to payment list in payment details panel(bill details to search bill)
     private void btn_backserviceListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backserviceListActionPerformed
         
         //remove all panel
@@ -3082,6 +3120,7 @@ public class main_menu extends javax.swing.JFrame {
             service_main.revalidate();
     }//GEN-LAST:event_btn_backserviceListActionPerformed
 
+    //payment panel order qty text box effect
     private void Qty_etFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Qty_etFocusGained
         
         if(Qty_et.getText().equals("0"))
@@ -3089,13 +3128,84 @@ public class main_menu extends javax.swing.JFrame {
             Qty_et.setText("");
         }
     }//GEN-LAST:event_Qty_etFocusGained
-
+    
+    //payment panel order qty text box effect
     private void Qty_etFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Qty_etFocusLost
         if(Qty_et.getText().equals(""))
         {
             Qty_et.setText("0");
         }
     }//GEN-LAST:event_Qty_etFocusLost
+
+    //use to show and hide password in settings panel top chage password
+    private void change_show_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_change_show_passwordActionPerformed
+        
+        if(change_show_password.isSelected())
+        {
+            change_password_et.setEchoChar((char)0);
+            change_newpassword_et.setEchoChar((char)0);
+        }
+        else
+        {
+            change_password_et.setEchoChar('*');
+            change_newpassword_et.setEchoChar('*');
+        }
+    }//GEN-LAST:event_change_show_passwordActionPerformed
+    
+    //use to show and hide password in settings panel bottem create user
+    private void create_new_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_new_passwordActionPerformed
+        
+        if(create_new_password.isSelected())
+        {
+            create_password_et.setEchoChar((char)0);
+            create_repassword_et.setEchoChar((char)0);
+        }
+        else
+        {
+            create_password_et.setEchoChar('*');
+            create_repassword_et.setEchoChar('*');
+        }
+    }//GEN-LAST:event_create_new_passwordActionPerformed
+
+    private void btn_passwordchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_passwordchangeActionPerformed
+        
+        String password = String.valueOf(change_password_et.getPassword());
+        String repassword = String.valueOf(change_newpassword_et.getPassword());
+        
+        try {
+            boolean iscreate = Login_Controller.change_password(new LoginDTO(change_username_et.getText(), password), repassword);
+            
+            if(iscreate){
+                JOptionPane.showMessageDialog(this, "Change your Password");
+                clear_change_password_data();
+            }else
+                JOptionPane.showMessageDialog(this, "Change Faild");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_passwordchangeActionPerformed
+
+    //settings panel search btn
+    private void btn_createnew_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createnew_searchActionPerformed
+        
+        try {
+            LoginDTO loginDTO = Login_Controller.find_user(create_username_et.getText());
+            if(loginDTO!=null)
+            {
+                create_question_combo.setSelectedItem(loginDTO.getQuestion());
+                create_answer_et.setText(loginDTO.getAnswer());
+                create_password_et.setText(loginDTO.getPassword());
+                create_repassword_et.setText(loginDTO.getPassword());
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Account not Found");
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_createnew_searchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3153,9 +3263,9 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_addpart;
     private rsbuttom.RSButtonMetro btn_backserviceList;
     private rsbuttom.RSButtonMetro btn_createnew_account;
-    private rsbuttom.RSButtonMetro btn_createnew_account1;
-    private rsbuttom.RSButtonMetro btn_createnew_account2;
-    private rsbuttom.RSButtonMetro btn_createnew_account3;
+    private rsbuttom.RSButtonMetro btn_createnew_delete;
+    private rsbuttom.RSButtonMetro btn_createnew_search;
+    private rsbuttom.RSButtonMetro btn_createnew_update;
     private rsbuttom.RSButtonMetro btn_mounth;
     private rsbuttom.RSButtonMetro btn_partRemove;
     private rsbuttom.RSButtonMetro btn_parts;
@@ -3180,8 +3290,10 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup5;
     private javax.swing.JPasswordField change_newpassword_et;
     private javax.swing.JPasswordField change_password_et;
+    private javax.swing.JCheckBox change_show_password;
     private javax.swing.JTextField change_username_et;
     private javax.swing.JTextField create_answer_et;
+    private javax.swing.JCheckBox create_new_password;
     private javax.swing.JPasswordField create_password_et;
     private javax.swing.JComboBox create_question_combo;
     private javax.swing.JPasswordField create_repassword_et;
@@ -3189,8 +3301,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3398,7 +3508,7 @@ public class main_menu extends javax.swing.JFrame {
     
     
     
-    //Order ID Genaretor
+    //Order ID Genaretor in payment panel
     private void generateOrderID() {
          try {
             LablePayment_id.setText(Payment_Controller.generateOrderID());
@@ -3407,13 +3517,13 @@ public class main_menu extends javax.swing.JFrame {
         }
     }
     
-    //Order Date Genarator
+    //Order Date Genarator in order panel
      private String formatDate(Date date) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(date);
     }
      
-     //clculate total in payment
+     //clculate total in payment in order panel
      private void Calculate_total()
      {
         DefaultTableModel dtm = (DefaultTableModel) Table_Orderadd.getModel();
@@ -3428,7 +3538,7 @@ public class main_menu extends javax.swing.JFrame {
         
      }
      
-     //clculate total in payment
+     //clculate total in payment services panel secod panel table
      private void Calculate_PaymentList_total()
      {
         DefaultTableModel dtm = (DefaultTableModel) table_billitem.getModel();
@@ -3443,7 +3553,7 @@ public class main_menu extends javax.swing.JFrame {
         
      }
         
-     //Load Vehical Number
+     //Load Vehical Number in payment panel
      private void loadAllVehicalno() throws Exception
      {
          ArrayList<VehicalDTO> allvehicalno = Vehical_Controller.searchAll();
@@ -3453,7 +3563,7 @@ public class main_menu extends javax.swing.JFrame {
          }
      }
      
-     //Load Parts IDs
+     //Load Parts IDs in payment panel
      private void loaddAllPartsid() throws Exception
      {
          ArrayList<PartsDTO> allparts = Parts_Controller.searchallparts();
@@ -3506,7 +3616,7 @@ public class main_menu extends javax.swing.JFrame {
                 
     }
     
-      //loard paymentlist
+      //-------------------------------------------------loard paymentlist------------------------------------------------------------
     private void loardPaymentList() throws Exception
     {
         try
@@ -3546,7 +3656,7 @@ public class main_menu extends javax.swing.JFrame {
         }
                 
     }
-    
+    //------------------------------------------in order form chack this part previous insert or not-------------------------------------
     private int isAlredyExist(String item_code)
     {
         DefaultTableModel dtm = (DefaultTableModel) Table_Orderadd.getModel();
@@ -3560,6 +3670,15 @@ public class main_menu extends javax.swing.JFrame {
             }   
         }
         return -1;
+    }
+    
+    //after chage password clear fields
+    private void clear_change_password_data()
+    {
+        change_username_et.setText("");
+        create_password_et.setText("");
+        create_new_password.setText("");
+        
     }
  
 }

@@ -14,6 +14,7 @@ import lk.project.shopmanagement.DTO.LoginDTO;
  */
 public class Login_Controller {
     
+    //login form is empty
     public static boolean login_isfill(String username , String password)
     {
         if(username.equals("User Name") || password.equals("****************"))
@@ -28,11 +29,12 @@ public class Login_Controller {
         return LoginBusiness.login_validate(loginDTO);
     }
     
+    //forget password panel question
     public static boolean ismatch_answer(LoginDTO loginDTO) throws Exception
     {
         return LoginBusiness.ismatch_answer(loginDTO);
     }
-    
+    //create user in settings panel
     public static boolean creat_user(LoginDTO loginDTO , String repassword) throws Exception
     {
         if(loginDTO.getPassword().equals(repassword))
@@ -41,6 +43,15 @@ public class Login_Controller {
         }
         else
             return false;
+    }
+    //change password in settings panel text box is empty and change
+    public static boolean change_password(LoginDTO loginDTO, String new_pass) throws Exception
+    {
+        if(loginDTO.getUsername().equals("") && loginDTO.getPassword().equals("") && new_pass.equals(""))
+        {
+            return false;
+        }
+        return LoginBusiness.password_change(loginDTO, new_pass);
     }
     
     public static boolean remove_user(String username) throws Exception

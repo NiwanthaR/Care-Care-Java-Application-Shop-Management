@@ -3582,7 +3582,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
-                                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="change_show_password" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3601,7 +3601,7 @@
                                           <Component id="jLabel62" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="15" max="32767" attributes="0"/>
-                                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="change_show_password" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -3705,7 +3705,6 @@
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Montserrat" size="15" style="0"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="jPasswordField1"/>
                                   </Properties>
                                 </Component>
                               </SubComponents>
@@ -3749,17 +3748,19 @@
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Montserrat" size="15" style="0"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="jPasswordField2"/>
                                   </Properties>
                                 </Component>
                               </SubComponents>
                             </Container>
                             <Component class="javax.swing.JLabel" name="jLabel62">
                             </Component>
-                            <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+                            <Component class="javax.swing.JCheckBox" name="change_show_password">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Show Password"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="change_show_passwordActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -3828,7 +3829,7 @@
                                       <Component id="jPanel62" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="create_new_password" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -3847,7 +3848,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jPanel62" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="create_new_password" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -4048,7 +4049,6 @@
                                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                           <Font name="Montserrat" size="15" style="0"/>
                                         </Property>
-                                        <Property name="text" type="java.lang.String" value="jPasswordField3"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
@@ -4096,15 +4096,17 @@
                                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                           <Font name="Montserrat" size="15" style="0"/>
                                         </Property>
-                                        <Property name="text" type="java.lang.String" value="jPasswordField4"/>
                                       </Properties>
                                     </Component>
                                   </SubComponents>
                                 </Container>
-                                <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+                                <Component class="javax.swing.JCheckBox" name="create_new_password">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="Show Password"/>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="create_new_passwordActionPerformed"/>
+                                  </Events>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -4121,10 +4123,10 @@
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="btn_createnew_account1" min="-2" pref="278" max="-2" attributes="0"/>
+                                              <Component id="btn_createnew_search" min="-2" pref="278" max="-2" attributes="0"/>
                                               <Component id="btn_createnew_account" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
-                                              <Component id="btn_createnew_account2" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
-                                              <Component id="btn_createnew_account3" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
+                                              <Component id="btn_createnew_update" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
+                                              <Component id="btn_createnew_delete" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace pref="24" max="32767" attributes="0"/>
                                       </Group>
@@ -4134,13 +4136,13 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="btn_createnew_account1" min="-2" pref="45" max="-2" attributes="0"/>
+                                          <Component id="btn_createnew_search" min="-2" pref="45" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="btn_createnew_account" min="-2" pref="45" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="btn_createnew_account3" min="-2" pref="45" max="-2" attributes="0"/>
+                                          <Component id="btn_createnew_delete" min="-2" pref="45" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="btn_createnew_account2" min="-2" pref="45" max="-2" attributes="0"/>
+                                          <Component id="btn_createnew_update" min="-2" pref="45" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -4158,7 +4160,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="btn_createnew_account1">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_createnew_search">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
@@ -4168,8 +4170,11 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_createnew_searchActionPerformed"/>
+                                  </Events>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="btn_createnew_account2">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_createnew_update">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
@@ -4180,7 +4185,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="btn_createnew_account3">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_createnew_delete">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
@@ -4233,6 +4238,9 @@
                                   <Color blue="0" green="99" red="ff" type="rgb"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_passwordchangeActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
