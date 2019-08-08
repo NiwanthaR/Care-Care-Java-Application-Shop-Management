@@ -32,5 +32,32 @@ public class Login_Controller {
     {
         return LoginBusiness.ismatch_answer(loginDTO);
     }
+    
+    public static boolean creat_user(LoginDTO loginDTO , String repassword) throws Exception
+    {
+        if(loginDTO.getPassword().equals(repassword))
+        {
+            return LoginBusiness.create_user(loginDTO);
+        }
+        else
+            return false;
+    }
+    
+    public static boolean remove_user(String username) throws Exception
+    {
+        return LoginBusiness.remove_user(username);
+    }
+    
+    public static LoginDTO find_user(String username) throws Exception
+    {
+        return LoginBusiness.find_user(username);
+    }
+    
+    public static boolean update_user(LoginDTO loginDTO) throws Exception
+    {
+        return LoginBusiness.update_user(loginDTO);
+    }
+            
+            
    
 }
