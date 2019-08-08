@@ -3627,9 +3627,9 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel59" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel60" min="-2" pref="168" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                          <Component id="jLabel60" min="-2" pref="170" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                           <Component id="change_username_et" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -3675,8 +3675,8 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel56" min="-2" pref="30" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                          <Component id="jLabel57" min="-2" pref="171" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel57" min="-2" pref="170" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                           <Component id="change_password_et" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -3720,10 +3720,10 @@
                                 <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel63" min="-2" pref="176" max="-2" attributes="0"/>
+                                          <Component id="jLabel63" min="-2" pref="170" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                          <Component id="change_newpassword_et" pref="459" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                          <Component id="change_newpassword_et" max="32767" attributes="0"/>
+                                          <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -3917,7 +3917,7 @@
                                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                               <Component id="jLabel66" min="-2" pref="170" max="-2" attributes="0"/>
                                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                              <Component id="create_question_combo" max="32767" attributes="0"/>
+                                              <Component id="create_question_combo" pref="453" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
