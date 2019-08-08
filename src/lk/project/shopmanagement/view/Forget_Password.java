@@ -174,7 +174,7 @@ public class Forget_Password extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel6.setText("New Password");
 
-        security_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Your Question", "What s Your Childhood Nick Name", "What s Your First Vehical", "What s Your First Class Teacher", "What s Your Elder Brother's Name", "What s Your Favourite Country" }));
+        security_combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Your Question", "What s Your Childhood Nick Name", "What s Your First Vehical", "What s Your First Class Teacher", "What s Your Elder Brothers Name", "What s Your Favourite Country" }));
 
         jLabel7.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel7.setText("Answer");
