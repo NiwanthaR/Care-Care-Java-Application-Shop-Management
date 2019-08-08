@@ -37,11 +37,12 @@ public class Login_Controller {
     //create user in settings panel
     public static boolean creat_user(LoginDTO loginDTO , String repassword) throws Exception
     {
-        if(loginDTO.getPassword().equals(repassword))
+        if(loginDTO.getPassword().toString().equals(repassword))
         {
-            return LoginBusiness.create_user(loginDTO);
-        }
-        else
+            System.out.println("awa awa");
+            return LoginBusiness.create_user(loginDTO); 
+        
+        }else
             return false;
     }
     //change password in settings panel text box is empty and change
@@ -64,9 +65,13 @@ public class Login_Controller {
         return LoginBusiness.find_user(username);
     }
     
-    public static boolean update_user(LoginDTO loginDTO) throws Exception
+    public static boolean update_user(LoginDTO loginDTO,String repassword) throws Exception
     {
-        return LoginBusiness.update_user(loginDTO);
+        if(loginDTO.getPassword().toString().equals(repassword))
+            return LoginBusiness.update_user(loginDTO);
+        else
+            return false;
+        
     }
             
             

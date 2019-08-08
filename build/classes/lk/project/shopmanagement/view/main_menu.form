@@ -4159,6 +4159,9 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_createnew_accountActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="rsbuttom.RSButtonMetro" name="btn_createnew_search">
                                   <Properties>
@@ -4184,6 +4187,9 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_createnew_updateActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="rsbuttom.RSButtonMetro" name="btn_createnew_delete">
                                   <Properties>
@@ -4195,6 +4201,9 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_createnew_deleteActionPerformed"/>
+                                  </Events>
                                 </Component>
                               </SubComponents>
                             </Container>

@@ -2423,6 +2423,11 @@ public class main_menu extends javax.swing.JFrame {
         btn_createnew_account.setBackground(new java.awt.Color(255, 153, 0));
         btn_createnew_account.setText("Create Account");
         btn_createnew_account.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_createnew_account.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_createnew_accountActionPerformed(evt);
+            }
+        });
 
         btn_createnew_search.setBackground(new java.awt.Color(255, 153, 0));
         btn_createnew_search.setText("Search");
@@ -2436,10 +2441,20 @@ public class main_menu extends javax.swing.JFrame {
         btn_createnew_update.setBackground(new java.awt.Color(255, 153, 0));
         btn_createnew_update.setText("Update Question");
         btn_createnew_update.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_createnew_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_createnew_updateActionPerformed(evt);
+            }
+        });
 
         btn_createnew_delete.setBackground(new java.awt.Color(255, 153, 0));
         btn_createnew_delete.setText("Delete Account");
         btn_createnew_delete.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_createnew_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_createnew_deleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel63Layout = new javax.swing.GroupLayout(jPanel63);
         jPanel63.setLayout(jPanel63Layout);
@@ -3206,6 +3221,51 @@ public class main_menu extends javax.swing.JFrame {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_createnew_searchActionPerformed
+
+    private void btn_createnew_accountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createnew_accountActionPerformed
+        
+        
+        try {
+            boolean isadded = Login_Controller.creat_user(new LoginDTO(create_username_et.getText(), create_question_combo.getSelectedItem().toString(), create_answer_et.getText(), String.valueOf(create_password_et.getPassword())), String.valueOf(create_repassword_et.getPassword()));
+            if(isadded)
+                JOptionPane.showMessageDialog(this, "Account Created");
+            else
+                JOptionPane.showMessageDialog(this, "Account Create Failed");
+                    
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_createnew_accountActionPerformed
+
+    private void btn_createnew_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createnew_deleteActionPerformed
+        
+        try {
+            boolean isdelete = Login_Controller.remove_user(create_username_et.getText());
+            
+            if(isdelete)
+                JOptionPane.showMessageDialog(this, "Account Deleted");
+            else
+                JOptionPane.showMessageDialog(this, "Account Delete Failed");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_createnew_deleteActionPerformed
+
+    private void btn_createnew_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createnew_updateActionPerformed
+        
+        try {
+            boolean isupdate = Login_Controller.update_user(new LoginDTO(create_username_et.getText(), create_question_combo.getSelectedItem().toString(), create_answer_et.getText(), String.valueOf(create_password_et.getPassword())),String.valueOf(create_repassword_et.getPassword()));
+            
+            if(isupdate)
+                JOptionPane.showMessageDialog(this, "Account Updatede");
+            else
+                JOptionPane.showMessageDialog(this, "Account Update Failed");
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_createnew_updateActionPerformed
 
     /**
      * @param args the command line arguments
