@@ -151,18 +151,18 @@ public class main_menu extends javax.swing.JFrame {
         jPanel46 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        vehicalno_et = new javax.swing.JTextField();
+        search_vehicalno = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        payment_et = new javax.swing.JFormattedTextField();
+        search_vehical_date = new javax.swing.JFormattedTextField();
         jPanel47 = new javax.swing.JPanel();
-        jRadioButton_Number = new javax.swing.JRadioButton();
-        jRadioButton_Date = new javax.swing.JRadioButton();
+        search_number_radio = new javax.swing.JRadioButton();
+        search_date_radio = new javax.swing.JRadioButton();
         jLabel24 = new javax.swing.JLabel();
-        btn_search = new rsbuttom.RSButtonMetro();
+        btn_search_search = new rsbuttom.RSButtonMetro();
         jPanel48 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         table_paymentList = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        btn_go = new javax.swing.JButton();
         search_vehical_panel = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
         jPanel49 = new javax.swing.JPanel();
@@ -931,19 +931,39 @@ public class main_menu extends javax.swing.JFrame {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel19.setText("Vehical NO");
 
-        vehicalno_et.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        search_vehicalno.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         jLabel20.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel20.setText("   Payment Date");
 
-        payment_et.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        search_vehical_date.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
         jPanel47.setBackground(new java.awt.Color(245, 245, 245));
 
-        jRadioButton_Number.setText("Search By Number");
+        search_number_radio.setText("Search By Number");
+        search_number_radio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                search_number_radioFocusGained(evt);
+            }
+        });
+        search_number_radio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_number_radioActionPerformed(evt);
+            }
+        });
 
-        jRadioButton_Date.setText("Search By Date");
+        search_date_radio.setText("Search By Date");
+        search_date_radio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                search_date_radioFocusGained(evt);
+            }
+        });
+        search_date_radio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_date_radioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
@@ -952,20 +972,25 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel47Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton_Date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton_Number, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
+                    .addComponent(search_date_radio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(search_number_radio, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel47Layout.setVerticalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel47Layout.createSequentialGroup()
-                .addComponent(jRadioButton_Number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(search_number_radio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton_Date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(search_date_radio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btn_search.setText("Search");
-        btn_search.setColorNormal(new java.awt.Color(255, 102, 0));
+        btn_search_search.setText("Search");
+        btn_search_search.setColorNormal(new java.awt.Color(255, 102, 0));
+        btn_search_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_search_searchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
@@ -976,15 +1001,15 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(vehicalno_et, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                .addComponent(search_vehicalno, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(payment_et, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                .addComponent(search_vehical_date, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                .addComponent(btn_search_search, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -992,14 +1017,14 @@ public class main_menu extends javax.swing.JFrame {
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_search_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(vehicalno_et)
+            .addComponent(search_vehicalno)
             .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel46Layout.createSequentialGroup()
                 .addGap(2, 2, 2)
                 .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(payment_et)
+            .addComponent(search_vehical_date)
         );
 
         jPanel48.setBackground(new java.awt.Color(245, 245, 245));
@@ -1021,7 +1046,12 @@ public class main_menu extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(table_paymentList);
 
-        jButton2.setText("Go");
+        btn_go.setText("Go");
+        btn_go.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_goActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel48Layout = new javax.swing.GroupLayout(jPanel48);
         jPanel48.setLayout(jPanel48Layout);
@@ -1033,7 +1063,7 @@ public class main_menu extends javax.swing.JFrame {
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel48Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2)))
+                        .addComponent(btn_go)))
                 .addContainerGap())
         );
         jPanel48Layout.setVerticalGroup(
@@ -1042,7 +1072,7 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(btn_go)
                 .addContainerGap())
         );
 
@@ -3267,6 +3297,69 @@ public class main_menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btn_createnew_updateActionPerformed
 
+    private void search_number_radioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_search_number_radioFocusGained
+        
+    }//GEN-LAST:event_search_number_radioFocusGained
+
+    private void search_date_radioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_search_date_radioFocusGained
+        
+    }//GEN-LAST:event_search_date_radioFocusGained
+
+    //use to num radio button is selected date j box off
+    private void search_number_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_number_radioActionPerformed
+        
+        if(search_number_radio.isSelected())
+        {
+            search_date_radio.setSelected(false);
+        }
+    }//GEN-LAST:event_search_number_radioActionPerformed
+
+    //use to date radio button is select nuber button select off
+    private void search_date_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_date_radioActionPerformed
+        if(search_date_radio.isSelected())
+        {
+            search_number_radio.setSelected(false);
+        }
+    }//GEN-LAST:event_search_date_radioActionPerformed
+
+    private void btn_search_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_search_searchActionPerformed
+        
+        if(search_number_radio.isSelected() || search_date_radio.isSelected())
+        {
+            if(search_number_radio.isSelected())
+            {
+                
+                try {
+                    loardPaymentList_by_number();
+                } catch (Exception ex) {
+                    Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }else
+            {
+                
+                try {
+                    loardPaymentList_by_date();
+                } catch (Exception ex) {
+                    Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+        }else
+        {
+            try {
+                loardPaymentList_by_both();
+            } catch (Exception ex) {
+                Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_btn_search_searchActionPerformed
+
+    private void btn_goActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_goActionPerformed
+        
+        JOptionPane.showMessageDialog(this, search_vehical_date.getValue().toString());
+    }//GEN-LAST:event_btn_goActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3326,6 +3419,7 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_createnew_delete;
     private rsbuttom.RSButtonMetro btn_createnew_search;
     private rsbuttom.RSButtonMetro btn_createnew_update;
+    private javax.swing.JButton btn_go;
     private rsbuttom.RSButtonMetro btn_mounth;
     private rsbuttom.RSButtonMetro btn_partRemove;
     private rsbuttom.RSButtonMetro btn_parts;
@@ -3333,7 +3427,7 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_payment;
     private rsbuttom.RSButtonMetro btn_remove_vehical;
     private rsbuttom.RSButtonMetro btn_removepart;
-    private rsbuttom.RSButtonMetro btn_search;
+    private rsbuttom.RSButtonMetro btn_search_search;
     private rsbuttom.RSButtonMetro btn_search_vehical;
     private rsbuttom.RSButtonMetro btn_searchpart;
     private rsbuttom.RSButtonMetro btn_service;
@@ -3359,7 +3453,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPasswordField create_repassword_et;
     private javax.swing.JTextField create_username_et;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -3497,8 +3590,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton_Date;
-    private javax.swing.JRadioButton jRadioButton_Number;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -3522,10 +3613,13 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField part_qty_et;
     private javax.swing.JTextField parts_sellprice_et;
     private javax.swing.JLabel payment_date;
-    private javax.swing.JFormattedTextField payment_et;
     private javax.swing.JPanel payment_panel;
+    private javax.swing.JRadioButton search_date_radio;
+    private javax.swing.JRadioButton search_number_radio;
     private javax.swing.JPanel search_selling_panel;
+    private javax.swing.JFormattedTextField search_vehical_date;
     private javax.swing.JPanel search_vehical_panel;
+    private javax.swing.JTextField search_vehicalno;
     private javax.swing.JPanel service_main;
     private javax.swing.JPanel service_panel;
     private javax.swing.JPanel settings_panel;
@@ -3540,7 +3634,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField vehical_no_et;
     private javax.swing.JPanel vehical_panel;
     private javax.swing.JComboBox vehicalno_combobox;
-    private javax.swing.JTextField vehicalno_et;
     // End of variables declaration//GEN-END:variables
 
     //After submit clear Fields in Vehical
@@ -3681,8 +3774,69 @@ public class main_menu extends javax.swing.JFrame {
     {
         try
         {
-            DefaultTableModel dtm = (DefaultTableModel) table_paymentList.getModel();
+         DefaultTableModel dtm = (DefaultTableModel) table_paymentList.getModel();
         ArrayList<PaymentListDTO> paymentList = PaymentList_Controller.loadAllPayment();
+        dtm.setRowCount(0);
+        
+        for(PaymentListDTO paymentListDTO : paymentList)
+        {
+            Object[] rowData = {paymentListDTO.getPaymentID(),paymentListDTO.getPaymentDATE(),paymentListDTO.getVehicalNO(),paymentListDTO.getPaymentCOST()+".00"};
+            dtm.addRow(rowData);
+        }
+        }catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex);
+        }
+    }
+    
+    
+     //-------------------------------------------------loard paymentlist by date------------------------------------------------------------
+    private void loardPaymentList_by_number() throws Exception
+    {
+        try
+        {
+         DefaultTableModel dtm = (DefaultTableModel) table_paymentList.getModel();
+        ArrayList<PaymentListDTO> paymentList = PaymentList_Controller.findby_number(search_vehicalno.getText());
+        dtm.setRowCount(0);
+        
+        for(PaymentListDTO paymentListDTO : paymentList)
+        {
+            Object[] rowData = {paymentListDTO.getPaymentID(),paymentListDTO.getPaymentDATE(),paymentListDTO.getVehicalNO(),paymentListDTO.getPaymentCOST()+".00"};
+            dtm.addRow(rowData);
+        }
+        }catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex);
+        }
+    }
+    
+    //-------------------------------------------------loard paymentlist by date------------------------------------------------------------
+    private void loardPaymentList_by_date() throws Exception
+    {
+        try
+        {
+         DefaultTableModel dtm = (DefaultTableModel) table_paymentList.getModel();
+        ArrayList<PaymentListDTO> paymentList = PaymentList_Controller.findby_date(search_vehical_date.getText());
+        dtm.setRowCount(0);
+        
+        for(PaymentListDTO paymentListDTO : paymentList)
+        {
+            Object[] rowData = {paymentListDTO.getPaymentID(),paymentListDTO.getPaymentDATE(),paymentListDTO.getVehicalNO(),paymentListDTO.getPaymentCOST()+".00"};
+            dtm.addRow(rowData);
+        }
+        }catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex);
+        }
+    }
+    
+    //-------------------------------------------------loard paymentlist by both------------------------------------------------------------
+    private void loardPaymentList_by_both() throws Exception
+    {
+        try
+        {
+         DefaultTableModel dtm = (DefaultTableModel) table_paymentList.getModel();
+        ArrayList<PaymentListDTO> paymentList = PaymentList_Controller.findby_both(search_vehicalno.getText(),search_vehical_date.getText());
         dtm.setRowCount(0);
         
         for(PaymentListDTO paymentListDTO : paymentList)

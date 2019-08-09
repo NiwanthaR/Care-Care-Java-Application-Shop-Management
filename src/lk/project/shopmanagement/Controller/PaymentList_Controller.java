@@ -19,4 +19,20 @@ public class PaymentList_Controller {
     {
         return PaymentListBusiness.findAllList();
     }
+    
+    public static ArrayList<PaymentListDTO> findby_number(String num) throws Exception
+    {
+        return PaymentListBusiness.findby_number(num);
+    }
+    
+    public static ArrayList<PaymentListDTO> findby_date(String date) throws Exception
+    {
+        return PaymentListBusiness.findby_date(date);
+    }
+    
+    public static ArrayList<PaymentListDTO> findby_both(String num , String date) throws Exception
+    {
+        return PaymentListBusiness.findby_both(num, date);
+    }
+    
 }

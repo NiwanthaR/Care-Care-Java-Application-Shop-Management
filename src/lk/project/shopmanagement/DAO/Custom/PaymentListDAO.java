@@ -14,5 +14,8 @@ import lk.project.shopmanagement.entity.PaymentList;
  * @author NIWANTHA
  */
 public interface PaymentListDAO extends CrudDAO<PaymentList, String>{
-         
+    
+    public ArrayList<PaymentList> findby_number(String number) throws Exception;
+    public ArrayList<PaymentList> findby_Date(String date) throws Exception;
+    public ArrayList<PaymentList> findby_both(String number,String date) throws Exception;
 }

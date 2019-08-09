@@ -48,5 +48,40 @@ public class PaymentListDAOImpl implements PaymentListDAO{
         }
         return paymentLists;
     }
+
+    @Override
+    public ArrayList<PaymentList> findby_number(String number) throws Exception {
+        ArrayList<PaymentList> paymentLists = new ArrayList<>();
+        ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM PAYMENT WHERE vehical_no='"+number+"' ");
+        while(rst.next())
+        {
+            paymentLists.add(new PaymentList(rst.getString("payment_id"), rst.getString("payment_date"), rst.getInt("payment_cost"), rst.getString("vehical_no")));
+        }
+        return paymentLists;
+    }
+
+    @Override
+    public ArrayList<PaymentList> findby_Date(String date) throws Exception {
+        ArrayList<PaymentList> paymentLists = new ArrayList<>();
+        ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM PAYMENT WHERE payment_date='"+date+"' ");
+        while(rst.next())
+        {
+            paymentLists.add(new PaymentList(rst.getString("payment_id"), rst.getString("payment_date"), rst.getInt("payment_cost"), rst.getString("vehical_no")));
+        }
+        return paymentLists;
+    }
+
+    @Override
+    public ArrayList<PaymentList> findby_both(String number, String date) throws Exception {
+        ArrayList<PaymentList> paymentLists = new ArrayList<>();
+        ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT * FROM PAYMENT where payment_date='"+date+"' AND vehical_no='"+number+"'");
+        while(rst.next())
+        {
+            paymentLists.add(new PaymentList(rst.getString("payment_id"), rst.getString("payment_date"), rst.getInt("payment_cost"), rst.getString("vehical_no")));
+        }
+        return paymentLists;
+    }
+
+  
     
 }

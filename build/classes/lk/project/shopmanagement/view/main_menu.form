@@ -1285,15 +1285,15 @@
                                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                               <Component id="jLabel19" min="-2" pref="125" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="vehicalno_et" pref="147" max="32767" attributes="0"/>
+                                              <Component id="search_vehicalno" pref="147" max="32767" attributes="0"/>
                                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                               <Component id="jLabel20" min="-2" pref="155" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="payment_et" pref="155" max="32767" attributes="0"/>
+                                              <Component id="search_vehical_date" pref="155" max="32767" attributes="0"/>
                                               <EmptySpace min="-2" max="-2" attributes="0"/>
                                               <Component id="jPanel47" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                              <Component id="btn_search" pref="172" max="32767" attributes="0"/>
+                                              <Component id="btn_search_search" pref="172" max="32767" attributes="0"/>
                                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                               <Component id="jLabel24" min="-2" pref="25" max="-2" attributes="0"/>
                                           </Group>
@@ -1303,15 +1303,15 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel18" max="32767" attributes="0"/>
                                           <Component id="jLabel24" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="btn_search" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="btn_search_search" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jPanel47" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="vehicalno_et" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="search_vehicalno" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel19" alignment="1" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                                               <Component id="jLabel20" max="32767" attributes="0"/>
                                           </Group>
-                                          <Component id="payment_et" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="search_vehical_date" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
@@ -1327,7 +1327,7 @@
                                         <Property name="text" type="java.lang.String" value="Vehical NO"/>
                                       </Properties>
                                     </Component>
-                                    <Component class="javax.swing.JTextField" name="vehicalno_et">
+                                    <Component class="javax.swing.JTextField" name="search_vehicalno">
                                       <Properties>
                                         <Property name="horizontalAlignment" type="int" value="2"/>
                                       </Properties>
@@ -1341,7 +1341,7 @@
                                         <Property name="text" type="java.lang.String" value="   Payment Date"/>
                                       </Properties>
                                     </Component>
-                                    <Component class="javax.swing.JFormattedTextField" name="payment_et">
+                                    <Component class="javax.swing.JFormattedTextField" name="search_vehical_date">
                                       <Properties>
                                         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                                           <Format subtype="1" type="1"/>
@@ -1361,8 +1361,8 @@
                                               <Group type="102" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jRadioButton_Date" max="32767" attributes="0"/>
-                                                      <Component id="jRadioButton_Number" alignment="0" pref="162" max="32767" attributes="0"/>
+                                                      <Component id="search_date_radio" max="32767" attributes="0"/>
+                                                      <Component id="search_number_radio" alignment="0" pref="162" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                               </Group>
@@ -1371,35 +1371,46 @@
                                         <DimensionLayout dim="1">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jRadioButton_Number" max="32767" attributes="0"/>
+                                                  <Component id="search_number_radio" max="32767" attributes="0"/>
                                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jRadioButton_Date" max="32767" attributes="0"/>
+                                                  <Component id="search_date_radio" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
                                       </Layout>
                                       <SubComponents>
-                                        <Component class="javax.swing.JRadioButton" name="jRadioButton_Number">
+                                        <Component class="javax.swing.JRadioButton" name="search_number_radio">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Search By Number"/>
                                           </Properties>
+                                          <Events>
+                                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="search_number_radioFocusGained"/>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="search_number_radioActionPerformed"/>
+                                          </Events>
                                         </Component>
-                                        <Component class="javax.swing.JRadioButton" name="jRadioButton_Date">
+                                        <Component class="javax.swing.JRadioButton" name="search_date_radio">
                                           <Properties>
                                             <Property name="text" type="java.lang.String" value="Search By Date"/>
                                           </Properties>
+                                          <Events>
+                                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="search_date_radioFocusGained"/>
+                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="search_date_radioActionPerformed"/>
+                                          </Events>
                                         </Component>
                                       </SubComponents>
                                     </Container>
                                     <Component class="javax.swing.JLabel" name="jLabel24">
                                     </Component>
-                                    <Component class="rsbuttom.RSButtonMetro" name="btn_search">
+                                    <Component class="rsbuttom.RSButtonMetro" name="btn_search_search">
                                       <Properties>
                                         <Property name="text" type="java.lang.String" value="Search"/>
                                         <Property name="colorNormal" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="0" green="66" red="ff" type="rgb"/>
                                         </Property>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_search_searchActionPerformed"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -1419,7 +1430,7 @@
                                                   <Component id="jScrollPane5" alignment="1" max="32767" attributes="0"/>
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="btn_go" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -1432,7 +1443,7 @@
                                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                               <Component id="jScrollPane5" pref="539" max="32767" attributes="0"/>
                                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btn_go" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -1494,10 +1505,13 @@
                                         </Component>
                                       </SubComponents>
                                     </Container>
-                                    <Component class="javax.swing.JButton" name="jButton2">
+                                    <Component class="javax.swing.JButton" name="btn_go">
                                       <Properties>
                                         <Property name="text" type="java.lang.String" value="Go"/>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_goActionPerformed"/>
+                                      </Events>
                                     </Component>
                                   </SubComponents>
                                 </Container>
