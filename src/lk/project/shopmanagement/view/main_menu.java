@@ -153,12 +153,12 @@ public class main_menu extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         search_vehicalno = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        search_vehical_date = new javax.swing.JFormattedTextField();
         jPanel47 = new javax.swing.JPanel();
         search_number_radio = new javax.swing.JRadioButton();
         search_date_radio = new javax.swing.JRadioButton();
         jLabel24 = new javax.swing.JLabel();
         btn_search_search = new rsbuttom.RSButtonMetro();
+        search_vehical_date = new javax.swing.JTextField();
         jPanel48 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         table_paymentList = new javax.swing.JTable();
@@ -931,13 +931,12 @@ public class main_menu extends javax.swing.JFrame {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel19.setText("Vehical NO");
 
+        search_vehicalno.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
         search_vehicalno.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         jLabel20.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel20.setText("   Payment Date");
-
-        search_vehical_date.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
 
         jPanel47.setBackground(new java.awt.Color(245, 245, 245));
 
@@ -992,6 +991,8 @@ public class main_menu extends javax.swing.JFrame {
             }
         });
 
+        search_vehical_date.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
+
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
@@ -1001,15 +1002,15 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(search_vehicalno, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                .addComponent(search_vehicalno, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(search_vehical_date, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(search_vehical_date, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(btn_search_search, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                .addComponent(btn_search_search, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -1021,10 +1022,8 @@ public class main_menu extends javax.swing.JFrame {
             .addComponent(jPanel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(search_vehicalno)
             .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel46Layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(search_vehical_date)
+            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel48.setBackground(new java.awt.Color(245, 245, 245));
@@ -3357,7 +3356,7 @@ public class main_menu extends javax.swing.JFrame {
 
     private void btn_goActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_goActionPerformed
         
-        JOptionPane.showMessageDialog(this, search_vehical_date.getValue().toString());
+        JOptionPane.showMessageDialog(this, search_vehical_date.toString());
     }//GEN-LAST:event_btn_goActionPerformed
 
     /**
@@ -3617,7 +3616,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JRadioButton search_date_radio;
     private javax.swing.JRadioButton search_number_radio;
     private javax.swing.JPanel search_selling_panel;
-    private javax.swing.JFormattedTextField search_vehical_date;
+    private javax.swing.JTextField search_vehical_date;
     private javax.swing.JPanel search_vehical_panel;
     private javax.swing.JTextField search_vehicalno;
     private javax.swing.JPanel service_main;
