@@ -9,7 +9,7 @@ package lk.project.shopmanagement.entity;
  *
  * @author NIWANTHA
  */
-public class Oppretion {
+public class Opperation {
     
     private String payment_id;
     private String part_id;
@@ -18,10 +18,10 @@ public class Oppretion {
     private String part_name;
     private String part_brand;
 
-    public Oppretion() {
+    public Opperation() {
     }
 
-    public Oppretion(String payment_id, String part_id, int qty, int unite_price, String part_name, String part_brand) {
+    public Opperation(String payment_id, String part_id, int qty, int unite_price, String part_name, String part_brand) {
         this.payment_id = payment_id;
         this.part_id = part_id;
         this.qty = qty;
