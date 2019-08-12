@@ -262,6 +262,20 @@ public class main_menu extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tableStore = new javax.swing.JTable();
         oparetion_panel = new javax.swing.JPanel();
+        jPanel64 = new javax.swing.JPanel();
+        jLabel73 = new javax.swing.JLabel();
+        jPanel65 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        opperation_table = new javax.swing.JTable();
+        jLabel76 = new javax.swing.JLabel();
+        opperation_total = new javax.swing.JLabel();
+        jPanel66 = new javax.swing.JPanel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        opperation_count = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        opperation_date = new javax.swing.JLabel();
         mounthly_panel = new javax.swing.JPanel();
         settings_panel = new javax.swing.JPanel();
         jLabel54 = new javax.swing.JLabel();
@@ -2117,18 +2131,132 @@ public class main_menu extends javax.swing.JFrame {
 
         loard_panel.add(store_panel, "card2");
 
-        oparetion_panel.setBackground(new java.awt.Color(255, 255, 204));
+        oparetion_panel.setBackground(new java.awt.Color(245, 245, 245));
         oparetion_panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, new java.awt.Color(255, 255, 255), java.awt.Color.white));
+
+        jPanel64.setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel73.setBackground(new java.awt.Color(245, 245, 245));
+        jLabel73.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
+        jLabel73.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel73.setText("Today Opperation's");
+
+        javax.swing.GroupLayout jPanel64Layout = new javax.swing.GroupLayout(jPanel64);
+        jPanel64.setLayout(jPanel64Layout);
+        jPanel64Layout.setHorizontalGroup(
+            jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel64Layout.setVerticalGroup(
+            jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+
+        jPanel65.setBackground(new java.awt.Color(245, 245, 245));
+
+        opperation_table.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        opperation_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Payment ID", "Payment Date", "Vehical No", "Payment Cost"
+            }
+        ));
+        opperation_table.setRowHeight(30);
+        jScrollPane7.setViewportView(opperation_table);
+
+        jLabel76.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel76.setText("Total In Come");
+
+        opperation_total.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        opperation_total.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout jPanel65Layout = new javax.swing.GroupLayout(jPanel65);
+        jPanel65.setLayout(jPanel65Layout);
+        jPanel65Layout.setHorizontalGroup(
+            jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel65Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7)
+                    .addGroup(jPanel65Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(opperation_total, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel65Layout.setVerticalGroup(
+            jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel65Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                    .addComponent(opperation_total, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        jPanel66.setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel74.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel74.setText("Total Transaction");
+
+        opperation_count.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+
+        jLabel77.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel77.setText("Date");
+
+        opperation_date.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        opperation_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanel66Layout = new javax.swing.GroupLayout(jPanel66);
+        jPanel66.setLayout(jPanel66Layout);
+        jPanel66Layout.setHorizontalGroup(
+            jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel66Layout.createSequentialGroup()
+                .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(opperation_count, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(opperation_date, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+        );
+        jPanel66Layout.setVerticalGroup(
+            jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+            .addComponent(opperation_count, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(opperation_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout oparetion_panelLayout = new javax.swing.GroupLayout(oparetion_panel);
         oparetion_panel.setLayout(oparetion_panelLayout);
         oparetion_panelLayout.setHorizontalGroup(
             oparetion_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 989, Short.MAX_VALUE)
+            .addComponent(jPanel64, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel65, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         oparetion_panelLayout.setVerticalGroup(
             oparetion_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 674, Short.MAX_VALUE)
+            .addGroup(oparetion_panelLayout.createSequentialGroup()
+                .addComponent(jPanel64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         loard_panel.add(oparetion_panel, "card2");
@@ -2844,6 +2972,24 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.add(oparetion_panel);
         loard_panel.repaint();
         loard_panel.revalidate();
+        
+        
+        // Setting current date
+        Date date = new Date();
+        String formatDate = formatDate(date);
+        opperation_date.setText(formatDate);
+        
+        //loard today transaction
+        try {
+            loardPaymentList_in_OpperationPanel();
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //tarnsaction count
+        opperation_count.setText("       "+String.valueOf(opperation_table.getRowCount()));
+        
+        //calculate total
+        Calculate_total_in_opperation_panel();
     }//GEN-LAST:event_btn_todayActionPerformed
 
     private void btn_mounthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mounthActionPerformed
@@ -3523,6 +3669,12 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
@@ -3586,6 +3738,9 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel61;
     private javax.swing.JPanel jPanel62;
     private javax.swing.JPanel jPanel63;
+    private javax.swing.JPanel jPanel64;
+    private javax.swing.JPanel jPanel65;
+    private javax.swing.JPanel jPanel66;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
@@ -3595,11 +3750,16 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JLabel lable_paymentlist_cost;
     private javax.swing.JPanel loard_panel;
     private javax.swing.JPanel menu_panel;
     private javax.swing.JPanel mounthly_panel;
     private javax.swing.JPanel oparetion_panel;
+    private javax.swing.JLabel opperation_count;
+    private javax.swing.JLabel opperation_date;
+    private javax.swing.JTable opperation_table;
+    private javax.swing.JLabel opperation_total;
     private javax.swing.JTextField owner_address;
     private javax.swing.JTextField owner_contact_et;
     private javax.swing.JTextField owner_name_et;
@@ -3689,6 +3849,22 @@ public class main_menu extends javax.swing.JFrame {
         Lable_total.setText(total+"0");
         
      }
+     
+     //clculate total in payment in order panel
+     private void Calculate_total_in_opperation_panel()
+     {
+        DefaultTableModel dtm = (DefaultTableModel) opperation_table.getModel();
+        double total = 0;
+        
+        for(int i =0; i<dtm.getRowCount() ;i++)
+        {
+            //total += (double)dtm.getValueAt(i, 4); 
+            total += Double.valueOf((String) dtm.getValueAt(i,3)); 
+        }
+        opperation_total.setText(total+"0");
+        
+     }
+     
      
      //clculate total in payment services panel secod panel table
      private void Calculate_PaymentList_total()
@@ -3816,6 +3992,26 @@ public class main_menu extends javax.swing.JFrame {
         {
          DefaultTableModel dtm = (DefaultTableModel) table_paymentList.getModel();
         ArrayList<PaymentListDTO> paymentList = PaymentList_Controller.findby_date(search_vehical_date.getText());
+        dtm.setRowCount(0);
+        
+        for(PaymentListDTO paymentListDTO : paymentList)
+        {
+            Object[] rowData = {paymentListDTO.getPaymentID(),paymentListDTO.getPaymentDATE(),paymentListDTO.getVehicalNO(),paymentListDTO.getPaymentCOST()+".00"};
+            dtm.addRow(rowData);
+        }
+        }catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex);
+        }
+    }
+    
+    //-------------------------------------------------loard paymentlist by date------------------------------------------------------------
+    private void loardPaymentList_in_OpperationPanel() throws Exception
+    {
+        try
+        {
+         DefaultTableModel dtm = (DefaultTableModel) opperation_table.getModel();
+        ArrayList<PaymentListDTO> paymentList = PaymentList_Controller.findby_date(opperation_date.getText());
         dtm.setRowCount(0);
         
         for(PaymentListDTO paymentListDTO : paymentList)
