@@ -15,12 +15,14 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import lk.project.shopmanagement.Controller.Login_Controller;
+import lk.project.shopmanagement.Controller.Opperation_Controller;
 import lk.project.shopmanagement.Controller.Parts_Controller;
 import lk.project.shopmanagement.Controller.PaymentList_Controller;
 import lk.project.shopmanagement.Controller.Payment_Controller;
 import lk.project.shopmanagement.Controller.Payment_DetailsController;
 import lk.project.shopmanagement.Controller.Vehical_Controller;
 import lk.project.shopmanagement.DTO.LoginDTO;
+import lk.project.shopmanagement.DTO.OpperetionDTO;
 import lk.project.shopmanagement.DTO.PartsDTO;
 import lk.project.shopmanagement.DTO.PaymentDTO;
 import lk.project.shopmanagement.DTO.PaymentListDTO;
@@ -2160,7 +2162,7 @@ public class main_menu extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Payment ID", "Payment Date", "Vehical No", "Payment Cost"
+                "Payment ID", "Part ID", "Part Qty", "Part Unte Price", "Part Name", "Part Brand"
             }
         ));
         opperation_table.setRowHeight(30);
@@ -3855,11 +3857,15 @@ public class main_menu extends javax.swing.JFrame {
      {
         DefaultTableModel dtm = (DefaultTableModel) opperation_table.getModel();
         double total = 0;
+        double x=0;
+        double y=0;
         
         for(int i =0; i<dtm.getRowCount() ;i++)
         {
             //total += (double)dtm.getValueAt(i, 4); 
-            total += Double.valueOf((String) dtm.getValueAt(i,3)); 
+            x=Double.valueOf((int) dtm.getValueAt(i,3));
+            y=Double.valueOf((int) dtm.getValueAt(i,2));
+            total += x*y; 
         }
         opperation_total.setText(total+"0");
         
@@ -4011,12 +4017,12 @@ public class main_menu extends javax.swing.JFrame {
         try
         {
          DefaultTableModel dtm = (DefaultTableModel) opperation_table.getModel();
-        ArrayList<PaymentListDTO> paymentList = PaymentList_Controller.findby_date(opperation_date.getText());
+        ArrayList<OpperetionDTO> opperetionDTOs = Opperation_Controller.findby_opperation_list(opperation_date.getText());
         dtm.setRowCount(0);
         
-        for(PaymentListDTO paymentListDTO : paymentList)
+        for(OpperetionDTO opperetion_list : opperetionDTOs)
         {
-            Object[] rowData = {paymentListDTO.getPaymentID(),paymentListDTO.getPaymentDATE(),paymentListDTO.getVehicalNO(),paymentListDTO.getPaymentCOST()+".00"};
+            Object[] rowData = {opperetion_list.getPayment_id(),opperetion_list.getPart_id(),opperetion_list.getQty(),opperetion_list.getUnite_price(),opperetion_list.getPart_name(),opperetion_list.getPart_brand()};
             dtm.addRow(rowData);
         }
         }catch(Exception ex)
