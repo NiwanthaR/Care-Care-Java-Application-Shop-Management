@@ -10,6 +10,7 @@ package lk.project.shopmanagement.view;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -28,6 +29,11 @@ import lk.project.shopmanagement.DTO.PaymentDTO;
 import lk.project.shopmanagement.DTO.PaymentListDTO;
 import lk.project.shopmanagement.DTO.Payment_DetailsDTO;
 import lk.project.shopmanagement.DTO.VehicalDTO;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot3D;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -271,6 +277,7 @@ public class main_menu extends javax.swing.JFrame {
         opperation_table = new javax.swing.JTable();
         jLabel76 = new javax.swing.JLabel();
         opperation_total = new javax.swing.JLabel();
+        chart_view = new rsbuttom.RSButtonMetro();
         jPanel66 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
@@ -2174,6 +2181,13 @@ public class main_menu extends javax.swing.JFrame {
         opperation_total.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         opperation_total.setForeground(new java.awt.Color(255, 0, 0));
 
+        chart_view.setText("Chart View");
+        chart_view.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chart_viewActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel65Layout = new javax.swing.GroupLayout(jPanel65);
         jPanel65.setLayout(jPanel65Layout);
         jPanel65Layout.setHorizontalGroup(
@@ -2181,12 +2195,14 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel65Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
                     .addGroup(jPanel65Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(opperation_total, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(chart_view, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -2198,7 +2214,11 @@ public class main_menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                    .addComponent(opperation_total, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(opperation_total, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel65Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(chart_view, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -3507,6 +3527,23 @@ public class main_menu extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, search_vehical_date.toString());
     }//GEN-LAST:event_btn_goActionPerformed
 
+    private void chart_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chart_viewActionPerformed
+        
+        DefaultPieDataset pieDataset = new DefaultPieDataset();
+        pieDataset.setValue("TOYOTA", new Integer(80));
+        pieDataset.setValue("HONDA", new Integer(60));
+        pieDataset.setValue("KIA", new Integer(19));
+        pieDataset.setValue("NISSAN", new Integer(42));
+        pieDataset.setValue("LAND ROVER", new Integer(5));
+        
+        JFreeChart chart = ChartFactory.createPieChart3D("Pie Chart", pieDataset, true, true, true);
+        PiePlot3D p = (PiePlot3D)chart.getPlot();
+        ChartFrame chartFrame = new ChartFrame("Daily Sale Chart", chart);
+        chartFrame.setVisible(true);
+        chartFrame.setSize(800,550);
+        chartFrame.setAlwaysOnTop(true);
+    }//GEN-LAST:event_chart_viewActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3593,6 +3630,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPasswordField change_password_et;
     private javax.swing.JCheckBox change_show_password;
     private javax.swing.JTextField change_username_et;
+    private rsbuttom.RSButtonMetro chart_view;
     private javax.swing.JTextField create_answer_et;
     private javax.swing.JCheckBox create_new_password;
     private javax.swing.JPasswordField create_password_et;
