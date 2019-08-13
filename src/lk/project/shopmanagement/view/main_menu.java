@@ -7,6 +7,7 @@ package lk.project.shopmanagement.view;
 
 
 
+import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,6 +33,7 @@ import lk.project.shopmanagement.DTO.VehicalDTO;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PiePlot3D;
 import org.jfree.data.general.DefaultPieDataset;
 
@@ -3536,8 +3538,9 @@ public class main_menu extends javax.swing.JFrame {
         pieDataset.setValue("NISSAN", new Integer(42));
         pieDataset.setValue("LAND ROVER", new Integer(5));
         
-        JFreeChart chart = ChartFactory.createPieChart3D("Pie Chart", pieDataset, true, true, true);
+        JFreeChart chart = ChartFactory.createPieChart3D("Daily Sale Chart", pieDataset, true, true, true);
         PiePlot3D p = (PiePlot3D)chart.getPlot();
+        chart.setBackgroundPaint(Color.WHITE);
         ChartFrame chartFrame = new ChartFrame("Daily Sale Chart", chart);
         chartFrame.setVisible(true);
         chartFrame.setSize(800,550);
