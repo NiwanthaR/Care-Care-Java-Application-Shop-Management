@@ -288,6 +288,31 @@ public class main_menu extends javax.swing.JFrame {
         jLabel78 = new javax.swing.JLabel();
         opperation_date = new javax.swing.JLabel();
         mounthly_panel = new javax.swing.JPanel();
+        jLabel79 = new javax.swing.JLabel();
+        jPanel67 = new javax.swing.JPanel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        panel_chart = new javax.swing.JPanel();
+        jPanel69 = new javax.swing.JPanel();
+        jPanel70 = new javax.swing.JPanel();
+        rSButtonMetro1 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro2 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro3 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro4 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro5 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro6 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro7 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro8 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro9 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro10 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro11 = new rsbuttom.RSButtonMetro();
+        rSButtonMetro12 = new rsbuttom.RSButtonMetro();
+        jPanel68 = new javax.swing.JPanel();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
         settings_panel = new javax.swing.JPanel();
         jLabel54 = new javax.swing.JLabel();
         jPanel44 = new javax.swing.JPanel();
@@ -2285,18 +2310,222 @@ public class main_menu extends javax.swing.JFrame {
 
         loard_panel.add(oparetion_panel, "card2");
 
-        mounthly_panel.setBackground(new java.awt.Color(204, 51, 255));
+        mounthly_panel.setBackground(new java.awt.Color(245, 245, 245));
         mounthly_panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, new java.awt.Color(255, 255, 255), java.awt.Color.white));
+
+        jLabel79.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
+        jLabel79.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel79.setText("Mounthly Opperation");
+
+        jPanel67.setBackground(new java.awt.Color(245, 245, 245));
+
+        jLabel80.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+
+        jLabel81.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel81.setText("Sale Report");
+
+        javax.swing.GroupLayout panel_chartLayout = new javax.swing.GroupLayout(panel_chart);
+        panel_chart.setLayout(panel_chartLayout);
+        panel_chartLayout.setHorizontalGroup(
+            panel_chartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panel_chartLayout.setVerticalGroup(
+            panel_chartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 481, Short.MAX_VALUE)
+        );
+
+        rSButtonMetro1.setText("January");
+        rSButtonMetro1.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro1.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro2.setText("February");
+        rSButtonMetro2.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro2.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro3.setText("July");
+        rSButtonMetro3.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro3.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro4.setText("August");
+        rSButtonMetro4.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro4.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro5.setText("March");
+        rSButtonMetro5.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro5.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro6.setText("April");
+        rSButtonMetro6.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro6.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro7.setText("September");
+        rSButtonMetro7.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro7.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro8.setText("October");
+        rSButtonMetro8.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro8.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro9.setText("May");
+        rSButtonMetro9.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro9.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro10.setText("Juny");
+        rSButtonMetro10.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro10.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro11.setText("November");
+        rSButtonMetro11.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro11.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        rSButtonMetro12.setText("December");
+        rSButtonMetro12.setColorHover(new java.awt.Color(255, 102, 0));
+        rSButtonMetro12.setColorNormal(new java.awt.Color(255, 153, 0));
+
+        javax.swing.GroupLayout jPanel70Layout = new javax.swing.GroupLayout(jPanel70);
+        jPanel70.setLayout(jPanel70Layout);
+        jPanel70Layout.setHorizontalGroup(
+            jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel70Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel70Layout.createSequentialGroup()
+                        .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(rSButtonMetro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rSButtonMetro7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(rSButtonMetro8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rSButtonMetro11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(rSButtonMetro12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel70Layout.createSequentialGroup()
+                        .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rSButtonMetro5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(rSButtonMetro6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rSButtonMetro9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(rSButtonMetro10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel70Layout.setVerticalGroup(
+            jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel70Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                            .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(rSButtonMetro5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(rSButtonMetro6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(rSButtonMetro9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(rSButtonMetro10, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(rSButtonMetro4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(rSButtonMetro7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(rSButtonMetro8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(rSButtonMetro11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(rSButtonMetro12, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel85.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel85.setText("Item Count");
+
+        jLabel83.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel83.setText("Total Coust");
+
+        javax.swing.GroupLayout jPanel68Layout = new javax.swing.GroupLayout(jPanel68);
+        jPanel68.setLayout(jPanel68Layout);
+        jPanel68Layout.setHorizontalGroup(
+            jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel68Layout.createSequentialGroup()
+                .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel84, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel68Layout.setVerticalGroup(
+            jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel82, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel83, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel84, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel85, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel69Layout = new javax.swing.GroupLayout(jPanel69);
+        jPanel69.setLayout(jPanel69Layout);
+        jPanel69Layout.setHorizontalGroup(
+            jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel70, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel69Layout.setVerticalGroup(
+            jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel69Layout.createSequentialGroup()
+                .addComponent(jPanel70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel67Layout = new javax.swing.GroupLayout(jPanel67);
+        jPanel67.setLayout(jPanel67Layout);
+        jPanel67Layout.setHorizontalGroup(
+            jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel67Layout.createSequentialGroup()
+                .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(panel_chart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel67Layout.setVerticalGroup(
+            jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel67Layout.createSequentialGroup()
+                .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panel_chart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout mounthly_panelLayout = new javax.swing.GroupLayout(mounthly_panel);
         mounthly_panel.setLayout(mounthly_panelLayout);
         mounthly_panelLayout.setHorizontalGroup(
             mounthly_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 989, Short.MAX_VALUE)
+            .addComponent(jLabel79, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         mounthly_panelLayout.setVerticalGroup(
             mounthly_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 674, Short.MAX_VALUE)
+            .addGroup(mounthly_panelLayout.createSequentialGroup()
+                .addComponent(jLabel79, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         loard_panel.add(mounthly_panel, "card2");
@@ -3718,7 +3947,15 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
@@ -3784,7 +4021,11 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel64;
     private javax.swing.JPanel jPanel65;
     private javax.swing.JPanel jPanel66;
+    private javax.swing.JPanel jPanel67;
+    private javax.swing.JPanel jPanel68;
+    private javax.swing.JPanel jPanel69;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel70;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
@@ -3806,6 +4047,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField owner_address;
     private javax.swing.JTextField owner_contact_et;
     private javax.swing.JTextField owner_name_et;
+    private javax.swing.JPanel panel_chart;
     private javax.swing.JTextField part_brand_et;
     private javax.swing.JTextField part_getprice_et;
     private javax.swing.JTextField part_id_et;
@@ -3816,6 +4058,18 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField parts_sellprice_et;
     private javax.swing.JLabel payment_date;
     private javax.swing.JPanel payment_panel;
+    private rsbuttom.RSButtonMetro rSButtonMetro1;
+    private rsbuttom.RSButtonMetro rSButtonMetro10;
+    private rsbuttom.RSButtonMetro rSButtonMetro11;
+    private rsbuttom.RSButtonMetro rSButtonMetro12;
+    private rsbuttom.RSButtonMetro rSButtonMetro2;
+    private rsbuttom.RSButtonMetro rSButtonMetro3;
+    private rsbuttom.RSButtonMetro rSButtonMetro4;
+    private rsbuttom.RSButtonMetro rSButtonMetro5;
+    private rsbuttom.RSButtonMetro rSButtonMetro6;
+    private rsbuttom.RSButtonMetro rSButtonMetro7;
+    private rsbuttom.RSButtonMetro rSButtonMetro8;
+    private rsbuttom.RSButtonMetro rSButtonMetro9;
     private javax.swing.JRadioButton search_date_radio;
     private javax.swing.JRadioButton search_number_radio;
     private javax.swing.JPanel search_selling_panel;
