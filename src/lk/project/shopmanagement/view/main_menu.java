@@ -295,18 +295,18 @@ public class main_menu extends javax.swing.JFrame {
         panel_chart = new javax.swing.JPanel();
         jPanel69 = new javax.swing.JPanel();
         jPanel70 = new javax.swing.JPanel();
-        rSButtonMetro1 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro2 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro3 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro4 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro5 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro6 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro7 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro8 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro9 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro10 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro11 = new rsbuttom.RSButtonMetro();
-        rSButtonMetro12 = new rsbuttom.RSButtonMetro();
+        btn_january = new rsbuttom.RSButtonMetro();
+        btn_february = new rsbuttom.RSButtonMetro();
+        btn_july = new rsbuttom.RSButtonMetro();
+        btn_august = new rsbuttom.RSButtonMetro();
+        btn_march = new rsbuttom.RSButtonMetro();
+        btn_april = new rsbuttom.RSButtonMetro();
+        btn_september = new rsbuttom.RSButtonMetro();
+        btn_october = new rsbuttom.RSButtonMetro();
+        btn_may = new rsbuttom.RSButtonMetro();
+        btn_june = new rsbuttom.RSButtonMetro();
+        btn_november = new rsbuttom.RSButtonMetro();
+        btn_december = new rsbuttom.RSButtonMetro();
         jPanel68 = new javax.swing.JPanel();
         jLabel85 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
@@ -2335,53 +2335,53 @@ public class main_menu extends javax.swing.JFrame {
             .addGap(0, 481, Short.MAX_VALUE)
         );
 
-        rSButtonMetro1.setText("January");
-        rSButtonMetro1.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro1.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_january.setText("January");
+        btn_january.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_january.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro2.setText("February");
-        rSButtonMetro2.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro2.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_february.setText("February");
+        btn_february.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_february.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro3.setText("July");
-        rSButtonMetro3.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro3.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_july.setText("July");
+        btn_july.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_july.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro4.setText("August");
-        rSButtonMetro4.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro4.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_august.setText("August");
+        btn_august.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_august.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro5.setText("March");
-        rSButtonMetro5.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro5.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_march.setText("March");
+        btn_march.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_march.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro6.setText("April");
-        rSButtonMetro6.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro6.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_april.setText("April");
+        btn_april.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_april.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro7.setText("September");
-        rSButtonMetro7.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro7.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_september.setText("September");
+        btn_september.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_september.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro8.setText("October");
-        rSButtonMetro8.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro8.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_october.setText("October");
+        btn_october.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_october.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro9.setText("May");
-        rSButtonMetro9.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro9.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_may.setText("May");
+        btn_may.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_may.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro10.setText("Juny");
-        rSButtonMetro10.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro10.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_june.setText("Juny");
+        btn_june.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_june.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro11.setText("November");
-        rSButtonMetro11.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro11.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_november.setText("November");
+        btn_november.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_november.setColorNormal(new java.awt.Color(255, 153, 0));
 
-        rSButtonMetro12.setText("December");
-        rSButtonMetro12.setColorHover(new java.awt.Color(255, 102, 0));
-        rSButtonMetro12.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_december.setText("December");
+        btn_december.setColorHover(new java.awt.Color(255, 102, 0));
+        btn_december.setColorNormal(new java.awt.Color(255, 153, 0));
 
         javax.swing.GroupLayout jPanel70Layout = new javax.swing.GroupLayout(jPanel70);
         jPanel70.setLayout(jPanel70Layout);
@@ -2391,29 +2391,29 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel70Layout.createSequentialGroup()
-                        .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_july, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(rSButtonMetro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_august, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonMetro7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_september, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(rSButtonMetro8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_october, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonMetro11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_november, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(rSButtonMetro12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_december, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel70Layout.createSequentialGroup()
-                        .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_january, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_february, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonMetro5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_march, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(rSButtonMetro6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_april, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSButtonMetro9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_may, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(rSButtonMetro10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_june, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel70Layout.setVerticalGroup(
@@ -2423,25 +2423,25 @@ public class main_menu extends javax.swing.JFrame {
                 .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
-                            .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(btn_january, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                            .addComponent(btn_february, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(rSButtonMetro5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(rSButtonMetro6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btn_march, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(btn_april, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(rSButtonMetro9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(rSButtonMetro10, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_may, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btn_june, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(rSButtonMetro4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_july, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btn_august, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(rSButtonMetro7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(rSButtonMetro8, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_september, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btn_october, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(rSButtonMetro11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(rSButtonMetro12, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_november, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btn_december, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -3830,13 +3830,24 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_PlaceOrder;
     private rsbuttom.RSButtonMetro btn_add_vehical;
     private rsbuttom.RSButtonMetro btn_addpart;
+    private rsbuttom.RSButtonMetro btn_april;
+    private rsbuttom.RSButtonMetro btn_august;
     private rsbuttom.RSButtonMetro btn_backserviceList;
     private rsbuttom.RSButtonMetro btn_createnew_account;
     private rsbuttom.RSButtonMetro btn_createnew_delete;
     private rsbuttom.RSButtonMetro btn_createnew_search;
     private rsbuttom.RSButtonMetro btn_createnew_update;
+    private rsbuttom.RSButtonMetro btn_december;
+    private rsbuttom.RSButtonMetro btn_february;
     private javax.swing.JButton btn_go;
+    private rsbuttom.RSButtonMetro btn_january;
+    private rsbuttom.RSButtonMetro btn_july;
+    private rsbuttom.RSButtonMetro btn_june;
+    private rsbuttom.RSButtonMetro btn_march;
+    private rsbuttom.RSButtonMetro btn_may;
     private rsbuttom.RSButtonMetro btn_mounth;
+    private rsbuttom.RSButtonMetro btn_november;
+    private rsbuttom.RSButtonMetro btn_october;
     private rsbuttom.RSButtonMetro btn_partRemove;
     private rsbuttom.RSButtonMetro btn_parts;
     private rsbuttom.RSButtonMetro btn_passwordchange;
@@ -3846,6 +3857,7 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_search_search;
     private rsbuttom.RSButtonMetro btn_search_vehical;
     private rsbuttom.RSButtonMetro btn_searchpart;
+    private rsbuttom.RSButtonMetro btn_september;
     private rsbuttom.RSButtonMetro btn_service;
     private rsbuttom.RSButtonMetro btn_settings;
     private rsbuttom.RSButtonMetro btn_store;
@@ -4058,18 +4070,6 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JTextField parts_sellprice_et;
     private javax.swing.JLabel payment_date;
     private javax.swing.JPanel payment_panel;
-    private rsbuttom.RSButtonMetro rSButtonMetro1;
-    private rsbuttom.RSButtonMetro rSButtonMetro10;
-    private rsbuttom.RSButtonMetro rSButtonMetro11;
-    private rsbuttom.RSButtonMetro rSButtonMetro12;
-    private rsbuttom.RSButtonMetro rSButtonMetro2;
-    private rsbuttom.RSButtonMetro rSButtonMetro3;
-    private rsbuttom.RSButtonMetro rSButtonMetro4;
-    private rsbuttom.RSButtonMetro rSButtonMetro5;
-    private rsbuttom.RSButtonMetro rSButtonMetro6;
-    private rsbuttom.RSButtonMetro rSButtonMetro7;
-    private rsbuttom.RSButtonMetro rSButtonMetro8;
-    private rsbuttom.RSButtonMetro rSButtonMetro9;
     private javax.swing.JRadioButton search_date_radio;
     private javax.swing.JRadioButton search_number_radio;
     private javax.swing.JPanel search_selling_panel;

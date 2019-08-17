@@ -3857,30 +3857,30 @@
                                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
-                                                  <Component id="rSButtonMetro3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_july" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro4" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_august" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro7" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_september" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro8" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_october" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro11" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_november" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro12" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_december" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
-                                                  <Component id="rSButtonMetro1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_january" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro2" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_february" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro5" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_march" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro6" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_april" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro9" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_may" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="rSButtonMetro10" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btn_june" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
@@ -3894,32 +3894,32 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="rSButtonMetro1" pref="23" max="32767" attributes="0"/>
-                                                      <Component id="rSButtonMetro2" pref="0" max="32767" attributes="0"/>
+                                                      <Component id="btn_january" pref="23" max="32767" attributes="0"/>
+                                                      <Component id="btn_february" pref="0" max="32767" attributes="0"/>
                                                   </Group>
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="rSButtonMetro5" alignment="0" pref="0" max="32767" attributes="0"/>
-                                                      <Component id="rSButtonMetro6" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                                                      <Component id="btn_march" alignment="0" pref="0" max="32767" attributes="0"/>
+                                                      <Component id="btn_april" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="rSButtonMetro9" alignment="0" pref="0" max="32767" attributes="0"/>
-                                                  <Component id="rSButtonMetro10" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                                                  <Component id="btn_may" alignment="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="btn_june" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="rSButtonMetro3" alignment="0" pref="0" max="32767" attributes="0"/>
-                                                  <Component id="rSButtonMetro4" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                                                  <Component id="btn_july" alignment="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="btn_august" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="rSButtonMetro7" alignment="0" pref="0" max="32767" attributes="0"/>
-                                                  <Component id="rSButtonMetro8" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                                                  <Component id="btn_september" alignment="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="btn_october" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="rSButtonMetro11" alignment="0" pref="0" max="32767" attributes="0"/>
-                                                  <Component id="rSButtonMetro12" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                                                  <Component id="btn_november" alignment="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="btn_december" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
@@ -3928,7 +3928,7 @@
                                 </DimensionLayout>
                               </Layout>
                               <SubComponents>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro1">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_january">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="January"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3939,7 +3939,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro2">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_february">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="February"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3950,7 +3950,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro3">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_july">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="July"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3961,7 +3961,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro4">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_august">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="August"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3972,7 +3972,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro5">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_march">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="March"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3983,7 +3983,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro6">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_april">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="April"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -3994,7 +3994,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro7">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_september">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="September"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -4005,7 +4005,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro8">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_october">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="October"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -4016,7 +4016,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro9">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_may">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="May"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -4027,7 +4027,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro10">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_june">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="Juny"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -4038,7 +4038,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro11">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_november">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="November"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -4049,7 +4049,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro12">
+                                <Component class="rsbuttom.RSButtonMetro" name="btn_december">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="December"/>
                                     <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
