@@ -604,10 +604,12 @@ public class main_menu extends javax.swing.JFrame {
         LablePayment_id.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         LablePayment_id.setForeground(new java.awt.Color(255, 0, 0));
         LablePayment_id.setText("1001");
+        LablePayment_id.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         payment_date.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         payment_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         payment_date.setText("2001/02/26");
+        payment_date.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel9.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel9.setText("Payment Date");
@@ -621,11 +623,11 @@ public class main_menu extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(LablePayment_id, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 293, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(payment_date, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(payment_date, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -661,6 +663,7 @@ public class main_menu extends javax.swing.JFrame {
 
         LableOwnern_ame.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         LableOwnern_ame.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LableOwnern_ame.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel12.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel12.setText("Vehical Owner");
@@ -692,24 +695,30 @@ public class main_menu extends javax.swing.JFrame {
             .addComponent(LableOwnern_ame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel6.setBackground(new java.awt.Color(245, 245, 245));
+        jPanel6.setBackground(new java.awt.Color(255, 204, 51));
 
+        jLabel13.setBackground(new java.awt.Color(255, 204, 51));
         jLabel13.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel13.setText("Code");
 
+        jLabel14.setBackground(new java.awt.Color(255, 204, 51));
         jLabel14.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Discription");
 
+        jLabel15.setBackground(new java.awt.Color(255, 204, 51));
         jLabel15.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel15.setText("Unite Price");
 
+        jLabel16.setBackground(new java.awt.Color(255, 204, 51));
         jLabel16.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel16.setText("Qty Store");
 
-        jLabel17.setBackground(new java.awt.Color(51, 255, 204));
+        jLabel17.setBackground(new java.awt.Color(255, 204, 51));
         jLabel17.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel17.setText("Qty Buy");
+
+        jLabel7.setBackground(new java.awt.Color(255, 204, 51));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -750,19 +759,23 @@ public class main_menu extends javax.swing.JFrame {
 
         Lable_Discription.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         Lable_Discription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lable_Discription.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Lable_Price.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         Lable_Price.setForeground(new java.awt.Color(51, 0, 153));
         Lable_Price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lable_Price.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Lable_Qty.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         Lable_Qty.setForeground(new java.awt.Color(255, 0, 0));
         Lable_Qty.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lable_Qty.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Qty_et.setFont(new java.awt.Font("Montserrat", 0, 16)); // NOI18N
         Qty_et.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Qty_et.setText("0");
         Qty_et.setToolTipText("");
+        Qty_et.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Qty_et.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Qty_etFocusGained(evt);
@@ -2209,6 +2222,10 @@ public class main_menu extends javax.swing.JFrame {
         opperation_total.setForeground(new java.awt.Color(255, 0, 0));
 
         chart_view.setText("Chart View");
+        chart_view.setColorHover(new java.awt.Color(255, 153, 0));
+        chart_view.setColorNormal(new java.awt.Color(255, 102, 0));
+        chart_view.setColorPressed(new java.awt.Color(255, 102, 0));
+        chart_view.setColorTextHover(new java.awt.Color(0, 0, 0));
         chart_view.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chart_viewActionPerformed(evt);
@@ -2222,15 +2239,15 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel65Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
                     .addGroup(jPanel65Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(opperation_total, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(chart_view, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(9, 9, 9)))
                 .addContainerGap())
         );
         jPanel65Layout.setVerticalGroup(
@@ -2238,15 +2255,17 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel65Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                    .addComponent(opperation_total, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel65Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(chart_view, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                            .addComponent(opperation_total, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel65Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chart_view, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))))
         );
 
         jPanel66.setBackground(new java.awt.Color(245, 245, 245));
@@ -3760,12 +3779,22 @@ public class main_menu extends javax.swing.JFrame {
 
     private void chart_viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chart_viewActionPerformed
         
+        int toyota = mesure_presantage("TOYOTA");
+        int nissan = mesure_presantage("NISSAN");
+        int mazda = mesure_presantage("MAZDA");
+        int benze = mesure_presantage("Mercedes-Benz");
+        int bmw = mesure_presantage("BMW");
+        int isuzu = mesure_presantage("ISUZU");
+        int honda = mesure_presantage("HONDA");
+        
+        
         DefaultPieDataset pieDataset = new DefaultPieDataset();
-        pieDataset.setValue("TOYOTA", new Integer(80));
-        pieDataset.setValue("HONDA", new Integer(60));
-        pieDataset.setValue("KIA", new Integer(19));
-        pieDataset.setValue("NISSAN", new Integer(42));
-        pieDataset.setValue("LAND ROVER", new Integer(5));
+        pieDataset.setValue("TOYOTA", new Integer(toyota));
+        pieDataset.setValue("BMW", new Integer(bmw));
+        pieDataset.setValue("MAZDA", new Integer(mazda));
+        pieDataset.setValue("NISSAN", new Integer(nissan));
+        pieDataset.setValue("Mercedes-Benz", new Integer(benze));
+        pieDataset.setValue("HONDA", new Integer(honda));
         
         JFreeChart chart = ChartFactory.createPieChart3D("Daily Sale Chart", pieDataset, true, true, true);
         PiePlot3D p = (PiePlot3D)chart.getPlot();
@@ -4389,6 +4418,23 @@ public class main_menu extends javax.swing.JFrame {
         create_password_et.setText("");
         create_new_password.setText("");
         
+    }
+    
+    //-------------------------------------------------check product presantage----------------------------------------------------
+    
+    private int mesure_presantage(String name)
+    {
+        DefaultTableModel dtm = (DefaultTableModel) opperation_table.getModel();
+         int count=0;
+         
+         for(int i=0;i<dtm.getRowCount();i++)
+         {
+             if(dtm.getValueAt(i,5).equals(name))
+             {
+                 count++;
+             }
+         }
+         return count;
     }
  
 }
