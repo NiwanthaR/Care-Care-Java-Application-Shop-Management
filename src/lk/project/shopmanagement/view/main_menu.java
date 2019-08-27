@@ -94,6 +94,7 @@ public class main_menu extends javax.swing.JFrame {
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
         buttonGroup5 = new javax.swing.ButtonGroup();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -363,6 +364,17 @@ public class main_menu extends javax.swing.JFrame {
         jPanel56 = new javax.swing.JPanel();
         btn_passwordchange = new rsbuttom.RSButtonMetro();
 
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
+        jLayeredPane2.setLayout(jLayeredPane2Layout);
+        jLayeredPane2Layout.setHorizontalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jLayeredPane2Layout.setVerticalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
@@ -604,12 +616,12 @@ public class main_menu extends javax.swing.JFrame {
         LablePayment_id.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         LablePayment_id.setForeground(new java.awt.Color(255, 0, 0));
         LablePayment_id.setText("1001");
-        LablePayment_id.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        LablePayment_id.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
-        payment_date.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
+        payment_date.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        payment_date.setForeground(new java.awt.Color(255, 0, 0));
         payment_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         payment_date.setText("2001/02/26");
-        payment_date.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel9.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel9.setText("Payment Date");
@@ -654,6 +666,7 @@ public class main_menu extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(245, 245, 245));
         jButton3.setText("ADD");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -663,7 +676,6 @@ public class main_menu extends javax.swing.JFrame {
 
         LableOwnern_ame.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         LableOwnern_ame.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LableOwnern_ame.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel12.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
         jLabel12.setText("Vehical Owner");
@@ -678,8 +690,8 @@ public class main_menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(vehicalno_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LableOwnern_ame, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -690,7 +702,7 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addComponent(vehicalno_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(LableOwnern_ame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -726,7 +738,7 @@ public class main_menu extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -749,6 +761,7 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(245, 245, 245));
 
+        PartsID_combobox.setBackground(new java.awt.Color(245, 245, 245));
         PartsID_combobox.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
         PartsID_combobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Code" }));
         PartsID_combobox.addItemListener(new java.awt.event.ItemListener() {
@@ -757,25 +770,26 @@ public class main_menu extends javax.swing.JFrame {
             }
         });
 
+        Lable_Discription.setBackground(new java.awt.Color(255, 204, 0));
         Lable_Discription.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         Lable_Discription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Lable_Discription.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        Lable_Price.setBackground(new java.awt.Color(255, 204, 0));
         Lable_Price.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         Lable_Price.setForeground(new java.awt.Color(51, 0, 153));
         Lable_Price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Lable_Price.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        Lable_Qty.setBackground(new java.awt.Color(255, 204, 0));
         Lable_Qty.setFont(new java.awt.Font("Montserrat", 0, 18)); // NOI18N
         Lable_Qty.setForeground(new java.awt.Color(255, 0, 0));
         Lable_Qty.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Lable_Qty.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        Qty_et.setBackground(new java.awt.Color(245, 245, 245));
         Qty_et.setFont(new java.awt.Font("Montserrat", 0, 16)); // NOI18N
         Qty_et.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Qty_et.setText("0");
         Qty_et.setToolTipText("");
-        Qty_et.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Qty_et.setBorder(null);
         Qty_et.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Qty_etFocusGained(evt);
@@ -795,9 +809,9 @@ public class main_menu extends javax.swing.JFrame {
                 .addComponent(PartsID_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(Lable_Discription, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(Lable_Price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(Lable_Qty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(Qty_et)
@@ -3999,6 +4013,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

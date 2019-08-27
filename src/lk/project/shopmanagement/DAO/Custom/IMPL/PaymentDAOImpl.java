@@ -22,9 +22,13 @@ public class PaymentDAOImpl implements PaymentDAO{
     public String generateOrderID() throws Exception {
         ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("SELECT payment_id FROM Payment ORDER BY payment_id DESC LIMIT 1");
         if(rst.next()) {
-            String orderID = rst.getString("payment_id");
-            orderID = Integer.parseInt(orderID.split("[A-Z]")[1])+1+"";
-            return "D"+orderID;
+//            String orderID = rst.getString("payment_id");
+//            orderID = Integer.parseInt(orderID.split("[A-Z]")[1])+1+"";
+//            return "D"+orderID;
+            String orderID = rst.getString(1);
+            orderID = orderID.split("[A-Z]")[1];
+            orderID = (Integer.parseInt(orderID) + 1) + "";
+            return "D" + orderID;
         }
         return "D1";
     }

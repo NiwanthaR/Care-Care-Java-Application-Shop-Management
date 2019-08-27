@@ -12,6 +12,21 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup5">
     </Component>
+    <Container class="javax.swing.JLayeredPane" name="jLayeredPane2">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -639,8 +654,8 @@
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="1001"/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder/>
+                                  <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
+                                    <CompoundBorder/>
                                   </Border>
                                 </Property>
                               </Properties>
@@ -648,15 +663,13 @@
                             <Component class="javax.swing.JLabel" name="payment_date">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Montserrat" size="18" style="0"/>
+                                  <Font name="Montserrat" size="18" style="1"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="2001/02/26"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder/>
-                                  </Border>
-                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel9">
@@ -685,8 +698,8 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="vehicalno_combobox" min="-2" pref="150" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="228" max="32767" attributes="0"/>
+                                      <Component id="jButton3" min="-2" pref="102" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jLabel12" min="-2" pref="143" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="LableOwnern_ame" min="-2" pref="186" max="-2" attributes="0"/>
@@ -699,7 +712,7 @@
                                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                       <Component id="jLabel10" alignment="3" pref="47" max="32767" attributes="0"/>
                                       <Component id="vehicalno_combobox" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                                      <Component id="jButton3" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                                      <Component id="jButton3" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
                                   <Component id="LableOwnern_ame" alignment="0" max="32767" attributes="0"/>
@@ -732,6 +745,9 @@
                             </Component>
                             <Component class="javax.swing.JButton" name="jButton3">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f5" green="f5" red="f5" type="rgb"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="ADD"/>
                               </Properties>
                               <Events>
@@ -744,11 +760,6 @@
                                   <Font name="Montserrat" size="18" style="0"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder/>
-                                  </Border>
-                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel12">
@@ -773,9 +784,9 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel7" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="jLabel13" min="-2" pref="158" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="jLabel14" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                       <Component id="jLabel15" max="32767" attributes="0"/>
@@ -879,11 +890,11 @@
                                       <Component id="PartsID_combobox" min="-2" pref="137" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                       <Component id="Lable_Discription" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="Lable_Price" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="Lable_Qty" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="Qty_et" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                       <Component id="jLabel8" min="-2" pref="14" max="-2" attributes="0"/>
@@ -905,6 +916,9 @@
                           <SubComponents>
                             <Component class="javax.swing.JComboBox" name="PartsID_combobox">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f5" green="f5" red="f5" type="rgb"/>
+                                </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Montserrat" size="15" style="0"/>
                                 </Property>
@@ -920,19 +934,20 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="Lable_Discription">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="cc" red="ff" type="rgb"/>
+                                </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Montserrat" size="18" style="0"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder/>
-                                  </Border>
-                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="Lable_Price">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="cc" red="ff" type="rgb"/>
+                                </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Montserrat" size="18" style="0"/>
                                 </Property>
@@ -940,15 +955,13 @@
                                   <Color blue="99" green="0" red="33" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder/>
-                                  </Border>
-                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="Lable_Qty">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="cc" red="ff" type="rgb"/>
+                                </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Montserrat" size="18" style="0"/>
                                 </Property>
@@ -956,15 +969,13 @@
                                   <Color blue="0" green="0" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder/>
-                                  </Border>
-                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="Qty_et">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f5" green="f5" red="f5" type="rgb"/>
+                                </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Montserrat" size="16" style="0"/>
                                 </Property>
@@ -972,9 +983,7 @@
                                 <Property name="text" type="java.lang.String" value="0"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                    <LineBorder/>
-                                  </Border>
+                                  <Border info="null"/>
                                 </Property>
                               </Properties>
                               <Events>
