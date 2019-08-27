@@ -2414,6 +2414,11 @@ public class main_menu extends javax.swing.JFrame {
         btn_february.setText("February");
         btn_february.setColorHover(new java.awt.Color(255, 102, 0));
         btn_february.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_february.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_februaryActionPerformed(evt);
+            }
+        });
 
         btn_july.setText("July");
         btn_july.setColorHover(new java.awt.Color(255, 102, 0));
@@ -2426,10 +2431,20 @@ public class main_menu extends javax.swing.JFrame {
         btn_march.setText("March");
         btn_march.setColorHover(new java.awt.Color(255, 102, 0));
         btn_march.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_march.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_marchActionPerformed(evt);
+            }
+        });
 
         btn_april.setText("April");
         btn_april.setColorHover(new java.awt.Color(255, 102, 0));
         btn_april.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_april.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_aprilActionPerformed(evt);
+            }
+        });
 
         btn_september.setText("September");
         btn_september.setColorHover(new java.awt.Color(255, 102, 0));
@@ -2442,10 +2457,20 @@ public class main_menu extends javax.swing.JFrame {
         btn_may.setText("May");
         btn_may.setColorHover(new java.awt.Color(255, 102, 0));
         btn_may.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_may.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mayActionPerformed(evt);
+            }
+        });
 
         btn_june.setText("Juny");
         btn_june.setColorHover(new java.awt.Color(255, 102, 0));
         btn_june.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_june.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_juneActionPerformed(evt);
+            }
+        });
 
         btn_november.setText("November");
         btn_november.setColorHover(new java.awt.Color(255, 102, 0));
@@ -2527,9 +2552,9 @@ public class main_menu extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel85, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel68Layout.setVerticalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3860,15 +3885,55 @@ public class main_menu extends javax.swing.JFrame {
         chartFrame.setSize(800,550);
         chartFrame.setAlwaysOnTop(true);
     }//GEN-LAST:event_chart_viewActionPerformed
-
+//------------------------------------------------------------------------------search in January---------------------------------------
     private void btn_januaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_januaryActionPerformed
         try {
-            loardPaymentList_by_mounth_in_mounthly("08");
+            loardPaymentList_by_mounth_in_mounthly("01");
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_januaryActionPerformed
-
+//------------------------------------------------------------------------------search in February---------------------------------------
+    private void btn_februaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_februaryActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("02");
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_februaryActionPerformed
+//------------------------------------------------------------------------------search in March---------------------------------------
+    private void btn_marchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_marchActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("03");
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_marchActionPerformed
+//------------------------------------------------------------------------------search in Aprill---------------------------------------
+    private void btn_aprilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aprilActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("04");
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_aprilActionPerformed
+//------------------------------------------------------------------------------search in May---------------------------------------
+    private void btn_mayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mayActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("06");
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_mayActionPerformed
+//------------------------------------------------------------------------------search in June---------------------------------------
+    private void btn_juneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_juneActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("06");
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_juneActionPerformed
+//------------------------------------------------------------------------------search in January---------------------------------------
     /**
      * @param args the command line arguments
      */
