@@ -82,6 +82,17 @@ public class PaymentListDAOImpl implements PaymentListDAO{
         return paymentLists;
     }
 
+    @Override
+    public ArrayList<PaymentList> findby_mounth(String mounth) throws Exception {
+        ArrayList<PaymentList> paymentLists = new ArrayList<>();
+        ResultSet rst = DBConnection.getConnection().createStatement().executeQuery("select * from payment where payment_date like'2___-"+mounth+"-__'");
+        while (rst.next()) {
+            paymentLists.add(new PaymentList(rst.getString("payment_id"), rst.getString("payment_date"), rst.getInt("payment_cost"), rst.getString("vehical_no")));
+            
+        }
+        return  paymentLists;
+    }
+
   
     
 }

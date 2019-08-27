@@ -66,4 +66,17 @@ public class PaymentListBusiness {
         }
         return  paymentListDTOs;
     }
+    
+     
+    public static ArrayList<PaymentListDTO> findby_mounth(String mounth) throws Exception
+    {
+        ArrayList<PaymentListDTO> paymentListDTOs = new ArrayList<>();
+        ArrayList<PaymentList> paymentLists = paymentList.findby_mounth(mounth);
+        
+        for(PaymentList paymentList: paymentLists )
+        {
+            paymentListDTOs.add(new PaymentListDTO(paymentList.getPayment_id(), paymentList.getPayment_date(), paymentList.getPayment_cost(), paymentList.getVehical_no()));
+        }
+        return  paymentListDTOs;
+    }
 }

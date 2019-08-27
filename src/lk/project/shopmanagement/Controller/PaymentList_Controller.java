@@ -34,5 +34,8 @@ public class PaymentList_Controller {
     {
         return PaymentListBusiness.findby_both(num, date);
     }
-    
+    public static ArrayList<PaymentListDTO> findby_mounth(String mounth) throws Exception
+    {
+        return PaymentListBusiness.findby_mounth(mounth);
+    }
 }
