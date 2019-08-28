@@ -33,8 +33,11 @@ import lk.project.shopmanagement.DTO.VehicalDTO;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PiePlot3D;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 
 /**
@@ -316,9 +319,10 @@ public class main_menu extends javax.swing.JFrame {
         jLabel85 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
-        jLabel84 = new javax.swing.JLabel();
-        jLabel86 = new javax.swing.JLabel();
+        lable_transaction_count = new javax.swing.JLabel();
+        lable_total_cost_mounthly = new javax.swing.JLabel();
         rSButtonMetro1 = new rsbuttom.RSButtonMetro();
+        back_to_mounthly_default = new rsbuttom.RSButtonMetro();
         settings_panel = new javax.swing.JPanel();
         jLabel54 = new javax.swing.JLabel();
         jPanel44 = new javax.swing.JPanel();
@@ -381,6 +385,7 @@ public class main_menu extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CAR CARE MANAGEMENT SYSTEM");
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -671,7 +676,8 @@ public class main_menu extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(245, 245, 245));
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         jButton3.setText("ADD");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -694,9 +700,9 @@ public class main_menu extends javax.swing.JFrame {
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(vehicalno_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LableOwnern_ame, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -706,10 +712,10 @@ public class main_menu extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                .addComponent(vehicalno_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(vehicalno_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(LableOwnern_ame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 51));
@@ -766,7 +772,6 @@ public class main_menu extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(245, 245, 245));
 
-        PartsID_combobox.setBackground(new java.awt.Color(245, 245, 245));
         PartsID_combobox.setFont(new java.awt.Font("Montserrat", 0, 15)); // NOI18N
         PartsID_combobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Code" }));
         PartsID_combobox.addItemListener(new java.awt.event.ItemListener() {
@@ -901,7 +906,7 @@ public class main_menu extends javax.swing.JFrame {
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
 
@@ -2423,10 +2428,20 @@ public class main_menu extends javax.swing.JFrame {
         btn_july.setText("July");
         btn_july.setColorHover(new java.awt.Color(255, 102, 0));
         btn_july.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_july.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_julyActionPerformed(evt);
+            }
+        });
 
         btn_august.setText("August");
         btn_august.setColorHover(new java.awt.Color(255, 102, 0));
         btn_august.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_august.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_augustActionPerformed(evt);
+            }
+        });
 
         btn_march.setText("March");
         btn_march.setColorHover(new java.awt.Color(255, 102, 0));
@@ -2449,10 +2464,20 @@ public class main_menu extends javax.swing.JFrame {
         btn_september.setText("September");
         btn_september.setColorHover(new java.awt.Color(255, 102, 0));
         btn_september.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_september.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_septemberActionPerformed(evt);
+            }
+        });
 
         btn_october.setText("October");
         btn_october.setColorHover(new java.awt.Color(255, 102, 0));
         btn_october.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_october.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_octoberActionPerformed(evt);
+            }
+        });
 
         btn_may.setText("May");
         btn_may.setColorHover(new java.awt.Color(255, 102, 0));
@@ -2475,10 +2500,20 @@ public class main_menu extends javax.swing.JFrame {
         btn_november.setText("November");
         btn_november.setColorHover(new java.awt.Color(255, 102, 0));
         btn_november.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_november.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_novemberActionPerformed(evt);
+            }
+        });
 
         btn_december.setText("December");
         btn_december.setColorHover(new java.awt.Color(255, 102, 0));
         btn_december.setColorNormal(new java.awt.Color(255, 153, 0));
+        btn_december.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_decemberActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel70Layout = new javax.swing.GroupLayout(jPanel70);
         jPanel70.setLayout(jPanel70Layout);
@@ -2536,10 +2571,16 @@ public class main_menu extends javax.swing.JFrame {
         );
 
         jLabel85.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel85.setText("Transaction Count");
+        jLabel85.setText("Total Cost");
 
         jLabel83.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel83.setText("Total Coust");
+        jLabel83.setText("Transaction Count");
+
+        lable_transaction_count.setFont(new java.awt.Font("Montserrat", 1, 20)); // NOI18N
+        lable_transaction_count.setForeground(new java.awt.Color(0, 0, 255));
+
+        lable_total_cost_mounthly.setFont(new java.awt.Font("Montserrat", 1, 20)); // NOI18N
+        lable_total_cost_mounthly.setForeground(new java.awt.Color(51, 204, 0));
 
         javax.swing.GroupLayout jPanel68Layout = new javax.swing.GroupLayout(jPanel68);
         jPanel68.setLayout(jPanel68Layout);
@@ -2548,21 +2589,21 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel68Layout.createSequentialGroup()
                 .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel83, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lable_transaction_count, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel85, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lable_total_cost_mounthly, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel68Layout.setVerticalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel82, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel83, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel84, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lable_transaction_count, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel85, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
-            .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lable_total_cost_mounthly, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel69Layout = new javax.swing.GroupLayout(jPanel69);
@@ -2584,6 +2625,20 @@ public class main_menu extends javax.swing.JFrame {
         rSButtonMetro1.setColorHover(new java.awt.Color(0, 255, 0));
         rSButtonMetro1.setColorNormal(new java.awt.Color(0, 204, 0));
         rSButtonMetro1.setColorTextHover(new java.awt.Color(0, 0, 0));
+        rSButtonMetro1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSButtonMetro1ActionPerformed(evt);
+            }
+        });
+
+        back_to_mounthly_default.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/back white.png"))); // NOI18N
+        back_to_mounthly_default.setColorHover(new java.awt.Color(255, 0, 0));
+        back_to_mounthly_default.setColorNormal(new java.awt.Color(204, 0, 0));
+        back_to_mounthly_default.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_to_mounthly_defaultActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel67Layout = new javax.swing.GroupLayout(jPanel67);
         jPanel67.setLayout(jPanel67Layout);
@@ -2592,7 +2647,9 @@ public class main_menu extends javax.swing.JFrame {
             .addGroup(jPanel67Layout.createSequentialGroup()
                 .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(back_to_mounthly_default, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -2603,10 +2660,10 @@ public class main_menu extends javax.swing.JFrame {
             jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel67Layout.createSequentialGroup()
                 .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                        .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(back_to_mounthly_default, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                    .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(chart_table_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3356,6 +3413,16 @@ public class main_menu extends javax.swing.JFrame {
         loard_panel.add(mounthly_panel);
         loard_panel.repaint();
         loard_panel.revalidate();
+        
+        try {
+            loardPaymentList_by_mounth_default();
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_mounthActionPerformed
 
     //loard settings panel
@@ -3889,6 +3956,11 @@ public class main_menu extends javax.swing.JFrame {
     private void btn_januaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_januaryActionPerformed
         try {
             loardPaymentList_by_mounth_in_mounthly("01");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3897,6 +3969,11 @@ public class main_menu extends javax.swing.JFrame {
     private void btn_februaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_februaryActionPerformed
         try {
             loardPaymentList_by_mounth_in_mounthly("02");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3905,6 +3982,11 @@ public class main_menu extends javax.swing.JFrame {
     private void btn_marchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_marchActionPerformed
         try {
             loardPaymentList_by_mounth_in_mounthly("03");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3913,6 +3995,11 @@ public class main_menu extends javax.swing.JFrame {
     private void btn_aprilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aprilActionPerformed
         try {
             loardPaymentList_by_mounth_in_mounthly("04");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3920,7 +4007,12 @@ public class main_menu extends javax.swing.JFrame {
 //------------------------------------------------------------------------------search in May---------------------------------------
     private void btn_mayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mayActionPerformed
         try {
-            loardPaymentList_by_mounth_in_mounthly("06");
+            loardPaymentList_by_mounth_in_mounthly("05");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3929,11 +4021,121 @@ public class main_menu extends javax.swing.JFrame {
     private void btn_juneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_juneActionPerformed
         try {
             loardPaymentList_by_mounth_in_mounthly("06");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_juneActionPerformed
-//------------------------------------------------------------------------------search in January---------------------------------------
+//------------------------------------------------------------------------------search in July---------------------------------------
+    private void btn_julyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_julyActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("07");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_julyActionPerformed
+//------------------------------------------------------------------------------search in August---------------------------------------
+    private void btn_augustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_augustActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("08");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_augustActionPerformed
+//------------------------------------------------------------------------------search in September---------------------------------------
+    private void btn_septemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_septemberActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("09");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_septemberActionPerformed
+//------------------------------------------------------------------------------search in October---------------------------------------
+    private void btn_octoberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_octoberActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("10");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_octoberActionPerformed
+//------------------------------------------------------------------------------search in November---------------------------------------
+    private void btn_novemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_novemberActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("11");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_novemberActionPerformed
+//------------------------------------------------------------------------------search in December---------------------------------------
+    private void btn_decemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_decemberActionPerformed
+        try {
+            loardPaymentList_by_mounth_in_mounthly("12");
+            
+            //calculate total and transaction
+            Calculate_Mounthly_total();
+            Calculate_Mounthly_transaction();
+            
+        } catch (Exception ex) {
+            Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_decemberActionPerformed
+
+    private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
+        
+        //remove all panel
+            chart_table_panel.removeAll();
+            chart_table_panel.repaint();
+            chart_table_panel.revalidate();
+        
+            //add panel
+            chart_table_panel.add(chart_panel);
+            chart_table_panel.repaint();
+            chart_table_panel.revalidate();
+            
+            create_mounthly_barchart();
+    }//GEN-LAST:event_rSButtonMetro1ActionPerformed
+
+    private void back_to_mounthly_defaultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_to_mounthly_defaultActionPerformed
+        //remove all panel
+            chart_table_panel.removeAll();
+            chart_table_panel.repaint();
+            chart_table_panel.revalidate();
+        
+            //add panel
+            chart_table_panel.add(table_panel);
+            chart_table_panel.repaint();
+            chart_table_panel.revalidate();
+    }//GEN-LAST:event_back_to_mounthly_defaultActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3984,6 +4186,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JComboBox PartsID_combobox;
     private javax.swing.JTextField Qty_et;
     private javax.swing.JTable Table_Orderadd;
+    private rsbuttom.RSButtonMetro back_to_mounthly_default;
     private rsbuttom.RSButtonMetro btn_Partadd;
     private rsbuttom.RSButtonMetro btn_PlaceOrder;
     private rsbuttom.RSButtonMetro btn_add_vehical;
@@ -4125,9 +4328,7 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
@@ -4210,6 +4411,8 @@ public class main_menu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JLabel lable_paymentlist_cost;
+    private javax.swing.JLabel lable_total_cost_mounthly;
+    private javax.swing.JLabel lable_transaction_count;
     private javax.swing.JPanel loard_panel;
     private javax.swing.JPanel menu_panel;
     private javax.swing.JPanel mounthly_panel;
@@ -4345,6 +4548,27 @@ public class main_menu extends javax.swing.JFrame {
         lable_paymentlist_cost.setText(total+"0");
         
      }
+     
+     //calculate total in payment services panel
+     private void Calculate_Mounthly_total()
+     {
+         DefaultTableModel dtm = (DefaultTableModel) table_by_mouth.getModel();
+         double total =0;
+         
+         for(int i =0;i<dtm.getRowCount();i++)
+         {
+             total+=Double.valueOf((String) dtm.getValueAt(i, 3));
+         }
+         lable_total_cost_mounthly.setText(String.valueOf(total)+"0");
+     }
+     
+     //calculate total in payment services panel
+     private void Calculate_Mounthly_transaction()
+     {
+         DefaultTableModel dtm = (DefaultTableModel) table_by_mouth.getModel();
+         int count = dtm.getRowCount();
+         lable_transaction_count.setText(String.valueOf(count));
+     }
         
      //Load Vehical Number in payment panel
      private void loadAllVehicalno() throws Exception
@@ -4429,6 +4653,25 @@ public class main_menu extends javax.swing.JFrame {
         }
     }
     
+      //-------------------------------------------------loard paymentlist------------------------------------------------------------
+    private void loardPaymentList_by_mounth_default() throws Exception
+    {
+        try
+        {
+         DefaultTableModel dtm = (DefaultTableModel) table_by_mouth.getModel();
+         ArrayList<PaymentListDTO> paymentList = PaymentList_Controller.loadAllPayment();
+         dtm.setRowCount(0);
+        
+        for(PaymentListDTO paymentListDTO : paymentList)
+        {
+            Object[] rowData = {paymentListDTO.getPaymentID(),paymentListDTO.getPaymentDATE(),paymentListDTO.getVehicalNO(),paymentListDTO.getPaymentCOST()+".00"};
+            dtm.addRow(rowData);
+        }
+        }catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex);
+        }
+    }
     
      //-------------------------------------------------loard paymentlist by mounth------------------------------------------------------------
     private void loardPaymentList_by_mounth_in_mounthly(String mounth) throws Exception
@@ -4592,5 +4835,32 @@ public class main_menu extends javax.swing.JFrame {
          }
          return count;
     }
+    
+    //--------------------------------------------------show mounthly chart---------------------------------------------------------
+    private void create_mounthly_barchart()
+    {
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.setValue(80, "Sale Rate", "January");
+        dataset.setValue(100, "Sale Rate", "February");
+        dataset.setValue(120, "Sale Rate", "March");
+        dataset.setValue(90, "Sale Rate", "April");
+        dataset.setValue(140, "Sale Rate", "May");
+        dataset.setValue(126, "Sale Rate", "Juny");
+        dataset.setValue(66, "Sale Rate", "July");
+        dataset.setValue(98, "Sale Rate", "August");
+        dataset.setValue(123, "Sale Rate", "September");
+        dataset.setValue(134, "Sale Rate", "October");
+        dataset.setValue(102, "Sale Rate", "November");
+        dataset.setValue(156, "Sale Rate", "December");
+        
+        JFreeChart  chart= ChartFactory.createBarChart("Mounthly Selling Limites", "Mounth", "Total Sale Count", dataset, PlotOrientation.VERTICAL, false, true, false);
+        CategoryPlot p =chart.getCategoryPlot();
+        p.setRangeGridlinePaint(Color.BLACK);
+        ChartFrame frame = new ChartFrame("Year Selling Limite", chart);
+        frame.setVisible(true);
+        //frame.setLocationRelativeTo(this);
+        frame.setSize(1250, 650);
+    }
  
+       
 }

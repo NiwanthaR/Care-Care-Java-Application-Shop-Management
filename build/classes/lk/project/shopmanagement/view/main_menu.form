@@ -30,6 +30,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="CAR CARE MANAGEMENT SYSTEM"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -697,9 +698,9 @@
                                       <Component id="jLabel10" min="-2" pref="129" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="vehicalno_combobox" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jButton3" min="-2" pref="102" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="229" max="32767" attributes="0"/>
                                       <Component id="jLabel12" min="-2" pref="143" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="LableOwnern_ame" min="-2" pref="186" max="-2" attributes="0"/>
@@ -712,10 +713,10 @@
                                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                       <Component id="jLabel10" alignment="3" pref="47" max="32767" attributes="0"/>
                                       <Component id="vehicalno_combobox" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                                      <Component id="jButton3" alignment="3" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
                                   <Component id="LableOwnern_ame" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -746,7 +747,10 @@
                             <Component class="javax.swing.JButton" name="jButton3">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="f5" green="f5" red="f5" type="rgb"/>
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Montserrat" size="14" style="1"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="ADD"/>
                               </Properties>
@@ -916,9 +920,6 @@
                           <SubComponents>
                             <Component class="javax.swing.JComboBox" name="PartsID_combobox">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="f5" green="f5" red="f5" type="rgb"/>
-                                </Property>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Montserrat" size="15" style="0"/>
                                 </Property>
@@ -1082,7 +1083,7 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jScrollPane1" pref="277" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" pref="385" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -3853,7 +3854,9 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel80" min="-2" pref="45" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jLabel81" min="-2" pref="748" max="-2" attributes="0"/>
+                                  <Component id="jLabel81" min="-2" pref="690" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="back_to_mounthly_default" min="-2" pref="51" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="rSButtonMetro1" min="-2" pref="198" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3866,13 +3869,12 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel81" alignment="3" pref="49" max="32767" attributes="0"/>
-                                          <Component id="rSButtonMetro1" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="jLabel81" min="-2" pref="49" max="-2" attributes="0"/>
                                       <Component id="jLabel80" max="32767" attributes="0"/>
+                                      <Component id="back_to_mounthly_default" pref="52" max="32767" attributes="0"/>
+                                      <Component id="rSButtonMetro1" alignment="1" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="chart_table_panel" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="jPanel69" max="32767" attributes="0"/>
@@ -4120,6 +4122,9 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_julyActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="rsbuttom.RSButtonMetro" name="btn_august">
                                   <Properties>
@@ -4131,6 +4136,9 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_augustActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="rsbuttom.RSButtonMetro" name="btn_march">
                                   <Properties>
@@ -4170,6 +4178,9 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_septemberActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="rsbuttom.RSButtonMetro" name="btn_october">
                                   <Properties>
@@ -4181,6 +4192,9 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_octoberActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="rsbuttom.RSButtonMetro" name="btn_may">
                                   <Properties>
@@ -4220,6 +4234,9 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_novemberActionPerformed"/>
+                                  </Events>
                                 </Component>
                                 <Component class="rsbuttom.RSButtonMetro" name="btn_december">
                                   <Properties>
@@ -4231,6 +4248,9 @@
                                       <Color blue="0" green="99" red="ff" type="rgb"/>
                                     </Property>
                                   </Properties>
+                                  <Events>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_decemberActionPerformed"/>
+                                  </Events>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -4242,13 +4262,13 @@
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jLabel82" min="-2" pref="30" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                          <Component id="jLabel83" max="32767" attributes="0"/>
+                                          <Component id="jLabel83" min="-2" pref="263" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                          <Component id="jLabel84" min="-2" pref="288" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                          <Component id="jLabel85" min="-2" pref="365" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                          <Component id="jLabel86" min="-2" pref="144" max="-2" attributes="0"/>
+                                          <Component id="lable_transaction_count" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                          <Component id="jLabel85" min="-2" pref="214" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                          <Component id="lable_total_cost_mounthly" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -4256,9 +4276,9 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel82" max="32767" attributes="0"/>
                                       <Component id="jLabel83" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel84" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="lable_transaction_count" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel85" alignment="0" pref="68" max="32767" attributes="0"/>
-                                      <Component id="jLabel86" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="lable_total_cost_mounthly" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                 </DimensionLayout>
                               </Layout>
@@ -4268,7 +4288,7 @@
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Montserrat" size="24" style="0"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="Transaction Count"/>
+                                    <Property name="text" type="java.lang.String" value="Total Cost"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel83">
@@ -4276,14 +4296,30 @@
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Montserrat" size="24" style="0"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="Total Coust"/>
+                                    <Property name="text" type="java.lang.String" value="Transaction Count"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel82">
                                 </Component>
-                                <Component class="javax.swing.JLabel" name="jLabel84">
+                                <Component class="javax.swing.JLabel" name="lable_transaction_count">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Montserrat" size="20" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="0" red="0" type="rgb"/>
+                                    </Property>
+                                  </Properties>
                                 </Component>
-                                <Component class="javax.swing.JLabel" name="jLabel86">
+                                <Component class="javax.swing.JLabel" name="lable_total_cost_mounthly">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Montserrat" size="20" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="0" green="cc" red="33" type="rgb"/>
+                                    </Property>
+                                  </Properties>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -4302,6 +4338,25 @@
                               <Color blue="0" green="0" red="0" type="rgb"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonMetro1ActionPerformed"/>
+                          </Events>
+                        </Component>
+                        <Component class="rsbuttom.RSButtonMetro" name="back_to_mounthly_default">
+                          <Properties>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/lk/project/shopmanagement/image/back white.png"/>
+                            </Property>
+                            <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="0" green="0" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="colorNormal" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="0" green="0" red="cc" type="rgb"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="back_to_mounthly_defaultActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
