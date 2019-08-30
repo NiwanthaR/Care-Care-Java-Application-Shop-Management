@@ -3599,9 +3599,13 @@ public class main_menu extends javax.swing.JFrame {
     private void vehicalno_comboboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_vehicalno_comboboxItemStateChanged
         
         try {
+            if(vehicalno_combobox.getSelectedItem().toString()=="Select Vehical No")
+            {
+                
+            }else{
             VehicalDTO vehicalDTO = Vehical_Controller.searchVehical(vehicalno_combobox.getSelectedItem().toString());
             LableOwnern_ame.setText(vehicalDTO.getOwner_name());
-            
+            }
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -3610,10 +3614,14 @@ public class main_menu extends javax.swing.JFrame {
     private void PartsID_comboboxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_PartsID_comboboxItemStateChanged
         
         try {
+            
+            if(PartsID_combobox.getSelectedItem().toString()!="Select Code")
+            {
             PartsDTO partsDTO = Parts_Controller.searchparts(PartsID_combobox.getSelectedItem().toString());
             Lable_Discription.setText(partsDTO.getPart_name());
             Lable_Price.setText(Integer.toString(partsDTO.getGet_price()));
             Lable_Qty.setText(Integer.toString(partsDTO.getPart_qty()));
+            }
             
         } catch (Exception ex) {
             Logger.getLogger(main_menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -3670,8 +3678,12 @@ public class main_menu extends javax.swing.JFrame {
             
             PaymentDTO paymentDTO = new PaymentDTO(order_id, order_Date,total_value, Vehical_no, payment_DetailDTOs);
             boolean isok = Payment_Controller.addPayment(paymentDTO);
-            if(isok)
+            if(isok){
                 JOptionPane.showMessageDialog(this, "Added Success");
+                dtm.setRowCount(0);
+                generateOrderID();
+                after_done_payment();
+            }
             else
                 JOptionPane.showMessageDialog(this, "Added Failed");
             
@@ -4862,5 +4874,15 @@ public class main_menu extends javax.swing.JFrame {
         frame.setSize(1250, 650);
     }
  
+    private void after_done_payment()
+    {
+        Lable_Discription.setText("");
+        Lable_Price.setText("");
+        Lable_Qty.setText("");
+        Qty_et.setText("0");
+        vehicalno_combobox.setSelectedItem("Select Vehical No");
+        LableOwnern_ame.setText("");
+        PartsID_combobox.setSelectedItem("Select Code");
+    }
        
 }

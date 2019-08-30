@@ -30,7 +30,7 @@ public class PaymentDAOImpl implements PaymentDAO{
             orderID = (Integer.parseInt(orderID) + 1) + "";
             return "D" + orderID;
         }
-        return "D1";
+        return "D01";
     }
 
     @Override
