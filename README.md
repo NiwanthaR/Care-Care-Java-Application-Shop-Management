@@ -1,5 +1,5 @@
 # Care Care Application (java)
-#### About Care Care Application
+## About Care Care Application
 
 <div>
    <body> This application can use to Manage Vehicle Spare Parts Shop Activitys. There Selling parts and buy a spare parts lots.
@@ -7,7 +7,7 @@
    </body>
 </div>
 
-##### User Features
+#### User Features
 <div>
     <ul>
         <li>First User Want to log there account(Login)</li>
@@ -18,7 +18,7 @@
     </ul>
  </div>
  
- ##### Managing Features
+ #### Managing Features
  <div>
        <ul>
            <li>Add Vehicle / Delete Vehicle / Update Vehicle / Search Vehicle</li>
@@ -33,7 +33,7 @@
        </ul>
  </div>
  
- ##### Technologies Used
+ #### Technologies Used
  <div>
       <body>I used Java Platform using NetBeans and MySql for Database. Additional I used two Dependancies
              <ul>
@@ -41,7 +41,10 @@
              <li><a href="http://plugins.netbeans.org/plugin/73575/rojerusan-lib-jar">Rs Button Dependancies</a></li>
              <li><a href="https://dev.mysql.com/downloads/">My SQL Database</a></li>
              </ul>
-      </body>
+         </body>
+        <p> This Project I used Layered Architecture(<a href="https://www.developer.com/design/article.php/10925_3808106_4/Introducing-Enterprise-Java-Application-Architecture-and-Design.htm">Enterprise Java Application Architecture and Design</a>). Including Interfaces and Java Classes.</p>
+         
+      
  </div>
  
  
