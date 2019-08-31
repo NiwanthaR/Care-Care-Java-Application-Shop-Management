@@ -44,7 +44,7 @@
          </body>
         <p> This Project I used Layered Architecture(<a href="https://www.developer.com/design/article.php/10925_3808106_4/Introducing-Enterprise-Java-Application-Architecture-and-Design.htm">Enterprise Java Application Architecture and Design</a>). Including Interfaces and Java Classes.</p>
          
-      
+ <p align="center" ><img src="Read_Me_Img\architecture.jpg"></p>
  </div>
  
  
