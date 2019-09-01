@@ -8,12 +8,14 @@ package lk.project.shopmanagement.view;
 
 
 import java.awt.Color;
+import java.awt.GraphicsEnvironment;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import lk.project.shopmanagement.Controller.Login_Controller;
@@ -49,6 +51,8 @@ public class main_menu extends javax.swing.JFrame {
     /**
      * Creates new form main_menu
      */
+    static boolean maximize = true;
+            
     public main_menu() throws Exception{
         initComponents();
         this.setLocationRelativeTo(this);
@@ -103,6 +107,9 @@ public class main_menu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btn_closemenu = new rsbuttom.RSButtonMetro();
+        btn_minimize = new rsbuttom.RSButtonMetro();
+        btn_maximize = new rsbuttom.RSButtonMetro();
         menu_panel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btn_payment = new rsbuttom.RSButtonMetro();
@@ -406,6 +413,33 @@ public class main_menu extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Management");
 
+        btn_closemenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/cancel_white.png"))); // NOI18N
+        btn_closemenu.setColorHover(new java.awt.Color(0, 0, 0));
+        btn_closemenu.setColorNormal(new java.awt.Color(0, 0, 0));
+        btn_closemenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_closemenuActionPerformed(evt);
+            }
+        });
+
+        btn_minimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/minimize.png"))); // NOI18N
+        btn_minimize.setColorHover(new java.awt.Color(0, 0, 0));
+        btn_minimize.setColorNormal(new java.awt.Color(0, 0, 0));
+        btn_minimize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_minimizeActionPerformed(evt);
+            }
+        });
+
+        btn_maximize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/maximize.png"))); // NOI18N
+        btn_maximize.setColorHover(new java.awt.Color(0, 0, 0));
+        btn_maximize.setColorNormal(new java.awt.Color(0, 0, 0));
+        btn_maximize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_maximizeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -417,19 +451,30 @@ public class main_menu extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_maximize, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_closemenu, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btn_closemenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_minimize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_maximize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -4148,6 +4193,30 @@ public class main_menu extends javax.swing.JFrame {
             chart_table_panel.revalidate();
     }//GEN-LAST:event_back_to_mounthly_defaultActionPerformed
 
+    private void btn_closemenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_closemenuActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_closemenuActionPerformed
+
+    private void btn_minimizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_minimizeActionPerformed
+       setState(main_menu.ICONIFIED);
+    }//GEN-LAST:event_btn_minimizeActionPerformed
+
+    private void btn_maximizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_maximizeActionPerformed
+
+        if(maximize)
+        {
+            main_menu.this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            main_menu.this.setMaximizedBounds(env.getMaximumWindowBounds());
+            
+            maximize =false;
+        }else{
+            setExtendedState(JFrame.NORMAL);
+            maximize = true;
+        }
+       
+    }//GEN-LAST:event_btn_maximizeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4206,6 +4275,7 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_april;
     private rsbuttom.RSButtonMetro btn_august;
     private rsbuttom.RSButtonMetro btn_backserviceList;
+    private rsbuttom.RSButtonMetro btn_closemenu;
     private rsbuttom.RSButtonMetro btn_createnew_account;
     private rsbuttom.RSButtonMetro btn_createnew_delete;
     private rsbuttom.RSButtonMetro btn_createnew_search;
@@ -4217,7 +4287,9 @@ public class main_menu extends javax.swing.JFrame {
     private rsbuttom.RSButtonMetro btn_july;
     private rsbuttom.RSButtonMetro btn_june;
     private rsbuttom.RSButtonMetro btn_march;
+    private rsbuttom.RSButtonMetro btn_maximize;
     private rsbuttom.RSButtonMetro btn_may;
+    private rsbuttom.RSButtonMetro btn_minimize;
     private rsbuttom.RSButtonMetro btn_mounth;
     private rsbuttom.RSButtonMetro btn_november;
     private rsbuttom.RSButtonMetro btn_october;
