@@ -194,9 +194,60 @@
  ## Storage Screen
  <div>
    <img src="Read_Me_Img/storescreen.jpg"><br>
-   User can see all production and available Quntity
-   It's Very help to Make a Business Deision
+   User can see all product and available Quntity.
+   It's Very help to Make a Business Deision.
    </div>
    <br>
    <br>
+   
+   ## Today Opperation Screen
+   <div>
+      <img src="Read_Me_Img/todayopperation.jpg"><br>
+   This is Daily Opperation Monitoring Screen.
+   This screen giving valuble data.
+   <ul>
+      <li>Total Selling count in Day</li>
+      <li>Total Income per Day</li>
+      <li>Mostly Selling Brand within Day</li>
+      <li>Grapical User Charts</li>
+      </ul>
+ </div>
+ <br>
+  <img src="Read_Me_Img/Todaytopselling.jpg"><br>
+  This Java chart Help to find most selling brand in day.
+  
+  ## Mounthly Opperation Screen
+   <div>
+      <img src="Read_Me_Img/mounthlyopperation.jpg"><br>
+   Using this window User can view Mounthly selling Transaction Count and total mounthly income.
+   User can check one by one 12 mounth
+   <ul>
+      <li>Fitness tracker</li>
+      <li>Total mounthly Transaction count</li>
+      <li>Total mounthly Transaction count</li>
+      <li>Grapical User Charts</li>
+      </ul>
+ </div>
+ <br>
+  <img src="Read_Me_Img/mounthlysellingchart.jpg"><br>
+  This Java chart Help to find most selling Mounth in this Year.
+  
+  
+   ## Parts Dashboard
+ <div>
+      <img src="Read_Me_Img/Settings.jpg"><br>
+   This is the User Control Panel
+   It has many Features
+   <ul>
+      <li>change password</li>
+      <li>Change Security question answer</li>
+      <li>Search Account</li>
+      <li>Update Account</li>
+      <li>Delete Account</li>
+      <li>Create New User</li>
+      </ul>
+ </div>
+ <br>
+ <br> 
  
+ Thank You...!! Any Developer can develop more Please Do it.........!! It plesure to meee....!!
