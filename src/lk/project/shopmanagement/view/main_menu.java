@@ -393,7 +393,6 @@ public class main_menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CAR CARE MANAGEMENT SYSTEM");
-        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
