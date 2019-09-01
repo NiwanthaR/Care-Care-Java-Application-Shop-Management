@@ -1,4 +1,6 @@
 # Care Care Application (java)
+<p align="center" ><img src="Read_Me_Img/car%20care%20logo%20(2).png"></p>
+
 ## About Care Care Application
 
 <div>
@@ -50,7 +52,7 @@
  ### InterFaces
  ##### Splash Screen
  <div>
-      <img src="Read_Me_Img/splash%20screen.jpg"><br>
+      <img src="Read_Me_Img/splashscreen.jpg"><br>
    This is the Loarding Screen (Splash Screen).
    when user open application first load this screen.
  </div>
@@ -68,7 +70,7 @@
  
   ##### Forget Psssword Screen
  <div>
-      <img src="Read_Me_Img/Forget%20Password.jpg"><br>
+      <img src="Read_Me_Img/forgetpassword.jpg"><br>
    This is the Forget Password Screen.
    User want to Insert
    <ul>
