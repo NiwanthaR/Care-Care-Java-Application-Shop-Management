@@ -49,8 +49,8 @@
  <p align="center" ><img src="Read_Me_Img/architecture.jpg"></p>
  </div>
  
- ### InterFaces
- ##### Splash Screen
+ # InterFaces
+ ## Splash Screen
  <div>
       <img src="Read_Me_Img/splashscreen.jpg"><br>
    This is the Loarding Screen (Splash Screen).
@@ -59,7 +59,7 @@
  <br>
  <br>
  
- ##### Login Screen
+ ## Login Screen
  <div>
       <img src="Read_Me_Img/Login.jpg"><br>
    This is the Login Screen.
@@ -68,7 +68,7 @@
  <br>
  <br>
  
-  ##### Forget Psssword Screen
+  ## Forget Psssword Screen
  <div>
       <img src="Read_Me_Img/forgetpassword.jpg"><br>
    This is the Forget Password Screen.
@@ -83,10 +83,120 @@
  <br>
  <br>
  
+ ## Payment Transaction Screen Side Menu
+ <div>
+      <img src="Read_Me_Img/payment02.jpg"><br>
+   Left Side have Main menu bar.
+   User can hide it.
+ </div>
  
+ ## Side Menu in Hide Position
+ <img src="Read_Me_Img/payment03.jpg"><br>
+ <br>
+ <br>
  
+ ## Payment Transaction Screen
+ <div>
+      <img src="Read_Me_Img/payment01.jpg"><br>
+   This is the Payment Transaction Screen.
+   It has many Features
+   <ul>
+      <li>Order ID automaticly genarated</li>
+      <li>Date also automaticly genareted</li>
+      <li>User want to select Vehical Number (after select vehical number automaticly filling Owner name)</li>
+      <li>user want to select product id and input quntity</li>
+      </ul>
+ </div>
+ <br>
+ <br>
  
+ ## Payment Transaction Screen (Adding Items)
+ <div>
+      <img src="Read_Me_Img/payment04.jpg"><br>
+   User can add items. total value is automaticaly calculated.
+ </div>
+ <br>
+ <br>
  
+ ## Close Window Button 
+ <div>
+   <img src="Read_Me_Img/closewindow.jpg"><br>
+   </div>
+   <br>
+   <br>
+   
+ ## Minimize Window Button 
+ <div>
+   <img src="Read_Me_Img/minimize.jpg"><br>
+   </div>
+   <br>
+   <br>
+   
+ ## Maximize Window Button 
+ <div>
+   <img src="Read_Me_Img/maximize.jpg"><br>
+   </div>
+   <br>
+   <br>
  
+ ## Vehicle Dashboard
+ <div>
+      <img src="Read_Me_Img/vehicalscreen.jpg"><br>
+   This is the Vehical Management Window.
+   It has many Features
+   <ul>
+      <li>Add new Vehicle</li>
+      <li>Delete Vehicle</li>
+      <li>Search Vehicle</li>
+      <li>Update Vehicle</li>
+      <li>All Register Vehical</li>
+      </ul>
+ </div>
+ <br>
+ <br>
  
+ ## Parts Dashboard
+ <div>
+      <img src="Read_Me_Img/partsscreen.jpg"><br>
+   This is the Spare Parts Management Window.
+   It has many Features
+   <ul>
+      <li>Add new Parts</li>
+      <li>Delete Parts</li>
+      <li>Search Parts</li>
+      <li>Update Parts</li>
+      <li>All Parts</li>
+      </ul>
+ </div>
+ <br>
+ <br> 
+ 
+ ## Previous Payments & Payment Details
+ <div>
+      <img src="Read_Me_Img/previous%20payments.jpg"><br>
+   This window display all previous payments.
+   If you click any payment you can see all the details of that payment.
+   User can search previous payment bill using two types
+   <ul>
+      <li>Vehical Number Base</li>
+      <li>Payment Date Base</li>
+      <li>Both Two of Them</li>
+   </ul>
+ </div>
+ <br>
+ <br> 
+ 
+ <div>
+   <img src="Read_Me_Img/paymentdetails.jpg"><br>
+   When user select ant payment he can check all payment details according to the that customer_id
+   </div>
+   
+ ## Storage Screen
+ <div>
+   <img src="Read_Me_Img/storescreen.jpg"><br>
+   User can see all production and available Quntity
+   It's Very help to Make a Business Deision
+   </div>
+   <br>
+   <br>
  
