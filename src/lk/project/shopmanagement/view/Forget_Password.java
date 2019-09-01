@@ -78,8 +78,8 @@ public class Forget_Password extends javax.swing.JFrame {
         jLabel5.setText("CAR CARE");
 
         rSButtonMetro1.setBackground(new java.awt.Color(0, 0, 0));
-        rSButtonMetro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/close-button-red.png"))); // NOI18N
-        rSButtonMetro1.setColorHover(new java.awt.Color(0, 0, 0));
+        rSButtonMetro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/close-button-white.png"))); // NOI18N
+        rSButtonMetro1.setColorHover(new java.awt.Color(255, 0, 0));
         rSButtonMetro1.setColorNormal(new java.awt.Color(0, 0, 0));
         rSButtonMetro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,9 +108,8 @@ public class Forget_Password extends javax.swing.JFrame {
         );
 
         jPanel3.setBackground(new java.awt.Color(245, 245, 245));
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        rSPanelImage1.setImagen(new javax.swing.ImageIcon("C:\\Users\\NIWANTHA\\Desktop\\App Logo\\4628493393.png")); // NOI18N
+        rSPanelImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/forget screen.png"))); // NOI18N
 
         javax.swing.GroupLayout rSPanelImage1Layout = new javax.swing.GroupLayout(rSPanelImage1);
         rSPanelImage1.setLayout(rSPanelImage1Layout);

@@ -393,6 +393,7 @@ public class main_menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CAR CARE MANAGEMENT SYSTEM");
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -414,7 +415,7 @@ public class main_menu extends javax.swing.JFrame {
         jLabel2.setText("Management");
 
         btn_closemenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/cancel_white.png"))); // NOI18N
-        btn_closemenu.setColorHover(new java.awt.Color(0, 0, 0));
+        btn_closemenu.setColorHover(new java.awt.Color(255, 0, 0));
         btn_closemenu.setColorNormal(new java.awt.Color(0, 0, 0));
         btn_closemenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -423,7 +424,7 @@ public class main_menu extends javax.swing.JFrame {
         });
 
         btn_minimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/minimize.png"))); // NOI18N
-        btn_minimize.setColorHover(new java.awt.Color(0, 0, 0));
+        btn_minimize.setColorHover(new java.awt.Color(255, 0, 0));
         btn_minimize.setColorNormal(new java.awt.Color(0, 0, 0));
         btn_minimize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -432,7 +433,7 @@ public class main_menu extends javax.swing.JFrame {
         });
 
         btn_maximize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/maximize.png"))); // NOI18N
-        btn_maximize.setColorHover(new java.awt.Color(0, 0, 0));
+        btn_maximize.setColorHover(new java.awt.Color(255, 0, 0));
         btn_maximize.setColorNormal(new java.awt.Color(0, 0, 0));
         btn_maximize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4592,7 +4593,7 @@ public class main_menu extends javax.swing.JFrame {
         for(int i =0; i<dtm.getRowCount() ;i++)
         {
             //total += (double)dtm.getValueAt(i, 4); 
-            total += Double.valueOf((String) dtm.getValueAt(i, 4)); 
+             total += Double.valueOf((String) dtm.getValueAt(i, 4)); 
         }
         Lable_total.setText(total+"0");
         

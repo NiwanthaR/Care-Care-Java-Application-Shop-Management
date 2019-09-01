@@ -114,10 +114,10 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/lk/project/shopmanagement/image/close-button-red.png"/>
+              <Image iconType="3" name="/lk/project/shopmanagement/image/close-button-white.png"/>
             </Property>
             <Property name="colorHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
+              <Color blue="0" green="0" red="ff" type="rgb"/>
             </Property>
             <Property name="colorNormal" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -172,17 +172,12 @@
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="btn_Login" min="-2" pref="212" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="forget_tv" min="-2" pref="144" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="btn_Login" min="-2" pref="212" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="forget_tv" min="-2" pref="144" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -229,7 +224,7 @@
         <Container class="rojerusan.RSPanelImage" name="rSPanelImage1">
           <Properties>
             <Property name="imagen" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/lk/project/shopmanagement/view/repair-icon-png-26.png"/>
+              <Image iconType="3" name="/lk/project/shopmanagement/image/login screen.png"/>
             </Property>
           </Properties>
 

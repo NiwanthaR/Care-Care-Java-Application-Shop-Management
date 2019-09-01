@@ -74,8 +74,8 @@ public class Login_Form extends javax.swing.JFrame {
         jLabel5.setText("CAR CARE");
 
         rSButtonMetro1.setBackground(new java.awt.Color(0, 0, 0));
-        rSButtonMetro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/close-button-red.png"))); // NOI18N
-        rSButtonMetro1.setColorHover(new java.awt.Color(0, 0, 0));
+        rSButtonMetro1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/close-button-white.png"))); // NOI18N
+        rSButtonMetro1.setColorHover(new java.awt.Color(255, 0, 0));
         rSButtonMetro1.setColorNormal(new java.awt.Color(0, 0, 0));
         rSButtonMetro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +108,7 @@ public class Login_Form extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(245, 245, 245));
         jPanel3.setPreferredSize(new java.awt.Dimension(845, 452));
 
-        rSPanelImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/view/repair-icon-png-26.png"))); // NOI18N
+        rSPanelImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/lk/project/shopmanagement/image/login screen.png"))); // NOI18N
 
         javax.swing.GroupLayout rSPanelImage1Layout = new javax.swing.GroupLayout(rSPanelImage1);
         rSPanelImage1.setLayout(rSPanelImage1Layout);
@@ -215,14 +215,11 @@ public class Login_Form extends javax.swing.JFrame {
                             .addComponent(loginpassword_et))
                         .addGap(44, 44, 44))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(btn_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(120, 120, 120))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(forget_tv, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(151, 151, 151))))))
+                        .addComponent(btn_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(forget_tv, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151))))
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
