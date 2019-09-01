@@ -7,7 +7,7 @@
    </body>
 </div>
 
-#### User Features
+### User Features
 <div>
     <ul>
         <li>First User Want to log there account(Login)</li>
@@ -18,7 +18,7 @@
     </ul>
  </div>
  
- #### Managing Features
+ ### Managing Features
  <div>
        <ul>
            <li>Add Vehicle / Delete Vehicle / Update Vehicle / Search Vehicle</li>
@@ -33,7 +33,7 @@
        </ul>
  </div>
  
- #### Technologies Used
+ ### Technologies Used
  <div>
       <body>I used Java Platform using NetBeans and MySql for Database. Additional I used two Dependancies
              <ul>
@@ -44,7 +44,47 @@
          </body>
         <p> This Project I used Layered Architecture(<a href="https://www.developer.com/design/article.php/10925_3808106_4/Introducing-Enterprise-Java-Application-Architecture-and-Design.htm">Enterprise Java Application Architecture and Design</a>). Including Interfaces and Java Classes.</p>
          
- <p align="center" ><img src="Read_Me_Img\architecture.jpg"></p>
+ <p align="center" ><img src="Read_Me_Img/architecture.jpg"></p>
  </div>
+ 
+ ### InterFaces
+ ##### Splash Screen
+ <div>
+      <img src="Read_Me_Img/splash%20screen.jpg"><br>
+   This is the Loarding Screen (Splash Screen).
+   when user open application first load this screen.
+ </div>
+ <br>
+ <br>
+ 
+ ##### Login Screen
+ <div>
+      <img src="Read_Me_Img/Login.jpg"><br>
+   This is the Login Screen.
+   User want to enter their user name and password.
+ </div>
+ <br>
+ <br>
+ 
+  ##### Forget Psssword Screen
+ <div>
+      <img src="Read_Me_Img/Forget%20Password.jpg"><br>
+   This is the Forget Password Screen.
+   User want to Insert
+   <ul>
+      <li>User Name</li>
+      <li>Security Question</li>
+      <li>Answer</li>
+      <li>New Password</li>
+      </ul>
+ </div>
+ <br>
+ <br>
+ 
+ 
+ 
+ 
+ 
+ 
  
  
